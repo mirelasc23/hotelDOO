@@ -149,7 +149,6 @@ public class Pessoa {
             this.status = status;
         }
         this.status = status;
-        nome.toUpperCase();
     }
     
 

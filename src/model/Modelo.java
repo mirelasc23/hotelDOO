@@ -42,6 +42,9 @@ public class Modelo {
     }
 
     public void setStatus(char status) {
+        if((status == 'A') || (status == 'A')){
+            this.status = status;
+        }
         this.status = status;
     }
 
