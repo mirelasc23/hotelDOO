@@ -1,25 +1,22 @@
 package model;
-
 public class Fornecedor extends Pessoa{
-    private String razaoSocial, cnpj, inscricaoEstadual, contato;
+    
+    private String razaoSocial;
+    private String cnpj;
+    private String inscricaoEstadual;
+    private String contato;
 
     public Fornecedor() {
     }
 
-    public Fornecedor(String razaoSocial, String cnpj, String inscricaoEstadual, String contato, String nome, String fone1, String fone2, String email, String cep, String logradouro, String bairro, String cidade, String complemento, String cpf, String rg, String obs, String dataCadastro, int id, char status) {
-        super(nome, fone1, fone2, email, cep, logradouro, bairro, cidade, complemento, cpf, rg, obs, dataCadastro, id, status);
+    public Fornecedor( int id, String nome, String fone1, String fone2, String email, String cep, String logradouro, String bairro, String cidade, String complemento, String dataCadastro, String cpf, String rg,String razaoSocial, String cnpj, String inscricaoEstadual, String contato, String obs, char status) {
+        super(id, nome, fone1, fone2, email, cep, logradouro, bairro, cidade, complemento, dataCadastro, cpf, rg, obs, status);
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
         this.inscricaoEstadual = inscricaoEstadual;
         this.contato = contato;
     }
 
-    @Override
-    public String toString() {
-        return "Fornecedor{" + "cnpj=" + cnpj + ", contato=" + contato + '}';
-    }
-
-    
     public String getRazaoSocial() {
         return razaoSocial;
     }
@@ -51,6 +48,20 @@ public class Fornecedor extends Pessoa{
     public void setContato(String contato) {
         this.contato = contato;
     }
+
+    @Override
+    public String toString() {
+        return  super.toString() + 
+                "\ncnpj   = " + this.getCnpj()+
+                "\nCep    = " + this.getCnpj()+
+                "\nCidade = " + this.getCidade()+
+                "\nBairro = " + this.getBairro()+
+                "\nLogradouro = " + this.getLogradouro()+
+                "\nComplemento= " + this.getComplemento()+
+                "\nContato    = " + this.getContato()+
+                "\nStatus = " + this.getStatus();
+    }
     
     
+
 }

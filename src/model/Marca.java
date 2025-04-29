@@ -1,6 +1,7 @@
 package model;
 
 public class Marca {
+
     private int id;
     private String descricao;
     private char status;
@@ -12,11 +13,6 @@ public class Marca {
         this.id = id;
         this.descricao = descricao;
         this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Marca{" + descricao + '}';
     }
 
     public int getId() {
@@ -40,11 +36,18 @@ public class Marca {
     }
 
     public void setStatus(char status) {
-        if((status == 'A') || (status == 'A')){
+        if ( (status == 'A') || (status == 'C') || (status == 'a') || (status == 'c') ) {
             this.status = status;
+        }else {
+            this.status = 'A';
         }
-        this.status = status;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return    "id    = " + this.getId()
+                + "Desc. = " + this.getDescricao()
+                + "Status= " + this.getStatus();
+    }
+
 }

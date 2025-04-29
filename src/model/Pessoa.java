@@ -1,18 +1,28 @@
 package model;
 
-//import java.util.Date;
-
 public class Pessoa {
-    private String nome, fone1, fone2, email, cep, logradouro, bairro, cidade,
-                                complemento, cpf, rg, obs, dataCadastro;
+
     private int id;
+    private String nome;
+    private String fone1;
+    private String fone2;
+    private String email;
+    private String cep;
+    private String logradouro;
+    private String bairro;
+    private String cidade;
+    private String complemento;
+    private String dataCadastro;
+    private String cpf;
+    private String rg;
+    private String obs;
     private char status;
-    //private Date dataCadastro;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String fone1, String fone2, String email, String cep, String logradouro, String bairro, String cidade, String complemento, String cpf, String rg, String obs, String dataCadastro, int id, char status) {
+    public Pessoa(int id, String nome, String fone1, String fone2, String email, String cep, String logradouro, String bairro, String cidade, String complemento, String dataCadastro, String cpf, String rg, String obs, char status) {
+        this.id = id;
         this.nome = nome;
         this.fone1 = fone1;
         this.fone2 = fone2;
@@ -22,20 +32,20 @@ public class Pessoa {
         this.bairro = bairro;
         this.cidade = cidade;
         this.complemento = complemento;
+        this.dataCadastro = dataCadastro;
         this.cpf = cpf;
         this.rg = rg;
         this.obs = obs;
-        this.dataCadastro = dataCadastro;
-        this.id = id;
         this.status = status;
     }
-
-    @Override
-    public String toString() {
-        return "nome = " + nome + "id = " + id;//", fone1=" + fone1 + ", fone2=" + fone2 + ", email=" + email + ", cep=" + cep + ", logradouro=" + logradouro + ", bairro=" + bairro + ", cidade=" + cidade + ", complemento=" + complemento + ", cpf=" + cpf + ", rg=" + rg + ", obs=" + obs + ", dataCadastro=" + dataCadastro + ", id=" + id + ", status=" + status + '}';
+    public int getId() {
+        return id;
     }
 
-    
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -58,14 +68,6 @@ public class Pessoa {
 
     public void setFone2(String fone2) {
         this.fone2 = fone2;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -116,6 +118,14 @@ public class Pessoa {
         this.complemento = complemento;
     }
 
+    public String getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
     public String getCpf() {
         return cpf;
     }
@@ -145,27 +155,26 @@ public class Pessoa {
     }
 
     public void setStatus(char status) {
-        if((status == 'A') || (status == 'A')){
-            this.status = status;
-        }
-        this.status = status;
-    }
-    
-
-    /*public Date getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }*/
-    
-    public String getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public void setDataCadastro(String dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
         
+        if ( (status == 'A') || (status == 'C') || (status == 'a') || (status == 'c') ) {
+            this.status = status;
+        }else {
+            this.status = 'A';
+        }
+        
+    }
+
+    @Override
+    public String toString() {
+        return  "id      = " + this.id + 
+                "\nnome   = " + this.nome +
+                "\nfone1  = " + this.fone1 +
+                "\nfone2  = " + this.fone2 +
+                "\nemail  = " + this.email +
+                "\nrg     = " + this.rg +
+                "\ncpf    = " + this.cpf +
+                "\nobs    = " + this.obs +
+                "\nstatus = " + this.status  ;
+    }
+
 }
