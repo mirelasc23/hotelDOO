@@ -19,7 +19,11 @@ class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" + "id=" + id + ", dataHoraInicio=" + dataHoraInicio + ", dataPrevistaEntrada=" + dataPrevistaEntrada + ", dataPrevistaSaida=" + dataPrevistaSaida + ", obs=" + obs + ", status=" + status + '}';
+        return "Reserva " + id + ": " + status
+                + "\n DataHora Inicio: " + dataHoraInicio + " "
+                + "\n Data Prevista de Entrada: " + dataPrevistaEntrada + " "
+                + "\n Data Prevista de Saída: " + dataPrevistaSaida + " "
+                + "\n Obs.: " + obs ;
     }
 
     public int getId() {
