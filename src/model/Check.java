@@ -17,7 +17,8 @@ public class Check {
 
     @Override
     public String toString() {
-        return "Check{" + "id=" + id + ", tipoHospede=" + tipoHospede + ", obs=" + obs + ", status=" + status + '}';
+        return "Check: " + id + " -> " + status
+                + "\nObs.:" + obs;
     }
 
     public int getId() {
