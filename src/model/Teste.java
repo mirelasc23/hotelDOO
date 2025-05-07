@@ -9,6 +9,7 @@ public class Teste {
         
         pessoa.setId(1);
         pessoa.setNome("RoberUauuuuuu");
+        pessoa.setStatus('A');
         
         JOptionPane.showMessageDialog(null, pessoa.toString());
         //System.out.println( pessoa.toString());
