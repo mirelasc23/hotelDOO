@@ -101,6 +101,16 @@ public class TestaTriangulo extends javax.swing.JDialog {
         });
 
         jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+        jButtonSair.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jButtonSairKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelBotoesLayout = new javax.swing.GroupLayout(jPanelBotoes);
         jPanelBotoes.setLayout(jPanelBotoesLayout);
@@ -155,6 +165,9 @@ public class TestaTriangulo extends javax.swing.JDialog {
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
         // TODO add your handling code here:
+        jTextFieldAltura.setText("");
+        jTextFieldBase.setText("");
+        
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
@@ -169,6 +182,15 @@ public class TestaTriangulo extends javax.swing.JDialog {
         
         JOptionPane.showMessageDialog(null, triangulo.toString());
     }//GEN-LAST:event_jButtonCalcularActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void jButtonSairKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonSairKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSairKeyTyped
 
     /**
      * @param args the command line arguments
