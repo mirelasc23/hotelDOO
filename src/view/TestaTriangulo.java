@@ -5,6 +5,9 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+import model.Triangulo;
+
 /**
  *
  * @author aluno
@@ -156,6 +159,15 @@ public class TestaTriangulo extends javax.swing.JDialog {
 
     private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
         // TODO add your handling code here:
+        float area;
+        
+        Triangulo triangulo = new Triangulo();
+        
+        triangulo.setBase(Float.parseFloat(jTextFieldBase.getText()));
+        triangulo.setAltura(Float.parseFloat(jTextFieldAltura.getText()));
+        triangulo.setArea(triangulo.getBase(), triangulo.getAltura());
+        
+        JOptionPane.showMessageDialog(null, triangulo.toString());
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
     /**

@@ -9,12 +9,12 @@ public class Triangulo {
     public Triangulo(float base, float altura) {
         this.base = base;
         this.altura = altura;
-        area = base * altura / 2;
+        //area = base * altura / 2;
     }
 
     @Override
     public String toString() {
-        return "Base: " + base + " \nAltura: " + altura + " \nArea=" + area + '}';
+        return "Base: " + base + " \nAltura: " + altura + " \nÁrea=" + area + '}';
     }
 
     
@@ -42,4 +42,7 @@ public class Triangulo {
         area = base * altura / 2;
     }
     
+    public void setArea(float base, float altura) {
+        this.area = base * altura / 2;
+    }
 }
