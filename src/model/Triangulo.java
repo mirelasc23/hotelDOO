@@ -12,6 +12,12 @@ public class Triangulo {
         area = base * altura / 2;
     }
 
+    @Override
+    public String toString() {
+        return "Base: " + base + " \nAltura: " + altura + " \nArea=" + area + '}';
+    }
+
+    
     public float getBase() {
         return base;
     }
