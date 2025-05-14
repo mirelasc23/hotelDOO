@@ -164,16 +164,12 @@ public class TestaTriangulo extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-        // TODO add your handling code here:
         jTextFieldAltura.setText("");
         jTextFieldBase.setText("");
         
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
-        // TODO add your handling code here:
-        float area;
-        
         Triangulo triangulo = new Triangulo();
         
         triangulo.setBase(Float.parseFloat(jTextFieldBase.getText()));
@@ -184,7 +180,6 @@ public class TestaTriangulo extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
 
