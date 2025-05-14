@@ -69,27 +69,31 @@ public class TemplateCadastros2025 extends javax.swing.JDialog {
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
         jButton1.setText("Novo");
         jPanelBotoes.add(jButton1);
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cancel.png"))); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.setEnabled(false);
         jPanelBotoes.add(jButton2);
 
-        jButton3.setBackground(new java.awt.Color(153, 153, 153));
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Gravar");
+        jButton3.setEnabled(false);
         jPanelBotoes.add(jButton3);
 
-        jButton4.setBackground(new java.awt.Color(153, 153, 153));
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Buscar");
         jPanelBotoes.add(jButton4);
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 153));
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Sair");
         jPanelBotoes.add(jButton5);
