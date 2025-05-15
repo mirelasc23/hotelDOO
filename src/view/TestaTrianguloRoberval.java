@@ -171,7 +171,6 @@ public class TestaTrianguloRoberval extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-
         jTextFieldBase.setText("");
         jTextFieldAltura.setText("");
 
