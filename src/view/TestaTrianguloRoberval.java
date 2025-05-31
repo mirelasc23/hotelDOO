@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import model.Triangulo;
 
 /**
@@ -225,6 +226,8 @@ public class TestaTrianguloRoberval extends javax.swing.JDialog {
                 dialog.setVisible(true);
             }
         });
+        Runnable doRun = null;
+        SwingUtilities.invokeLater(doRun);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

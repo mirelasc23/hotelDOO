@@ -1,5 +1,8 @@
 package view;
 
+import javax.swing.JOptionPane;
+import model.Triangulo;
+
 public class TestaBotao extends javax.swing.JDialog {
 
     public TestaBotao(java.awt.Frame parent, boolean modal) {
@@ -24,6 +27,16 @@ public class TestaBotao extends javax.swing.JDialog {
         Fundo.setBackground(new java.awt.Color(204, 204, 204));
 
         Botao.setText("Botao");
+        Botao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoMouseClicked(evt);
+            }
+        });
+        Botao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FundoLayout = new javax.swing.GroupLayout(Fundo);
         Fundo.setLayout(FundoLayout);
@@ -61,6 +74,15 @@ public class TestaBotao extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoActionPerformed
+        Triangulo triangulo = new Triangulo(5, 2);
+        JOptionPane.showMessageDialog(null, triangulo.toString());
+    }//GEN-LAST:event_BotaoActionPerformed
+
+    private void BotaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
