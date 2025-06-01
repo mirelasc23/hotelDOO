@@ -14,7 +14,9 @@ public class Triangulo {
 
     @Override
     public String toString() {
-        return "Base: " + base + " \nAltura: " + altura + " \nÁrea=" + area + '}';
+        return "Base: " + getBase() + 
+                " \nAltura: " + getAltura() + 
+                " \nÁrea=" + getBase() + '}';
     }
 
     
