@@ -106,8 +106,6 @@ public class CadastroFornecedores extends javax.swing.JDialog {
         jPanelDados.setBackground(new java.awt.Color(204, 204, 204));
         jPanelDados.setForeground(new java.awt.Color(204, 204, 204));
 
-        jTextFieldDataCadastro.setText("   /   /");
-
         jTextFieldFone1.setText("(   )        -");
 
         jTextFielFone2.setText("(   )        -");
