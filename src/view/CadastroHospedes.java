@@ -91,7 +91,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelTituloLayout.setHorizontalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTituloLayout.createSequentialGroup()
-                .addGap(326, 326, 326)
+                .addGap(314, 314, 314)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -242,7 +242,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
                                     .addComponent(jTextFieldIE)
                                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                                         .addComponent(jLabelInscricaoEstadual)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addGap(0, 79, Short.MAX_VALUE)))
                                 .addGap(187, 187, 187))
                             .addComponent(jTextFieldEmail)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
