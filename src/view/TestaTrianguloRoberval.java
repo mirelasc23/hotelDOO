@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import model.Triangulo;
 
 /**
@@ -171,7 +172,6 @@ public class TestaTrianguloRoberval extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-
         jTextFieldBase.setText("");
         jTextFieldAltura.setText("");
 
@@ -226,6 +226,8 @@ public class TestaTrianguloRoberval extends javax.swing.JDialog {
                 dialog.setVisible(true);
             }
         });
+        Runnable doRun = null;
+        SwingUtilities.invokeLater(doRun);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
