@@ -77,6 +77,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAutoRequestFocus(false);
         setPreferredSize(new java.awt.Dimension(751, 502));
 
         jPanelTitulo.setBackground(new java.awt.Color(204, 204, 204));
