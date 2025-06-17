@@ -18,7 +18,18 @@ public class ControllerCadHospedes implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
+            
+        }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
+            
+        }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
+            
+        }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
+            
+        }else if(e.getSource() == this.telaCadastroHospedes.getjButtonSair()){
+           this.telaCadastroHospedes.dispose();
+        }
+        
     }
     
     
