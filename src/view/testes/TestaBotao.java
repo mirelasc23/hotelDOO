@@ -1,4 +1,4 @@
-package view;
+package view.testes;
 
 import javax.swing.JOptionPane;
 import model.Triangulo;
