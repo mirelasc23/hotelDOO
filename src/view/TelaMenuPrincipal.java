@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.ControllerCadHospedes;
+
 /**
  *
  * @author aluno
@@ -35,6 +37,8 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuItemHospede = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItemProduto = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemSair = new javax.swing.JMenuItem();
         jMenuMovimentos = new javax.swing.JMenu();
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuAjuda = new javax.swing.JMenu();
@@ -59,12 +63,31 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuItemFuncionario.setText("Funcionário");
         jMenuCadastros.add(jMenuItemFuncionario);
 
+        jMenuItemHospede.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemHospede.setForeground(new java.awt.Color(102, 102, 102));
         jMenuItemHospede.setText("Hóspede");
+        jMenuItemHospede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemHospedeActionPerformed(evt);
+            }
+        });
         jMenuCadastros.add(jMenuItemHospede);
         jMenuCadastros.add(jSeparator1);
 
+        jMenuItemProduto.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemProduto.setForeground(new java.awt.Color(102, 102, 102));
         jMenuItemProduto.setText("Produto");
         jMenuCadastros.add(jMenuItemProduto);
+        jMenuCadastros.add(jSeparator2);
+
+        jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
+        jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemSair);
 
         jMenuPrincipal.add(jMenuCadastros);
 
@@ -104,6 +127,16 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
+
+    private void jMenuItemHospedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHospedeActionPerformed
+        CadastroHospedes telaCadastroHospedes = new CadastroHospedes(null, true);
+        ControllerCadHospedes controllerCadHospedes = new ControllerCadHospedes(telaCadastroHospedes);
+        telaCadastroHospedes.setVisible(true);
+    }//GEN-LAST:event_jMenuItemHospedeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,10 +180,12 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemFuncionario;
     private javax.swing.JMenuItem jMenuItemHospede;
     private javax.swing.JMenuItem jMenuItemProduto;
+    private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuMovimentos;
     private javax.swing.JMenuBar jMenuPrincipal;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

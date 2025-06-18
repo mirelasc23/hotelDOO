@@ -14,6 +14,9 @@ public class ControllerCadHospedes implements ActionListener{
         this.telaCadastroHospedes.getjButtonBuscar().addActionListener(this);
         this.telaCadastroHospedes.getjButtonCancelar().addActionListener(this);
         this.telaCadastroHospedes.getjButtonSair().addActionListener(this);
+        
+        //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
+        
     }
 
     @Override
@@ -32,5 +35,8 @@ public class ControllerCadHospedes implements ActionListener{
         
     }
     
+    public void habilitarBotoes(){
+        
+    }
     
 }
