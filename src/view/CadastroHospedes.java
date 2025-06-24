@@ -45,6 +45,12 @@ public class CadastroHospedes extends javax.swing.JDialog {
     public JPanel getjPanelBotoes() {
         return jPanelBotoes;
     }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+    
+    
     
     
 

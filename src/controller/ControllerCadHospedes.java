@@ -19,20 +19,23 @@ public class ControllerCadHospedes implements ActionListener{
         
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    public  void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
-            utilities.Utilities.ativaDesativa(this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
-            
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
-            
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
-            
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonSair()){
            this.telaCadastroHospedes.dispose();
         }
         
     }
-    
+
 }
