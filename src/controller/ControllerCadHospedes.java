@@ -22,7 +22,7 @@ public class ControllerCadHospedes implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
-            
+            utilities.Utilities.ativaDesativa(this.telaCadastroHospedes.getjPanelBotoes(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
             
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
@@ -32,10 +32,6 @@ public class ControllerCadHospedes implements ActionListener{
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonSair()){
            this.telaCadastroHospedes.dispose();
         }
-        
-    }
-    
-    public void habilitarBotoes(){
         
     }
     
