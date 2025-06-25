@@ -5,54 +5,19 @@
  */
 package view;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
 /**
  *
  * @author aluno
  */
-public class CadastroHospedes extends javax.swing.JDialog {
+public class CadastroFornecedores extends javax.swing.JDialog {
 
     /**
      * Creates new form TemplateCadastros2025
      */
-    public CadastroHospedes(java.awt.Frame parent, boolean modal) {
+    public CadastroFornecedores(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-
-    public JButton getjButtonBuscar() {
-        return jButtonBuscar;
-    }
-
-    public JButton getjButtonCancelar() {
-        return jButtonCancelar;
-    }
-
-    public JButton getjButtonGravar() {
-        return jButtonGravar;
-    }
-
-    public JButton getjButtonNovo() {
-        return jButtonNovo;
-    }
-
-    public JButton getjButtonSair() {
-        return jButtonSair;
-    }
-
-    public JPanel getjPanelBotoes() {
-        return jPanelBotoes;
-    }
-
-    public JPanel getjPanelDados() {
-        return jPanelDados;
-    }
-    
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,7 +29,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanelTitulo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitulo = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
         jTextFieldDataCadastro = new javax.swing.JTextField();
         jTextFieldNomeFantasia = new javax.swing.JTextField();
@@ -105,44 +70,41 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jLabelContato = new javax.swing.JLabel();
         jComboBoxSexo = new javax.swing.JComboBox<>();
         jPanelBotoes = new javax.swing.JPanel();
-        jButtonNovo = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
-        jButtonGravar = new javax.swing.JButton();
-        jButtonBuscar = new javax.swing.JButton();
-        jButtonSair = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setAutoRequestFocus(false);
         setPreferredSize(new java.awt.Dimension(751, 502));
 
         jPanelTitulo.setBackground(new java.awt.Color(204, 204, 204));
         jPanelTitulo.setForeground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Hóspedes");
+        jLabelTitulo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelTitulo.setText("Fornecedores");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
         jPanelTituloLayout.setHorizontalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTituloLayout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(jLabel1)
+                .addGap(306, 306, 306)
+                .addComponent(jLabelTitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTituloLayout.setVerticalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTituloLayout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(jLabelTitulo)
                 .addContainerGap())
         );
 
         jPanelDados.setBackground(new java.awt.Color(204, 204, 204));
         jPanelDados.setForeground(new java.awt.Color(204, 204, 204));
-
-        jTextFieldDataCadastro.setText("   /   /");
 
         jTextFieldFone1.setText("(   )        -");
 
@@ -386,65 +348,37 @@ public class CadastroHospedes extends javax.swing.JDialog {
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButtonNovo.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonNovo.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
-        jButtonNovo.setText("Novo");
-        jButtonNovo.setActionCommand("1");
-        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNovoActionPerformed(evt);
-            }
-        });
-        jPanelBotoes.add(jButtonNovo);
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
+        jButton1.setText("Novo");
+        jPanelBotoes.add(jButton1);
 
-        jButtonCancelar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
-        jButtonCancelar.setText("Cancelar");
-        jButtonCancelar.setActionCommand("0");
-        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarActionPerformed(evt);
-            }
-        });
-        jPanelBotoes.add(jButtonCancelar);
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
+        jButton2.setText("Cancelar");
+        jButton2.setEnabled(false);
+        jPanelBotoes.add(jButton2);
 
-        jButtonGravar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonGravar.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
-        jButtonGravar.setText("Gravar");
-        jButtonGravar.setActionCommand("0");
-        jButtonGravar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGravarActionPerformed(evt);
-            }
-        });
-        jPanelBotoes.add(jButtonGravar);
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
+        jButton3.setText("Gravar");
+        jButton3.setEnabled(false);
+        jPanelBotoes.add(jButton3);
 
-        jButtonBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.setActionCommand("1");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-        jPanelBotoes.add(jButtonBuscar);
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+        jButton4.setText("Buscar");
+        jPanelBotoes.add(jButton4);
 
-        jButtonSair.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonSair.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
-        jButtonSair.setText("Sair");
-        jButtonSair.setActionCommand("1");
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
-        jPanelBotoes.add(jButtonSair);
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
+        jButton5.setText("Sair");
+        jPanelBotoes.add(jButton5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -471,28 +405,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonNovoActionPerformed
-
-    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarActionPerformed
-
-    private void jButtonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGravarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGravarActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSairActionPerformed
-
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -525,7 +438,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroHospedes dialog = new CadastroHospedes(new javax.swing.JFrame(), true);
+                TemplateCadastros2025 dialog = new TemplateCadastros2025(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -538,13 +451,12 @@ public class CadastroHospedes extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonGravar;
-    private javax.swing.JButton jButtonNovo;
-    private javax.swing.JButton jButtonSair;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBoxSexo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCEP;
     private javax.swing.JLabel jLabelCNPJ;
@@ -564,6 +476,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelRG;
     private javax.swing.JLabel jLabelRazãoSocial;
     private javax.swing.JLabel jLabelSexo;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;
     private javax.swing.JPanel jPanelTitulo;
