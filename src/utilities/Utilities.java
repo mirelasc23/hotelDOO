@@ -16,7 +16,7 @@ public class Utilities {
         JComponent[] vetComponentes = (JComponent[]) painel.getComponents();
         
         for (JComponent componente : vetComponentes) {
-            if (componente instanceof JTextField) {
+            if (componente instanceof JButton) {
                 if (((JButton)componente).getActionCommand()== "0") {
                     componente.setEnabled(ativa);
                 } else {

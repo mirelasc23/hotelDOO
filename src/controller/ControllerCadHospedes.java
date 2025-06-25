@@ -19,10 +19,10 @@ public class ControllerCadHospedes implements ActionListener{
         
     }
 
-    public  void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);

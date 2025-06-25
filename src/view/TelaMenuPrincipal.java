@@ -61,6 +61,11 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuItemFuncionario.setBackground(new java.awt.Color(204, 204, 204));
         jMenuItemFuncionario.setForeground(new java.awt.Color(102, 102, 102));
         jMenuItemFuncionario.setText("Funcionário");
+        jMenuItemFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFuncionarioActionPerformed(evt);
+            }
+        });
         jMenuCadastros.add(jMenuItemFuncionario);
 
         jMenuItemHospede.setBackground(new java.awt.Color(204, 204, 204));
@@ -137,6 +142,12 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         ControllerCadHospedes controllerCadHospedes = new ControllerCadHospedes(telaCadastroHospedes);
         telaCadastroHospedes.setVisible(true);
     }//GEN-LAST:event_jMenuItemHospedeActionPerformed
+
+    private void jMenuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFuncionarioActionPerformed
+        CadastroFuncionarios telaCadastroFuncionarios = new CadastroFuncionarios(null, true);
+        //ControllerCadHospedes controllerCadFuncinarios = new ControllerCadHospedes(telaCadastroFuncionarios);
+        telaCadastroFuncionarios.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
