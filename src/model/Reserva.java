@@ -15,6 +15,7 @@ class Reserva {
         this.dataPrevistaSaida = dataPrevistaSaida;
         this.obs = obs;
         this.status = status;
+        
     }
 
     @Override
