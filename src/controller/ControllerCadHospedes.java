@@ -41,3 +41,4 @@ public class ControllerCadHospedes implements ActionListener{
 
 }
 //https://www.google.com/search?q=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&oq=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&aqs=chrome..69i57.36815j0j1&sourceid=chrome&ie=UTF-8
+//https://www.guj.com.br/t/duvidas-de-ordenacao-e-limpar-textarea-resolvido/36037
