@@ -8,6 +8,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Utilities {
@@ -17,7 +18,7 @@ public class Utilities {
         
         for (JComponent componente : vetComponentes) {
             if (componente instanceof JButton) {
-                if (((JButton)componente).getActionCommand()== "0") {
+                if ("0".equals(((JButton)componente).getActionCommand())) {
                     componente.setEnabled(ativa);
                 } else {
                     componente.setEnabled(!ativa);
@@ -47,6 +48,12 @@ public class Utilities {
                 componente.setEnabled(ativa);
             } else if (componente instanceof JPasswordField) {
                 ((JPasswordField) componente).setText("");
+                componente.setEnabled(ativa);
+            } else if (componente instanceof JRadioButton) {
+                ((JRadioButton) componente).setSelected(false);
+                componente.setEnabled(ativa);
+            } else if (componente instanceof JTextArea) {
+                ((JTextArea) componente).setText("");
                 componente.setEnabled(ativa);
             }
         }

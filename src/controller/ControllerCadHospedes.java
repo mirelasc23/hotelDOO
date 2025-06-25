@@ -19,6 +19,7 @@ public class ControllerCadHospedes implements ActionListener{
         
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
@@ -39,3 +40,4 @@ public class ControllerCadHospedes implements ActionListener{
     }
 
 }
+//https://www.google.com/search?q=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&oq=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&aqs=chrome..69i57.36815j0j1&sourceid=chrome&ie=UTF-8
