@@ -14,6 +14,8 @@ public class ControllerCadHospedes implements ActionListener{
         this.telaCadastroHospedes.getjButtonBuscar().addActionListener(this);
         this.telaCadastroHospedes.getjButtonCancelar().addActionListener(this);
         this.telaCadastroHospedes.getjButtonSair().addActionListener(this);
+        utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
+       // utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         
         //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
         
@@ -22,14 +24,20 @@ public class ControllerCadHospedes implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
+            utilities.Utilities.ativaDesativaBotoes
+                (this.telaCadastroHospedes.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes
+                (this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
+            utilities.Utilities.ativaDesativaBotoes
+                (this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.limpaComponentes
+                (this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+            utilities.Utilities.ativaDesativaBotoes
+                (this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.limpaComponentes
+                (this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
@@ -42,3 +50,19 @@ public class ControllerCadHospedes implements ActionListener{
 }
 //https://www.google.com/search?q=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&oq=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&aqs=chrome..69i57.36815j0j1&sourceid=chrome&ie=UTF-8
 //https://www.guj.com.br/t/duvidas-de-ordenacao-e-limpar-textarea-resolvido/36037
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

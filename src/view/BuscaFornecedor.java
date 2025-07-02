@@ -9,12 +9,12 @@ package view;
  *
  * @author aluno
  */
-public class TemplateBuscas2025 extends javax.swing.JDialog {
+public class BuscaFornecedor extends javax.swing.JDialog {
 
     /**
      * Creates new form TemplateBuscas2025
      */
-    public TemplateBuscas2025(java.awt.Frame parent, boolean modal) {
+    public BuscaFornecedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -50,14 +50,14 @@ public class TemplateBuscas2025 extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Formulário Busca");
+        jLabel1.setText("Busca");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
         jPanelTituloLayout.setHorizontalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTituloLayout.createSequentialGroup()
-                .addGap(253, 253, 253)
+                .addGap(335, 335, 335)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -83,17 +83,24 @@ public class TemplateBuscas2025 extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "id", "Nome", "CPF", "Status"
             }
         ));
         jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(250);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(100);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(50);
+        }
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
         jPanelDadosLayout.setHorizontalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,16 +111,13 @@ public class TemplateBuscas2025 extends javax.swing.JDialog {
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButton6.setText("Filtrar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOME", "CPF" }));
         jComboBox1.setSelectedIndex(-1);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
         jButton7.setText("Carregar");
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButton8.setText("Fechar");
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -130,21 +134,22 @@ public class TemplateBuscas2025 extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(546, 546, 546)
-                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton8))
                     .addGroup(jPanelBotoesLayout.createSequentialGroup()
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
                             .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanelBotoesLayout.createSequentialGroup()
+                                .addComponent(jTextField1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jButton6)))))
                 .addContainerGap())
         );
         jPanelBotoesLayout.setVerticalGroup(
@@ -210,20 +215,23 @@ public class TemplateBuscas2025 extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TemplateBuscas2025.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscaFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TemplateBuscas2025.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscaFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TemplateBuscas2025.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscaFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TemplateBuscas2025.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscaFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TemplateBuscas2025 dialog = new TemplateBuscas2025(new javax.swing.JFrame(), true);
+                BuscaFornecedor dialog = new BuscaFornecedor(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

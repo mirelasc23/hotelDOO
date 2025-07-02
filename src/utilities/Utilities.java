@@ -1,5 +1,6 @@
 package utilities;
 
+import java.awt.Component;
 import javax.swing.JComponent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -14,17 +15,15 @@ import javax.swing.JTextField;
 public class Utilities {
     
     public static void ativaDesativaBotoes(JPanel painel, boolean ativa){
-        JComponent[] vetComponentes = (JComponent[]) painel.getComponents();
+        Component[] vetComponentes = painel.getComponents();
         
-        for (JComponent componente : vetComponentes) {
+        for (Component componente : vetComponentes) {
             if (componente instanceof JButton) {
-                if ("0".equals(((JButton)componente).getActionCommand())) {
+                if ("1".equals(((JButton)componente).getActionCommand())) {
                     componente.setEnabled(ativa);
                 } else {
                     componente.setEnabled(!ativa);
                 }
-                
-            } else {
             }
         }
         

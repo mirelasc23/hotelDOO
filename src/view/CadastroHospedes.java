@@ -113,7 +113,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
-        setPreferredSize(new java.awt.Dimension(751, 502));
 
         jPanelTitulo.setBackground(new java.awt.Color(204, 204, 204));
         jPanelTitulo.setForeground(new java.awt.Color(204, 204, 204));
@@ -403,6 +402,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.setActionCommand("0");
+        jButtonCancelar.setEnabled(false);
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -415,6 +415,7 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         jButtonGravar.setText("Gravar");
         jButtonGravar.setActionCommand("0");
+        jButtonGravar.setEnabled(false);
         jButtonGravar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGravarActionPerformed(evt);
