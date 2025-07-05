@@ -1,7 +1,8 @@
 package utilities;
 
+
+//import javax.swing.JComponent;
 import java.awt.Component;
-import javax.swing.JComponent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -15,7 +16,7 @@ import javax.swing.JTextField;
 public class Utilities {
     
     public static void ativaDesativaBotoes(JPanel painel, boolean ativa){
-        Component[] vetComponentes = painel.getComponents();
+        Component[] vetComponentes = (Component[]) painel.getComponents();
         
         for (Component componente : vetComponentes) {
             if (componente instanceof JButton) {
@@ -31,8 +32,8 @@ public class Utilities {
 
         
     public static void limpaComponentes(JPanel painel, boolean ativa) {
-        JComponent[] vetComponentes = (JComponent[]) painel.getComponents();
-        for (JComponent componente : vetComponentes) {
+        Component[] vetComponentes = (Component[]) painel.getComponents();
+        for (Component componente : vetComponentes) {
             if (componente instanceof JTextField) {
                 ((JTextField) componente).setText("");
                 componente.setEnabled(ativa);

@@ -6,7 +6,7 @@ import view.BuscaHospede;
 import view.CadastroHospedes;
 
 public class ControllerCadHospedes implements ActionListener{
-    private CadastroHospedes telaCadastroHospedes;
+    CadastroHospedes telaCadastroHospedes;
 
     public ControllerCadHospedes(CadastroHospedes telaCadastroHospedes) {
         this.telaCadastroHospedes = telaCadastroHospedes;
@@ -16,7 +16,7 @@ public class ControllerCadHospedes implements ActionListener{
         this.telaCadastroHospedes.getjButtonCancelar().addActionListener(this);
         this.telaCadastroHospedes.getjButtonSair().addActionListener(this);
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
-       // utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+        utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         
         //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
         
@@ -25,22 +25,18 @@ public class ControllerCadHospedes implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroHospedes.getjButtonNovo()){
-            utilities.Utilities.ativaDesativaBotoes
-                (this.telaCadastroHospedes.getjPanelBotoes(), false);
-            utilities.Utilities.limpaComponentes
-                (this.telaCadastroHospedes.getjPanelDados(), true);
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
-            utilities.Utilities.ativaDesativaBotoes
-                (this.telaCadastroHospedes.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes
-                (this.telaCadastroHospedes.getjPanelDados(), false);
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
             BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
             ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
             telaBuscaHospede.setVisible(true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
+            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonSair()){
            this.telaCadastroHospedes.dispose();
         }

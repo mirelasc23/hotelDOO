@@ -114,10 +114,7 @@ public class BuscaHospede extends javax.swing.JDialog {
         jTableDados.setForeground(new java.awt.Color(102, 102, 102));
         jTableDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "id", "Nome", "CPF", "Status"
