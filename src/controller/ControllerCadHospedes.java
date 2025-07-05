@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import view.BuscaHospede;
 import view.CadastroHospedes;
 
 public class ControllerCadHospedes implements ActionListener{
@@ -34,10 +35,9 @@ public class ControllerCadHospedes implements ActionListener{
             utilities.Utilities.limpaComponentes
                 (this.telaCadastroHospedes.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
-            utilities.Utilities.ativaDesativaBotoes
-                (this.telaCadastroHospedes.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes
-                (this.telaCadastroHospedes.getjPanelDados(), false);
+            BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
+            ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
+            telaBuscaHospede.setVisible(true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);

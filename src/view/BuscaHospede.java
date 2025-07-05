@@ -7,6 +7,8 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,6 +39,20 @@ public class BuscaHospede extends javax.swing.JDialog {
     public JComboBox<String> getjComboBoxFiltrarPor() {
         return jComboBoxFiltrarPor;
     }
+
+    public JTable getjTableDados() {
+        return jTableDados;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextFieldValor;
+    }
+
+    public void setjTextFieldValor(JTextField jTextField1) {
+        this.jTextFieldValor = jTextField1;
+    }
+    
+    
     
     
 
@@ -53,13 +69,13 @@ public class BuscaHospede extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableDados = new javax.swing.JTable();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonFiltrar = new javax.swing.JButton();
         jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
         jButtonCarregar = new javax.swing.JButton();
         jButtonFechar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldValor = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -94,9 +110,9 @@ public class BuscaHospede extends javax.swing.JDialog {
 
         jScrollPane1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setForeground(new java.awt.Color(102, 102, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDados.setBackground(new java.awt.Color(204, 204, 204));
+        jTableDados.setForeground(new java.awt.Color(102, 102, 102));
+        jTableDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -107,14 +123,14 @@ public class BuscaHospede extends javax.swing.JDialog {
                 "id", "Nome", "CPF", "Status"
             }
         ));
-        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
-            jTable1.getColumnModel().getColumn(1).setMaxWidth(250);
-            jTable1.getColumnModel().getColumn(2).setMaxWidth(100);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(50);
+        jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        jTableDados.setShowGrid(true);
+        jScrollPane1.setViewportView(jTableDados);
+        if (jTableDados.getColumnModel().getColumnCount() > 0) {
+            jTableDados.getColumnModel().getColumn(0).setMaxWidth(50);
+            jTableDados.getColumnModel().getColumn(1).setMaxWidth(250);
+            jTableDados.getColumnModel().getColumn(2).setMaxWidth(100);
+            jTableDados.getColumnModel().getColumn(3).setMaxWidth(50);
         }
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
@@ -171,7 +187,7 @@ public class BuscaHospede extends javax.swing.JDialog {
                                 .addComponent(jLabel3)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                                .addComponent(jTextField1)
+                                .addComponent(jTextFieldValor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButtonFiltrar)))))
                 .addContainerGap())
@@ -187,7 +203,7 @@ public class BuscaHospede extends javax.swing.JDialog {
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonFiltrar)
                     .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCarregar)
@@ -220,6 +236,7 @@ public class BuscaHospede extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -277,7 +294,7 @@ public class BuscaHospede extends javax.swing.JDialog {
     private javax.swing.JPanel jPanelDados;
     private javax.swing.JPanel jPanelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTableDados;
+    private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables
 }
