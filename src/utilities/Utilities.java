@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public class Utilities {
     
     public static void ativaDesativaBotoes(JPanel painel, boolean ativa){
-        Component[] vetComponentes = (Component[]) painel.getComponents();
+        Component[] vetComponentes = painel.getComponents();
         
         for (Component componente : vetComponentes) {
             if (componente instanceof JButton) {
