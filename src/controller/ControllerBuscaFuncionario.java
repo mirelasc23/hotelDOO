@@ -39,6 +39,8 @@ public class ControllerBuscaFuncionario implements ActionListener{
                     JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
                 } else if(telaBuscaFuncionario.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
                     JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
+                } else if(telaBuscaFuncionario.getjComboBoxFiltrarPor().getSelectedIndex() == 3){
+                    JOptionPane.showMessageDialog(null, "Filtrando Por Usuário");
                 }
             }
         } else if(evento.getSource() == this.telaBuscaFuncionario.getjButtonFechar()){
