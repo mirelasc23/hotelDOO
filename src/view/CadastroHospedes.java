@@ -203,9 +203,17 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
         jComboBoxSexo.setSelectedIndex(-1);
 
-        jFormattedTextField2.setText("jFormattedTextField2");
+        try {
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-        jFormattedTextField3.setText("jFormattedTextField3");
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         try {
             jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
@@ -213,11 +221,23 @@ public class CadastroHospedes extends javax.swing.JDialog {
             ex.printStackTrace();
         }
 
-        jFormattedTextField5.setText("jFormattedTextField5");
+        try {
+            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-        jFormattedTextField6.setText("jFormattedTextField6");
+        try {
+            jFormattedTextField6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-        jFormattedTextField7.setText("jFormattedTextField7");
+        try {
+            jFormattedTextField7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
