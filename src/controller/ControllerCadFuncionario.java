@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import view.BuscaFuncionario;
 import view.CadastroFuncionarios;
 
@@ -35,9 +36,11 @@ public class ControllerCadFuncionario implements ActionListener{
             utilities.Utilities.limpaComponentes
                 (this.telaCadastroFuncionarios.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonBuscar()){
-            BuscaFuncionario telaBuscaFuncionario = new BuscaFuncionario(null, true);
-            ControllerBuscaFuncionario controllerBuscaHospedes = new ControllerBuscaFuncionario(telaBuscaFuncionario);
-            telaBuscaFuncionario.setVisible(true);
+            JOptionPane.showMessageDialog(null, "Falta Controller Busca!!");
+            
+            //BuscaFuncionario telaBuscaFuncionario = new BuscaFuncionario(null, true);
+            //ControllerBuscaFuncionario controllerBuscaHospedes = new ControllerBuscaFuncionario(telaBuscaFuncionario);
+            //aBuscaFuncionario.setVisible(true);
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), false);

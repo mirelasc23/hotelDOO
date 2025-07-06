@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.ControllerCadFuncionario;
 import controller.ControllerCadHospedes;
 
 /**
@@ -145,7 +146,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFuncionarioActionPerformed
         CadastroFuncionarios telaCadastroFuncionarios = new CadastroFuncionarios(null, true);
-        //ControllerCadHospedes controllerCadFuncinarios = new ControllerCadHospedes(telaCadastroFuncionarios);
+        ControllerCadFuncionario controllerCadFuncinarios = new ControllerCadFuncionario(telaCadastroFuncionarios);
         telaCadastroFuncionarios.setVisible(true);
     }//GEN-LAST:event_jMenuItemFuncionarioActionPerformed
 
