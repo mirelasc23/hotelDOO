@@ -5,6 +5,11 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author aluno
@@ -19,6 +24,31 @@ public class BuscaFuncionario extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JButton getjButtonCarregar() {
+        return jButtonCarregar;
+    }
+
+    public JButton getjButtonFiltrar() {
+        return jButtonFiltrar;
+    }
+
+    public JButton getjButtonFechar() {
+        return jButtonFechar;
+    }
+
+    public JComboBox<String> getjComboBoxFiltrarPor() {
+        return jComboBoxFiltrarPor;
+    }
+
+    public JTable getjTableDados() {
+        return jTableDados;
+    }
+
+    public JTextField getjTextFieldValor() {
+        return jTextFieldValor;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,13 +62,13 @@ public class BuscaFuncionario extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableDados = new javax.swing.JTable();
         jPanelBotoes = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jButtonFiltrar = new javax.swing.JButton();
+        jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
+        jButtonCarregar = new javax.swing.JButton();
+        jButtonFechar = new javax.swing.JButton();
+        jTextFieldValor = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -73,35 +103,31 @@ public class BuscaFuncionario extends javax.swing.JDialog {
 
         jScrollPane1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setForeground(new java.awt.Color(102, 102, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDados.setBackground(new java.awt.Color(204, 204, 204));
+        jTableDados.setForeground(new java.awt.Color(102, 102, 102));
+        jTableDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "id", "Nome", "CPF", "Usuário", "Status"
+                "Id", "Nome", "CPF", "Usuário", "Status"
             }
         ));
-        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
-            jTable1.getColumnModel().getColumn(1).setMaxWidth(250);
-            jTable1.getColumnModel().getColumn(2).setMaxWidth(160);
-            jTable1.getColumnModel().getColumn(3).setMaxWidth(160);
-            jTable1.getColumnModel().getColumn(4).setMaxWidth(50);
+        jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane1.setViewportView(jTableDados);
+        if (jTableDados.getColumnModel().getColumnCount() > 0) {
+            jTableDados.getColumnModel().getColumn(0).setMaxWidth(50);
+            jTableDados.getColumnModel().getColumn(1).setMaxWidth(250);
+            jTableDados.getColumnModel().getColumn(2).setMaxWidth(160);
+            jTableDados.getColumnModel().getColumn(3).setMaxWidth(160);
+            jTableDados.getColumnModel().getColumn(4).setMaxWidth(50);
         }
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
         jPanelDadosLayout.setHorizontalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,17 +138,32 @@ public class BuscaFuncionario extends javax.swing.JDialog {
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
-        jButton6.setText("Filtrar");
+        jButtonFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
+        jButtonFiltrar.setText("Filtrar");
+        jButtonFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFiltrarActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOME", "CPF", "USUÁRIO", " " }));
-        jComboBox1.setSelectedIndex(-1);
+        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOME", "CPF", "USUÁRIO", " " }));
+        jComboBoxFiltrarPor.setSelectedIndex(-1);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
-        jButton7.setText("Carregar");
+        jButtonCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
+        jButtonCarregar.setText("Carregar");
+        jButtonCarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCarregarActionPerformed(evt);
+            }
+        });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
-        jButton8.setText("Fechar");
+        jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
+        jButtonFechar.setText("Fechar");
+        jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFecharActionPerformed(evt);
+            }
+        });
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Filtrar Por");
@@ -138,12 +179,12 @@ public class BuscaFuncionario extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addComponent(jButtonCarregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonFechar))
                     .addGroup(jPanelBotoesLayout.createSequentialGroup()
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,9 +192,9 @@ public class BuscaFuncionario extends javax.swing.JDialog {
                                 .addComponent(jLabel3)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanelBotoesLayout.setVerticalGroup(
@@ -165,13 +206,13 @@ public class BuscaFuncionario extends javax.swing.JDialog {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonFiltrar)
+                    .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(jButtonCarregar)
+                    .addComponent(jButtonFechar))
                 .addContainerGap())
         );
 
@@ -201,6 +242,18 @@ public class BuscaFuncionario extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonFiltrarActionPerformed
+
+    private void jButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonFecharActionPerformed
+
+    private void jButtonCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCarregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,10 +301,10 @@ public class BuscaFuncionario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButtonCarregar;
+    private javax.swing.JButton jButtonFechar;
+    private javax.swing.JButton jButtonFiltrar;
+    private javax.swing.JComboBox<String> jComboBoxFiltrarPor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -259,7 +312,7 @@ public class BuscaFuncionario extends javax.swing.JDialog {
     private javax.swing.JPanel jPanelDados;
     private javax.swing.JPanel jPanelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTableDados;
+    private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables
 }
