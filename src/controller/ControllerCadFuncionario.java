@@ -1,9 +1,11 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import view.BuscaFuncionario;
 import view.CadastroFuncionarios;
 
-public class ControllerCadFuncionario {
+public class ControllerCadFuncionario implements ActionListener{
     private CadastroFuncionarios telaCadastroFuncionarios;
     
     public ControllerCadFuncionario(CadastroFuncionarios telaCadastroFuncionarios) {
@@ -14,7 +16,7 @@ public class ControllerCadFuncionario {
         this.telaCadastroFuncionarios.getjButtonCancelar().addActionListener(this);
         this.telaCadastroFuncionarios.getjButtonSair().addActionListener(this);
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), true);
-       // utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+        utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), false);
         
         //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
         
@@ -33,13 +35,12 @@ public class ControllerCadFuncionario {
             utilities.Utilities.limpaComponentes
                 (this.telaCadastroFuncionarios.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonBuscar()){
-            utilities.Utilities.ativaDesativaBotoes
-                (this.telaCadastroFuncionarios.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes
-                (this.telaCadastroFuncionarios.getjPanelDados(), false);
+            BuscaFuncionario telaBuscaFuncionario = new BuscaFuncionario(null, true);
+            ControllerBuscaFuncionario controllerBuscaHospedes = new ControllerBuscaFuncionario(telaBuscaFuncionario);
+            telaBuscaFuncionario.setVisible(true);
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), true);
+            utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonSair()){
            this.telaCadastroFuncionarios.dispose();
         }
