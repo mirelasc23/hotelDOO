@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.ControllerCadFornecedor;
 import controller.ControllerCadFuncionario;
 import controller.ControllerCadHospedes;
 
@@ -57,6 +58,11 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuItemFornecedor.setBackground(new java.awt.Color(204, 204, 204));
         jMenuItemFornecedor.setForeground(new java.awt.Color(102, 102, 102));
         jMenuItemFornecedor.setText("Fornecedor");
+        jMenuItemFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFornecedorActionPerformed(evt);
+            }
+        });
         jMenuCadastros.add(jMenuItemFornecedor);
 
         jMenuItemFuncionario.setBackground(new java.awt.Color(204, 204, 204));
@@ -149,6 +155,13 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         ControllerCadFuncionario controllerCadFuncinarios = new ControllerCadFuncionario(telaCadastroFuncionarios);
         telaCadastroFuncionarios.setVisible(true);
     }//GEN-LAST:event_jMenuItemFuncionarioActionPerformed
+
+    private void jMenuItemFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFornecedorActionPerformed
+        // TODO add your handling code here:
+        CadastroFornecedores telaCadastroFornecedores = new CadastroFornecedores(null, true);
+        ControllerCadFornecedor controllerCadFornecedor = new ControllerCadFornecedor(telaCadastroFornecedores);
+        telaCadastroFornecedores.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFornecedorActionPerformed
 
     /**
      * @param args the command line arguments
