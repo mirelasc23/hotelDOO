@@ -18,7 +18,7 @@ public class ControllerCadFornecedor implements ActionListener{
         this.telaCadastroFornecedores.getjButtonSair().addActionListener(this);
         
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), true);
-        utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelBotoes(), true);
+        utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
     }
 
     @Override

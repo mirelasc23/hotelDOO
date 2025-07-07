@@ -289,12 +289,10 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jFormattedTextField4" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="jFormattedTextField3" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextFieldIE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldRG" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jFormattedTextField4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextFieldIE" max="32767" attributes="0"/>
+                      <Component id="jFormattedTextField3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextFieldRG" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -303,10 +301,10 @@
                       <Component id="jLabelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jFormattedTextField2" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="jFormattedTextField5" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="jTextFieldEmail" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jFormattedTextField2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jTextFieldEmail" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jFormattedTextField5" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -316,11 +314,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextFielBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldCidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jTextFielBairro" min="-2" max="-2" attributes="0"/>
                       <Component id="jFormattedTextField6" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCidade" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -342,7 +338,7 @@
                       <Component id="jTextFieldObs" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldContato" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
