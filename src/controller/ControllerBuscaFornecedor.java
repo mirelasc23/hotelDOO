@@ -13,7 +13,9 @@ public class ControllerBuscaFornecedor implements ActionListener{
         this.telaBuscaFornecedor.getjButtonFechar().addActionListener(this);
         this.telaBuscaFornecedor.getjButtonFiltrar().addActionListener(this);
         
-        utilities.Utilities.ativaDesativaBotoes(this.telaBuscaFornecedor.getj, true);
+        utilities.Utilities.ativaDesativaBotoes(this.telaBuscaFornecedor.getjPanelBotoes(), false);
+        utilities.Utilities.limpaComponentes(this.telaBuscaFornecedor.getjPanelDados(), true);
+        
         
     }
     

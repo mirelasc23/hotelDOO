@@ -7,6 +7,7 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 
 /**
@@ -42,6 +43,15 @@ public class BuscaFornecedor extends javax.swing.JDialog {
     public JTable getjTableDados() {
         return jTableDados;
     }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+    
     
     
 

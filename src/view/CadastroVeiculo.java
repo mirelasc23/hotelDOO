@@ -9,12 +9,12 @@ package view;
  *
  * @author aluno
  */
-public class CadastroMarca extends javax.swing.JDialog {
+public class CadastroVeiculo extends javax.swing.JDialog {
 
     /**
      * Creates new form TemplateCadastros2025
      */
-    public CadastroMarca(java.awt.Frame parent, boolean modal) {
+    public CadastroVeiculo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

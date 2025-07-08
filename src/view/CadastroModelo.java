@@ -9,12 +9,12 @@ package view;
  *
  * @author aluno
  */
-public class CadastroMarca extends javax.swing.JDialog {
+public class CadastroModelo extends javax.swing.JDialog {
 
     /**
      * Creates new form TemplateCadastros2025
      */
-    public CadastroMarca(java.awt.Frame parent, boolean modal) {
+    public CadastroModelo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -52,7 +52,7 @@ public class CadastroMarca extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Marcas");
+        jLabel1.setText("Modelos");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
         jPanelTitulo.setLayout(jPanelTituloLayout);
