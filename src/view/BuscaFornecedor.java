@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -51,6 +52,11 @@ public class BuscaFornecedor extends javax.swing.JDialog {
     public JPanel getjPanelDados() {
         return jPanelDados;
     }
+
+    public JTextField getjTextFieldValor() {
+        return jTextFieldValor;
+    }
+    
     
     
     
