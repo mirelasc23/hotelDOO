@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroVagaEstacionam.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroProdutoCopa.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/TelaMenuPrincipal.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroQuarto.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroModelo.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroServico.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroHospedes.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/Quarto.java</file>
         </group>
     </open-files>
 </project-private>
