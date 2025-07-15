@@ -127,7 +127,7 @@ public class CadastroVeiculo extends javax.swing.JDialog {
             jTableDados.getColumnModel().getColumn(0).setMaxWidth(35);
             jTableDados.getColumnModel().getColumn(2).setPreferredWidth(120);
             jTableDados.getColumnModel().getColumn(2).setMaxWidth(120);
-            jTableDados.getColumnModel().getColumn(3).setPreferredWidth(80);
+            jTableDados.getColumnModel().getColumn(3).setPreferredWidth(110);
             jTableDados.getColumnModel().getColumn(3).setMaxWidth(80);
             jTableDados.getColumnModel().getColumn(4).setPreferredWidth(80);
             jTableDados.getColumnModel().getColumn(4).setMaxWidth(80);

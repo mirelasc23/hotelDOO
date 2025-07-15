@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -378,7 +378,7 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="80" minWidth="-1" prefWidth="80" resizable="true">
+                    <Column maxWidth="80" minWidth="-1" prefWidth="110" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
