@@ -287,7 +287,7 @@ public class CadastroServico extends javax.swing.JDialog {
         jButtonGravar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         jButtonGravar.setText("Gravar");
-        jButtonGravar.setActionCommand("1");
+        jButtonGravar.setActionCommand("0");
         jButtonGravar.setEnabled(false);
         jButtonGravar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

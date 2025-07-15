@@ -10,7 +10,10 @@ import controller.ControllerCadFuncionario;
 import controller.ControllerCadHospedes;
 import controller.ControllerCadMarca;
 import controller.ControllerCadModelo;
+import controller.ControllerCadProdutoCopa;
 import controller.ControllerCadQuarto;
+import controller.ControllerCadServico;
+import controller.ControllerCadVagaEstacionamento;
 import controller.ControllerCadVeiculo;
 
 /**
@@ -250,21 +253,21 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemServicoActionPerformed
         // TODO add your handling code here:
         CadastroServico telaCadastroServico = new CadastroServico(null, true);
-        //ControllerCadServico controllerCadServico = new ControllerCadServico(telaCadastroServico);
+        ControllerCadServico controllerCadServico = new ControllerCadServico(telaCadastroServico);
         telaCadastroServico.setVisible(true);
     }//GEN-LAST:event_jMenuItemServicoActionPerformed
 
     private void jMenuItemProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProdutoActionPerformed
         // TODO add your handling code here:
         CadastroProdutoCopa telaCadastroProdutoCopa = new CadastroProdutoCopa(null, true);
-        //ControllerCadProdutoCopa controllerCadProdutoCopa = new ControllerCadProdutoCopa(telaCadastroProdutoCopa);
+        ControllerCadProdutoCopa controllerCadProdutoCopa = new ControllerCadProdutoCopa(telaCadastroProdutoCopa);
         telaCadastroProdutoCopa.setVisible(true);
     }//GEN-LAST:event_jMenuItemProdutoActionPerformed
 
     private void jMenuItemVagaEstacionamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVagaEstacionamentoActionPerformed
         // TODO add your handling code here:
         CadastroVagaEstacionamento telaCadastroVagaEstacionamento = new CadastroVagaEstacionamento(null, true);
-        //ControllerCadVagaEstacionamento controllerCadVagaEstacionamento = new ControllerCadVagaEstacionamento(telaCadastroVagaEstacionamento);
+        ControllerCadVagaEstacionamento controllerCadVagaEstacionamento = new ControllerCadVagaEstacionamento(telaCadastroVagaEstacionamento);
         telaCadastroVagaEstacionamento.setVisible(true);
     }//GEN-LAST:event_jMenuItemVagaEstacionamentoActionPerformed
 
