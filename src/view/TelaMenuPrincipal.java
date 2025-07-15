@@ -8,6 +8,10 @@ package view;
 import controller.ControllerCadFornecedor;
 import controller.ControllerCadFuncionario;
 import controller.ControllerCadHospedes;
+import controller.ControllerCadMarca;
+import controller.ControllerCadModelo;
+import controller.ControllerCadQuarto;
+import controller.ControllerCadVeiculo;
 
 /**
  *
@@ -239,7 +243,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemQuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemQuartoActionPerformed
         // TODO add your handling code here:
         CadastroQuarto telaCadastroQuarto = new CadastroQuarto(null, true);
-        //ControllerCadQuarto controllerCadQuarto = new ControllerCadQuarto(telaCadastroQuarto);
+        ControllerCadQuarto controllerCadQuarto = new ControllerCadQuarto(telaCadastroQuarto);
         telaCadastroQuarto.setVisible(true);
     }//GEN-LAST:event_jMenuItemQuartoActionPerformed
 
@@ -267,21 +271,21 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVeiculoActionPerformed
         // TODO add your handling code here:
         CadastroVeiculo telaCadastroVeiculo = new CadastroVeiculo(null, true);
-        //ControllerCadVeiculo controllerCadVeiculo = new ControllerCadVeiculo(telaCadastroVeiculo);
+        ControllerCadVeiculo controllerCadVeiculo = new ControllerCadVeiculo(telaCadastroVeiculo);
         telaCadastroVeiculo.setVisible(true);
     }//GEN-LAST:event_jMenuItemVeiculoActionPerformed
 
     private void jMenuItemModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModeloActionPerformed
         // TODO add your handling code here:
         CadastroModelo telaCadastroModelo = new CadastroModelo(null, true);
-        //ControllerCadModelo controllerCadModelo = new ControllerCadModelo(telaCadastroModelo);
+        ControllerCadModelo controllerCadModelo = new ControllerCadModelo(telaCadastroModelo);
         telaCadastroModelo.setVisible(true);
     }//GEN-LAST:event_jMenuItemModeloActionPerformed
 
     private void jMenuItemMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarcaActionPerformed
         // TODO add your handling code here:
         CadastroMarca telaCadastroMarca = new CadastroMarca(null, true);
-        //ControllerCadMarca controllerCadMarca = new ControllerCadMarca(telaCadastroMarca);
+        ControllerCadMarca controllerCadMarca = new ControllerCadMarca(telaCadastroMarca);
         telaCadastroMarca.setVisible(true);
     }//GEN-LAST:event_jMenuItemMarcaActionPerformed
 

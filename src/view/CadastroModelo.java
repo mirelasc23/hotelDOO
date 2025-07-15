@@ -253,12 +253,14 @@ public class CadastroModelo extends javax.swing.JDialog {
         jButtonNovo.setForeground(new java.awt.Color(0, 0, 0));
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
         jButtonNovo.setText("Novo");
+        jButtonNovo.setActionCommand("1");
         jPanelBotoes.add(jButtonNovo);
 
         jButtonCancelar.setBackground(new java.awt.Color(204, 204, 204));
         jButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setActionCommand("0");
         jButtonCancelar.setEnabled(false);
         jPanelBotoes.add(jButtonCancelar);
 
@@ -266,6 +268,7 @@ public class CadastroModelo extends javax.swing.JDialog {
         jButtonGravar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         jButtonGravar.setText("Gravar");
+        jButtonGravar.setActionCommand("0");
         jButtonGravar.setEnabled(false);
         jPanelBotoes.add(jButtonGravar);
 
@@ -273,12 +276,14 @@ public class CadastroModelo extends javax.swing.JDialog {
         jButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setActionCommand("1");
         jPanelBotoes.add(jButtonBuscar);
 
         jButtonSair.setBackground(new java.awt.Color(204, 204, 204));
         jButtonSair.setForeground(new java.awt.Color(0, 0, 0));
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonSair.setText("Sair");
+        jButtonSair.setActionCommand("1");
         jPanelBotoes.add(jButtonSair);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
