@@ -5,6 +5,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+
 /**
  *
  * @author aluno
@@ -18,6 +22,48 @@ public class CadastroMarca extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public JButton getjButtonCarregar() {
+        return jButtonCarregar;
+    }
+
+    public JButton getjButtonFiltrar() {
+        return jButtonFiltrar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public JPanel getjPanelBotoes() {
+        return jPanelBotoes;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+
+    public JTable getjTableDados() {
+        return jTableDados;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

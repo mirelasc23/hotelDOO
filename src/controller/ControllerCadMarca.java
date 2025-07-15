@@ -2,10 +2,9 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.BuscaHospede;
-import view.CadastroHospedes;
+import view.CadastroMarca;
 
-public class ControllerCadMarca {
+public class ControllerCadMarca implements ActionListener{
     CadastroMarca telaCadastroMarca;
 
     public ControllerCadMarca(CadastroMarca telaCadastroMarca) {

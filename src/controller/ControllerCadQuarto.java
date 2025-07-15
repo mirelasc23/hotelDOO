@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import view.BuscaHospede;
 import view.CadastroQuarto;
 
-public class ControllerCadQuarto {
+public class ControllerCadQuarto implements ActionListener{
     CadastroQuarto telaCadastroQuarto;
 
     public ControllerCadQuarto(CadastroQuarto telaCadastroQuarto) {
