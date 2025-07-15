@@ -121,7 +121,6 @@ public class BuscaHospede extends javax.swing.JDialog {
             }
         ));
         jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
-        jTableDados.setShowGrid(true);
         jScrollPane1.setViewportView(jTableDados);
         if (jTableDados.getColumnModel().getColumnCount() > 0) {
             jTableDados.getColumnModel().getColumn(0).setMaxWidth(50);
@@ -138,9 +137,7 @@ public class BuscaHospede extends javax.swing.JDialog {
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDadosLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
