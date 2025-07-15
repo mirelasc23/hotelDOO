@@ -3,9 +3,9 @@ package model;
 public class Quarto {
     private int id, capacidadeHospedes, andar;
     private float metragem;
-    private String descricao, identificacao, obs;
-    private boolean flagAnimais, flagFumante, flagBebe;
-    private char status;
+    private String descricao, identificacao, obs;//
+    private boolean flagAnimais, flagFumante, flagBebe;//
+    private char status;//
 
     public Quarto() {
     }
