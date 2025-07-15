@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import view.BuscaHospede;
 import view.CadastroFornecedores;
 
 public class ControllerCadFornecedor implements ActionListener{
@@ -31,9 +32,9 @@ public class ControllerCadFornecedor implements ActionListener{
             utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonBuscar()){
             JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
-            //BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
-            //ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
-            //telaBuscaHospede.setVisible(true);
+            BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
+            ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
+            telaBuscaHospede.setVisible(true);
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
