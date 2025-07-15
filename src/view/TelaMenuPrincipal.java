@@ -38,7 +38,14 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuItemFuncionario = new javax.swing.JMenuItem();
         jMenuItemHospede = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemQuarto = new javax.swing.JMenuItem();
+        jMenuItemServico = new javax.swing.JMenuItem();
         jMenuItemProduto = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemVagaEstacionamento = new javax.swing.JMenuItem();
+        jMenuItemVeiculo = new javax.swing.JMenuItem();
+        jMenuItemModelo = new javax.swing.JMenuItem();
+        jMenuItemMarca = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuMovimentos = new javax.swing.JMenu();
@@ -86,10 +93,76 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuCadastros.add(jMenuItemHospede);
         jMenuCadastros.add(jSeparator1);
 
+        jMenuItemQuarto.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemQuarto.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemQuarto.setText("Quarto");
+        jMenuItemQuarto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemQuartoActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemQuarto);
+
+        jMenuItemServico.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemServico.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemServico.setText("Serviço");
+        jMenuItemServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemServicoActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemServico);
+
         jMenuItemProduto.setBackground(new java.awt.Color(204, 204, 204));
         jMenuItemProduto.setForeground(new java.awt.Color(102, 102, 102));
         jMenuItemProduto.setText("Produto");
+        jMenuItemProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProdutoActionPerformed(evt);
+            }
+        });
         jMenuCadastros.add(jMenuItemProduto);
+        jMenuCadastros.add(jSeparator3);
+
+        jMenuItemVagaEstacionamento.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemVagaEstacionamento.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemVagaEstacionamento.setText("Estacionamento");
+        jMenuItemVagaEstacionamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVagaEstacionamentoActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemVagaEstacionamento);
+
+        jMenuItemVeiculo.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemVeiculo.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemVeiculo.setText("Veículo");
+        jMenuItemVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVeiculoActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemVeiculo);
+
+        jMenuItemModelo.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemModelo.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemModelo.setText("Modelo");
+        jMenuItemModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemModeloActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemModelo);
+
+        jMenuItemMarca.setBackground(new java.awt.Color(204, 204, 204));
+        jMenuItemMarca.setForeground(new java.awt.Color(102, 102, 102));
+        jMenuItemMarca.setText("Marca");
+        jMenuItemMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemMarcaActionPerformed(evt);
+            }
+        });
+        jMenuCadastros.add(jMenuItemMarca);
         jMenuCadastros.add(jSeparator2);
 
         jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
@@ -163,6 +236,55 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         telaCadastroFornecedores.setVisible(true);
     }//GEN-LAST:event_jMenuItemFornecedorActionPerformed
 
+    private void jMenuItemQuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemQuartoActionPerformed
+        // TODO add your handling code here:
+        CadastroQuarto telaCadastroQuarto = new CadastroQuarto(null, true);
+        ControllerCadQuarto controllerCadQuarto = new ControllerCadQuarto(telaCadastroQuarto);
+        telaCadastroQuarto.setVisible(true);
+    }//GEN-LAST:event_jMenuItemQuartoActionPerformed
+
+    private void jMenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemServicoActionPerformed
+        // TODO add your handling code here:
+        CadastroServico telaCadastroServico = new CadastroServico(null, true);
+        ControllerCadServico controllerCadServico = new ControllerCadServico(telaCadastroServico);
+        telaCadastroServico.setVisible(true);
+    }//GEN-LAST:event_jMenuItemServicoActionPerformed
+
+    private void jMenuItemProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProdutoActionPerformed
+        // TODO add your handling code here:
+        CadastroProduto telaCadastroProduto = new CadastroProduto(null, true);
+        ControllerCadProduto controllerCadProduto = new ControllerCadProduto(telaCadastroProduto);
+        telaCadastroProduto.setVisible(true);
+    }//GEN-LAST:event_jMenuItemProdutoActionPerformed
+
+    private void jMenuItemVagaEstacionamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVagaEstacionamentoActionPerformed
+        // TODO add your handling code here:
+        CadastroVagaEstacionamento telaCadastroVagaEstacionamento = new CadastroVagaEstacionamento(null, true);
+        ControllerCadVagaEstacionamento controllerCadVagaEstacionamento = new ControllerCadVagaEstacionamento(telaCadastroVagaEstacionamento);
+        telaCadastroVagaEstacionamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemVagaEstacionamentoActionPerformed
+
+    private void jMenuItemVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVeiculoActionPerformed
+        // TODO add your handling code here:
+        CadastroVeiculo telaCadastroVeiculo = new CadastroVeiculo(null, true);
+        ControllerCadVeiculo controllerCadVeiculo = new ControllerCadVeiculo(telaCadastroVeiculo);
+        telaCadastroVeiculo.setVisible(true);
+    }//GEN-LAST:event_jMenuItemVeiculoActionPerformed
+
+    private void jMenuItemModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModeloActionPerformed
+        // TODO add your handling code here:
+        CadastroModelo telaCadastroModelo = new CadastroModelo(null, true);
+        ControllerCadModelo controllerCadModelo = new ControllerCadModelo(telaCadastroModelo);
+        telaCadastroModelo.setVisible(true);
+    }//GEN-LAST:event_jMenuItemModeloActionPerformed
+
+    private void jMenuItemMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMarcaActionPerformed
+        // TODO add your handling code here:
+        CadastroMarca telaCadastroMarca = new CadastroMarca(null, true);
+        ControllerCadMarca controllerCadMarca = new ControllerCadMarca(telaCadastroMarca);
+        telaCadastroMarca.setVisible(true);
+    }//GEN-LAST:event_jMenuItemMarcaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -204,13 +326,20 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemFornecedor;
     private javax.swing.JMenuItem jMenuItemFuncionario;
     private javax.swing.JMenuItem jMenuItemHospede;
+    private javax.swing.JMenuItem jMenuItemMarca;
+    private javax.swing.JMenuItem jMenuItemModelo;
     private javax.swing.JMenuItem jMenuItemProduto;
+    private javax.swing.JMenuItem jMenuItemQuarto;
     private javax.swing.JMenuItem jMenuItemSair;
+    private javax.swing.JMenuItem jMenuItemServico;
+    private javax.swing.JMenuItem jMenuItemVagaEstacionamento;
+    private javax.swing.JMenuItem jMenuItemVeiculo;
     private javax.swing.JMenu jMenuMovimentos;
     private javax.swing.JMenuBar jMenuPrincipal;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSobre;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
