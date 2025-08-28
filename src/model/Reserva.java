@@ -1,6 +1,6 @@
 package model;
 
-class Reserva {
+public class Reserva {
     private int id;
     private String dataHoraInicio, dataPrevistaEntrada, dataPrevistaSaida, obs;
     private char status;

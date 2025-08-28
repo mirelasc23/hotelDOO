@@ -1,32 +1,33 @@
 package model.dao;
 
 import java.util.List;
+import model.AlocacaoVaga;
 import model.Veiculo;
 
-public class VeiculoDAO implements InterfaceDAO<Veiculo>{
+public class AlocacaoVagaDAO implements InterfaceDAO<AlocacaoVaga>{
 
     @Override
-    public void create(Veiculo objeto) {
+    public void create(AlocacaoVaga objeto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Veiculo retrieve(int id) {
+    public AlocacaoVaga retrieve(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Veiculo> retrieve(String atributo, String valor) {
+    public List<AlocacaoVaga> retrieve(String atributo, String valor) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Veiculo objeto) {
+    public void update(AlocacaoVaga objeto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Veiculo objeto) {
+    public void delete(AlocacaoVaga objeto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
