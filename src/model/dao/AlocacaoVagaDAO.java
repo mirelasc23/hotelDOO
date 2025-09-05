@@ -2,7 +2,6 @@ package model.dao;
 
 import java.util.List;
 import model.AlocacaoVaga;
-import model.Veiculo;
 
 public class AlocacaoVagaDAO implements InterfaceDAO<AlocacaoVaga>{
 
