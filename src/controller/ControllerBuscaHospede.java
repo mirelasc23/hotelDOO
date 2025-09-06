@@ -2,7 +2,11 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Hospede;
 import view.BuscaHospede;
 
 public class ControllerBuscaHospede implements ActionListener{
@@ -26,6 +30,7 @@ public class ControllerBuscaHospede implements ActionListener{
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 JOptionPane.showMessageDialog(null, "Carregando Dados");
+                //Retornar os dados para a tela de cadastro
             }
         } else if(evento.getSource() == this.telaBuscaHospede.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
@@ -34,11 +39,46 @@ public class ControllerBuscaHospede implements ActionListener{
             } else {
                 //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por Id");
+                    //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
+                    
+                    //Cria objeto para receber dados
+                    Hospede hospede = new Hospede();
+                    //Carrega o registro do BD para o objeto
+                    hospede = service.HospedeService.carregar(Integer.parseInt(this.telaBuscaHospede.getjTextField1().getText()));
+                    System.out.println(hospede);
+                    
+                    //Cria tabela para apresentar na view
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
+                    //Limpa a tabela a cada filtragem
+                    tabela.setRowCount(0);
+                    tabela.addRow(new Object[] {hospede.getId(), hospede.getNome(), hospede.getCpf(), hospede.getStatus()});
+                    
+                    
+                    
+                    
                 } else if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
+                    //JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
+                    
+                    List<Hospede> hospedes = new ArrayList<>();
+                    hospedes = service.HospedeService.carregar("nome", this.telaBuscaHospede.getjTextField1().getText());
+                                        
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
+                    tabela.setRowCount(0);
+                    for (Hospede hospede : hospedes) {
+                        tabela.addRow(new Object[] {hospede.getId(), hospede.getNome(), hospede.getCpf(), hospede.getStatus()});
+                    }
+                    
                 } else if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
+                    //JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
+                    
+                    List<Hospede> hospedes = new ArrayList<>();
+                    hospedes = service.HospedeService.carregar("cpf", this.telaBuscaHospede.getjTextField1().getText());
+                                        
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
+                    tabela.setRowCount(0);
+                    for (Hospede hospede : hospedes) {
+                        tabela.addRow(new Object[] {hospede.getId(), hospede.getNome(), hospede.getCpf(), hospede.getStatus()});
+                    }
                 }
             }
         } else if(evento.getSource() == this.telaBuscaHospede.getjButtonFechar()){
