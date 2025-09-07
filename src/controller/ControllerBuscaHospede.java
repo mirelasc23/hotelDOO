@@ -41,7 +41,7 @@ public class ControllerBuscaHospede implements ActionListener{
                 if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
                     //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
                     
-                    //Cria objeto para receber dados
+                //Cria objeto para receber dados
                     Hospede hospede = new Hospede();
                     //Carrega o registro do BD para o objeto
                     hospede = service.HospedeService.carregar(Integer.parseInt(this.telaBuscaHospede.getjTextField1().getText()));
