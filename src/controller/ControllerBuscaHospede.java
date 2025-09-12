@@ -31,8 +31,12 @@ public class ControllerBuscaHospede implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Carregando Dados");
                 //Retornar os dados para a tela de cadastro
+                ControllerCadHospedes.codigo = (int)this.telaBuscaHospede.getjTableDados().getValueAt(this.telaBuscaHospede.getjTableDados().getSelectedRow(), 0);
+                this.telaBuscaHospede.dispose();
+                
             }
-        } else if(evento.getSource() == this.telaBuscaHospede.getjButtonFiltrar()){
+        } 
+        else if(evento.getSource() == this.telaBuscaHospede.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
             if(this.telaBuscaHospede.getjTextField1().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");

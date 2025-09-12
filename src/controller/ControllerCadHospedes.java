@@ -2,11 +2,15 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import model.Hospede;
 import view.BuscaHospede;
 import view.CadastroHospedes;
 
 public class ControllerCadHospedes implements ActionListener{
     CadastroHospedes telaCadastroHospedes;
+    public static int codigo;
 
     public ControllerCadHospedes(CadastroHospedes telaCadastroHospedes) {
         this.telaCadastroHospedes = telaCadastroHospedes;
@@ -28,12 +32,93 @@ public class ControllerCadHospedes implements ActionListener{
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonGravar()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+            
+            if(this.telaCadastroHospedes.getjTextFieldNomeFantasia().getText().trim().equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
+                this.telaCadastroHospedes.getjTextFieldNomeFantasia().requestFocus();
+            }else{
+
+                Hospede hospede = new Hospede();
+
+                //hospede.setId(Integer.parseInt(this.telaCadastroHospedes.getjTextFieldID().getText()));
+                hospede.setNome(this.telaCadastroHospedes.getjTextFieldNomeFantasia().getText());
+                hospede.setFone1(this.telaCadastroHospedes.getjFormattedTextField2().getText());
+                hospede.setFone2(this.telaCadastroHospedes.getjFormattedTextField3().getText());
+                hospede.setEmail(this.telaCadastroHospedes.getjTextFieldEmail().getText());
+                hospede.setCep(this.telaCadastroHospedes.getjFormattedTextField4().getText());
+                hospede.setLogradouro(this.telaCadastroHospedes.getjTextFieldLogradouro().getText());
+                hospede.setBairro(this.telaCadastroHospedes.getjTextFielBairro().getText());
+                hospede.setCidade(this.telaCadastroHospedes.getjTextFieldCidade().getText());
+                hospede.setComplemento(this.telaCadastroHospedes.getjTextFieldComplemento().getText());
+                hospede.setDataCadastro(this.telaCadastroHospedes.getjFormattedTextField5().getText());
+                hospede.setCpf(this.telaCadastroHospedes.getjFormattedTextField6().getText());
+                hospede.setRg(this.telaCadastroHospedes.getjTextFieldRG().getText());
+                hospede.setObs(this.telaCadastroHospedes.getjTextFieldObs().getText());
+                //hospede.setStatus(this.telaCadastroHospedes.getj().setText(hospede.getStatus()));
+                hospede.setRazaoSocial(this.telaCadastroHospedes.getjTextFieldRazaoSocial().getText());
+                hospede.setCnpj(this.telaCadastroHospedes.getjFormattedTextField7().getText());
+                hospede.setInscricaoEstdual(this.telaCadastroHospedes.getjTextFieldIE().getText());
+                hospede.setContato(this.telaCadastroHospedes.getjTextFieldContato().getText());
+
+                /*
+                    Não efetuar a atribuicao de id como set porque no bd é automatico
+                    Não efetuar a atribuicao de status porque ainda nao esta sendo considerado
+
+                */
+
+
+                try{
+                    if(this.telaCadastroHospedes.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
+                        //inclusao
+                        service.HospedeService.criar(hospede);
+                    } else{
+                        service.HospedeService.atualizar(hospede);
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                } 
+
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
+                utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
+            }
+
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonBuscar()){
             BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
             ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
             telaBuscaHospede.setVisible(true);
+            
+            if (codigo != 0){
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), false);
+                utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), true);
+                
+                this.telaCadastroHospedes.getjTextFieldID().setText(codigo + "");
+                this.telaCadastroHospedes.getjTextFieldID().setEnabled(false);
+                
+                Hospede hospede = new Hospede();
+                hospede = service.HospedeService.carregar(codigo);
+                
+                this.telaCadastroHospedes.getjTextFieldNomeFantasia().setText(hospede.getNome());
+                this.telaCadastroHospedes.getjFormattedTextField2().setText(hospede.getFone1());
+                this.telaCadastroHospedes.getjFormattedTextField3().setText(hospede.getFone2());
+                this.telaCadastroHospedes.getjTextFieldEmail().setText(hospede.getEmail());
+                this.telaCadastroHospedes.getjFormattedTextField4().setText(hospede.getCep());
+                this.telaCadastroHospedes.getjTextFieldLogradouro().setText(hospede.getLogradouro());
+                this.telaCadastroHospedes.getjTextFielBairro().setText(hospede.getBairro());
+                this.telaCadastroHospedes.getjTextFieldCidade().setText(hospede.getCidade());
+                this.telaCadastroHospedes.getjTextFieldComplemento().setText(hospede.getComplemento());
+                this.telaCadastroHospedes.getjFormattedTextField5().setText(hospede.getDataCadastro());
+                this.telaCadastroHospedes.getjFormattedTextField6().setText(hospede.getCpf());
+                this.telaCadastroHospedes.getjTextFieldRG().setText(hospede.getRg());
+                this.telaCadastroHospedes.getjTextFieldObs().setText(hospede.getObs());
+                //this.telaCadastroHospedes.getj().setText(hospede.getStatus());
+                this.telaCadastroHospedes.getjTextFieldRazaoSocial().setText(hospede.getRazaoSocial());
+                this.telaCadastroHospedes.getjFormattedTextField7().setText(hospede.getCnpj());
+                this.telaCadastroHospedes.getjTextFieldIE().setText(hospede.getInscricaoEstdual());
+                this.telaCadastroHospedes.getjTextFieldContato().setText(hospede.getContato());
+                
+                this.telaCadastroHospedes.getjTextFieldNomeFantasia().requestFocus();
+                
+            }
         }else if(e.getSource() == this.telaCadastroHospedes.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroHospedes.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroHospedes.getjPanelDados(), false);
@@ -48,7 +133,14 @@ public class ControllerCadHospedes implements ActionListener{
 //https://www.google.com/search?q=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&oq=como+ativar+e+desativar+sequencia+de+botoes+com+netbeans%2C+usando+mvc&aqs=chrome..69i57.36815j0j1&sourceid=chrome&ie=UTF-8
 //https://www.guj.com.br/t/duvidas-de-ordenacao-e-limpar-textarea-resolvido/36037
 
+/* tab index:
+    https://www.google.com/search?q=tabindex+em+java+exemplo&oq=tabindex+em+java+exemplo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDM3OTFqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8
+    https://www.google.com/search?q=alterar+ordem+do+tab+com+tabindex+em+java&sca_esv=cb1e697b99ad7555&sxsrf=AE3TifOFcLI1m6t3Uqc3jtk3RjAZ8UlZhg%3A1757632045149&ei=LVbDaOLvCKrT1sQPrbaTkQE&ved=0ahUKEwiiusnN6dGPAxWqqZUCHS3bJBIQ4dUDCBA&uact=5&oq=alterar+ordem+do+tab+com+tabindex+em+java&gs_lp=Egxnd3Mtd2l6LXNlcnAiKWFsdGVyYXIgb3JkZW0gZG8gdGFiIGNvbSB0YWJpbmRleCBlbSBqYXZhMgUQABjvBTIFEAAY7wUyBRAAGO8FMggQABiiBBiJBTIFEAAY7wVIyixQygdY-ilwAngAkAEAmAGRAaABiA6qAQQwLjE0uAEDyAEA-AEBmAILoAKiCcICCBAAGLADGO8FwgIHECMYsAIYJ8ICChAhGKABGMMEGAqYAwCIBgGQBgSSBwMyLjmgB4RFsgcDMC45uAeZCcIHBTAuOS4yyAcb&sclient=gws-wiz-serp
+    https://www.google.com/search?q=alterar+ordem+do+tab+em+java&oq=alterar+ordem+do+tab+em+java&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDQ1ODRqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8
 
+    duplo clique:
+    https://www.google.com/search?q=como+colocar+evento+em+duplo+clique+em+java&sca_esv=dd1bb8bd48a3d6f2&sxsrf=AE3TifPcos_P5R-hEHgk4m9dKd_ONqyf3A%3A1757631976168&ei=6FXDaOaCCpHT1sQP4rC4oQY&ved=0ahUKEwjmltes6dGPAxWRqZUCHWIYLmQQ4dUDCBA&uact=5&oq=como+colocar+evento+em+duplo+clique+em+java&gs_lp=Egxnd3Mtd2l6LXNlcnAiK2NvbW8gY29sb2NhciBldmVudG8gZW0gZHVwbG8gY2xpcXVlIGVtIGphdmEyBRAAGO8FMggQABiABBiiBDIFEAAY7wUyBRAAGO8FSNUyULUFWPQTcAF4AJABAJgBpAGgAaAKqgEEMC4xMLgBA8gBAPgBAZgCCKACnAfCAggQABiwAxjvBcICCxAAGLADGKIEGIkFwgIHECMYsAIYJ8ICCBAAGKIEGIkFmAMAiAYBkAYDkgcDMS43oAf4MLIHAzAuN7gHlwfCBwUwLjYuMsgHEw&sclient=gws-wiz-serp
+*/
 
 
 

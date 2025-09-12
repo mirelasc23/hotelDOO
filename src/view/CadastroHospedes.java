@@ -6,7 +6,9 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -48,6 +50,150 @@ public class CadastroHospedes extends javax.swing.JDialog {
 
     public JPanel getjPanelDados() {
         return jPanelDados;
+    }
+
+    public JFormattedTextField getjFormattedTextField2() {
+        return jFormattedTextField2;
+    }
+
+    public void setjFormattedTextField2(JFormattedTextField jFormattedTextField2) {
+        this.jFormattedTextField2 = jFormattedTextField2;
+    }
+
+    public JFormattedTextField getjFormattedTextField3() {
+        return jFormattedTextField3;
+    }
+
+    public void setjFormattedTextField3(JFormattedTextField jFormattedTextField3) {
+        this.jFormattedTextField3 = jFormattedTextField3;
+    }
+
+    public JFormattedTextField getjFormattedTextField4() {
+        return jFormattedTextField4;
+    }
+
+    public void setjFormattedTextField4(JFormattedTextField jFormattedTextField4) {
+        this.jFormattedTextField4 = jFormattedTextField4;
+    }
+
+    public JFormattedTextField getjFormattedTextField5() {
+        return jFormattedTextField5;
+    }
+
+    public void setjFormattedTextField5(JFormattedTextField jFormattedTextField5) {
+        this.jFormattedTextField5 = jFormattedTextField5;
+    }
+
+    public JFormattedTextField getjFormattedTextField6() {
+        return jFormattedTextField6;
+    }
+
+    public void setjFormattedTextField6(JFormattedTextField jFormattedTextField6) {
+        this.jFormattedTextField6 = jFormattedTextField6;
+    }
+
+    public JFormattedTextField getjFormattedTextField7() {
+        return jFormattedTextField7;
+    }
+
+    public void setjFormattedTextField7(JFormattedTextField jFormattedTextField7) {
+        this.jFormattedTextField7 = jFormattedTextField7;
+    }
+
+    public JTextField getjTextFielBairro() {
+        return jTextFielBairro;
+    }
+
+    public void setjTextFielBairro(JTextField jTextFielBairro) {
+        this.jTextFielBairro = jTextFielBairro;
+    }
+
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    public void setjTextFieldCidade(JTextField jTextFieldCidade) {
+        this.jTextFieldCidade = jTextFieldCidade;
+    }
+
+    public JTextField getjTextFieldComplemento() {
+        return jTextFieldComplemento;
+    }
+
+    public void setjTextFieldComplemento(JTextField jTextFieldComplemento) {
+        this.jTextFieldComplemento = jTextFieldComplemento;
+    }
+
+    public JTextField getjTextFieldContato() {
+        return jTextFieldContato;
+    }
+
+    public void setjTextFieldContato(JTextField jTextFieldContato) {
+        this.jTextFieldContato = jTextFieldContato;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    public void setjTextFieldID(JTextField jTextFieldID) {
+        this.jTextFieldID = jTextFieldID;
+    }
+
+    public JTextField getjTextFieldIE() {
+        return jTextFieldIE;
+    }
+
+    public void setjTextFieldIE(JTextField jTextFieldIE) {
+        this.jTextFieldIE = jTextFieldIE;
+    }
+
+    public JTextField getjTextFieldLogradouro() {
+        return jTextFieldLogradouro;
+    }
+
+    public void setjTextFieldLogradouro(JTextField jTextFieldLogradouro) {
+        this.jTextFieldLogradouro = jTextFieldLogradouro;
+    }
+
+    public JTextField getjTextFieldNomeFantasia() {
+        return jTextFieldNomeFantasia;
+    }
+
+    public void setjTextFieldNomeFantasia(JTextField jTextFieldNomeFantasia) {
+        this.jTextFieldNomeFantasia = jTextFieldNomeFantasia;
+    }
+
+    public JTextField getjTextFieldObs() {
+        return jTextFieldObs;
+    }
+
+    public void setjTextFieldObs(JTextField jTextFieldObs) {
+        this.jTextFieldObs = jTextFieldObs;
+    }
+
+    public JTextField getjTextFieldRG() {
+        return jTextFieldRG;
+    }
+
+    public void setjTextFieldRG(JTextField jTextFieldRG) {
+        this.jTextFieldRG = jTextFieldRG;
+    }
+
+    public JTextField getjTextFieldRazaoSocial() {
+        return jTextFieldRazaoSocial;
+    }
+
+    public void setjTextFieldRazaoSocial(JTextField jTextFieldRazaoSocial) {
+        this.jTextFieldRazaoSocial = jTextFieldRazaoSocial;
     }
     
     
@@ -140,6 +286,8 @@ public class CadastroHospedes extends javax.swing.JDialog {
 
         jPanelDados.setBackground(new java.awt.Color(204, 204, 204));
         jPanelDados.setForeground(new java.awt.Color(204, 204, 204));
+
+        jTextFieldNomeFantasia.setNextFocusableComponent(jTextFieldRazaoSocial);
 
         jLabelId.setForeground(new java.awt.Color(102, 102, 102));
         jLabelId.setText("ID");
@@ -426,7 +574,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
         jButtonNovo.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonNovo.setForeground(new java.awt.Color(0, 0, 0));
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
         jButtonNovo.setText("Novo");
         jButtonNovo.setActionCommand("1");
@@ -438,7 +585,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelBotoes.add(jButtonNovo);
 
         jButtonCancelar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonCancelar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.setActionCommand("0");
@@ -451,7 +597,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelBotoes.add(jButtonCancelar);
 
         jButtonGravar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonGravar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         jButtonGravar.setText("Gravar");
         jButtonGravar.setActionCommand("0");
@@ -464,7 +609,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelBotoes.add(jButtonGravar);
 
         jButtonBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonBuscar.setText("Buscar");
         jButtonBuscar.setActionCommand("1");
@@ -476,7 +620,6 @@ public class CadastroHospedes extends javax.swing.JDialog {
         jPanelBotoes.add(jButtonBuscar);
 
         jButtonSair.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonSair.setForeground(new java.awt.Color(0, 0, 0));
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonSair.setText("Sair");
         jButtonSair.setActionCommand("1");
@@ -628,3 +771,5 @@ public class CadastroHospedes extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldRazaoSocial;
     // End of variables declaration//GEN-END:variables
 }
+
+

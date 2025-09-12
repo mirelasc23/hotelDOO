@@ -72,7 +72,7 @@ public class BuscaHospede extends javax.swing.JDialog {
         jTableDados = new javax.swing.JTable();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonFiltrar = new javax.swing.JButton();
-        jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
+        jComboBoxFiltrarPor = new javax.swing.JComboBox<String>();
         jButtonCarregar = new javax.swing.JButton();
         jButtonFechar = new javax.swing.JButton();
         jTextFieldValor = new javax.swing.JTextField();
@@ -150,19 +150,22 @@ public class BuscaHospede extends javax.swing.JDialog {
             }
         });
 
-        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOME", "CPF" }));
+        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "ID", "NOME", "CPF" }));
         jComboBoxFiltrarPor.setSelectedIndex(-1);
 
         jButtonCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
         jButtonCarregar.setText("Carregar");
+        jButtonCarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCarregarActionPerformed(evt);
+            }
+        });
 
         jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonFechar.setText("Fechar");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Filtrar Por");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Valor");
 
         javax.swing.GroupLayout jPanelBotoesLayout = new javax.swing.GroupLayout(jPanelBotoes);
@@ -241,6 +244,10 @@ public class BuscaHospede extends javax.swing.JDialog {
     private void jButtonFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonFiltrarActionPerformed
+
+    private void jButtonCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCarregarActionPerformed
 
     /**
      * @param args the command line arguments
