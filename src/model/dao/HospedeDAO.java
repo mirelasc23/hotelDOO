@@ -78,7 +78,7 @@ public class HospedeDAO implements InterfaceDAO<Hospede>{
             pstm.setInt(1, id);
             rst = pstm.executeQuery();
             
-            while (rst.next()) {                
+            while (!rst.next()) {                
                 hospede.setId(rst.getInt("id"));
                 hospede.setNome(rst.getString("nome"));
                 hospede.setFone1(rst.getString("fone"));
