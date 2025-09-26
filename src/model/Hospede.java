@@ -4,6 +4,7 @@ public class Hospede extends Pessoa{
     private String cnpj;
     private String inscricaoEstdual;
     private String contato;
+    private char sexo;
 
     public Hospede() {
     }
@@ -48,11 +49,21 @@ public class Hospede extends Pessoa{
         this.contato = contato;
     }
 
+    public char getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+
+    
     @Override
     public String toString() {
         return  super.toString() + 
-                "\ncnpj   = " + this.getCnpj()+
-                "\nCep    = " + this.getCnpj()+
+                "\nCnpj   = " + this.getCnpj()+
+                "\nInscricaoEstadual   = " + this.getInscricaoEstdual()+
+                "\nCep    = " + this.getCep()+
                 "\nCidade = " + this.getCidade()+
                 "\nBairro = " + this.getBairro()+
                 "\nLogradouro = " + this.getLogradouro()+

@@ -5,10 +5,11 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class ConnectionFactoty {
     public static final String driver = "com.mysql.jdbc.Driver";
-    public static final String banco = "jdbc:mysql://localhost:3306/hotel";
+    public static final String banco = "jdbc:mysql://localhost:3306/hotel";  //3306/hotel";
     public static final String usuario = "root";
     public static final String senha = "ifsc";
     
@@ -18,7 +19,8 @@ public class ConnectionFactoty {
                     + "&useSSL=false"
                     + "&requireSSL=false"
                     + "&USER=" + usuario + "&password=" + senha + "&serverTimezone=UTC");
-        } catch(SQLException ex){
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "CONEXAO FALHOU");
             ex.printStackTrace();
             return null;
         }
@@ -50,5 +52,12 @@ public class ConnectionFactoty {
             ex.printStackTrace();
         }
     }
+
+    @Override
+    public String toString() {
+        return "user: " + usuario + ", senha: "+ senha + ".";
+    }
+    
+    
 
 }

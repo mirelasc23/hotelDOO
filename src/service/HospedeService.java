@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.Hospede;
 import model.dao.HospedeDAO;
 
@@ -11,12 +12,13 @@ public class HospedeService {
         hospedeDAO.create(objeto);
     }
 
-    public static Hospede carregar(int id) {
+    public static Hospede Carregar(int id) {
         HospedeDAO hospedeDAO = new HospedeDAO();
+        JOptionPane.showMessageDialog(null, "SERVICE");
         return hospedeDAO.retrieve(id);
     }
 
-    public static List<Hospede> carregar(String atributo, String valor) {
+    public static List<Hospede> Carregar(String atributo, String valor) {
         HospedeDAO hospedeDAO = new HospedeDAO();
         return hospedeDAO.retrieve(atributo, valor);
     }

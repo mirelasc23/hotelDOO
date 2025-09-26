@@ -10,7 +10,7 @@ import model.Hospede;
 import view.BuscaHospede;
 
 public class ControllerBuscaHospede implements ActionListener{
-    private BuscaHospede telaBuscaHospede;
+    BuscaHospede telaBuscaHospede;
 
     public ControllerBuscaHospede(BuscaHospede telaBuscaHospede) {
         this.telaBuscaHospede = telaBuscaHospede;
@@ -43,12 +43,12 @@ public class ControllerBuscaHospede implements ActionListener{
             } else {
                 //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
-                    //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
+                    JOptionPane.showMessageDialog(null, "Filtrando Por Id");
                     
                 //Cria objeto para receber dados
                     Hospede hospede = new Hospede();
                     //Carrega o registro do BD para o objeto
-                    hospede = service.HospedeService.carregar(Integer.parseInt(this.telaBuscaHospede.getjTextField1().getText()));
+                    hospede = service.HospedeService.Carregar(Integer.parseInt(this.telaBuscaHospede.getjTextField1().getText()));
                     System.out.println(hospede);
                     
                     //Cria tabela para apresentar na view
@@ -64,19 +64,21 @@ public class ControllerBuscaHospede implements ActionListener{
                     //JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
                     
                     List<Hospede> hospedes = new ArrayList<>();
-                    hospedes = service.HospedeService.carregar("nome", this.telaBuscaHospede.getjTextField1().getText());
+                    hospedes = service.HospedeService.Carregar("nome", this.telaBuscaHospede.getjTextField1().getText());
                                         
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
                     tabela.setRowCount(0);
+                    int i=0;
                     for (Hospede hospede : hospedes) {
                         tabela.addRow(new Object[] {hospede.getId(), hospede.getNome(), hospede.getCpf(), hospede.getStatus()});
+                        JOptionPane.showMessageDialog(null, ++i);
                     }
                     
                 } else if(telaBuscaHospede.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
                     //JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
                     
                     List<Hospede> hospedes = new ArrayList<>();
-                    hospedes = service.HospedeService.carregar("cpf", this.telaBuscaHospede.getjTextField1().getText());
+                    hospedes = service.HospedeService.Carregar("cpf", this.telaBuscaHospede.getjTextField1().getText());
                                         
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
                     tabela.setRowCount(0);
