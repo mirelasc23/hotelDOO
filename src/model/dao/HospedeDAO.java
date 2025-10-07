@@ -136,9 +136,6 @@ public class HospedeDAO implements InterfaceDAO<Hospede>{
         ResultSet rst = null;
         List<Hospede> hospedes = new ArrayList<>();
 
-        
-        
-        
         try{
             pstm = conexao.prepareStatement(sqlInstrucao);
             pstm.setString(1, "%" + valor + "%");
