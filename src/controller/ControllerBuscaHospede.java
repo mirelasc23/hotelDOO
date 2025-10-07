@@ -92,3 +92,8 @@ public class ControllerBuscaHospede implements ActionListener{
         }
     }
 }
+
+/*
+Date hoje = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            String data = sdf.format(hoje);*/
