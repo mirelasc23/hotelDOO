@@ -6,7 +6,10 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -48,6 +51,158 @@ public class CadastroFornecedores extends javax.swing.JDialog {
 
     public JPanel getjPanelDados() {
         return jPanelDados;
+    }
+
+    public JComboBox<String> getjComboBoxSexo() {
+        return jComboBoxSexo;
+    }
+
+    public void setjComboBoxSexo(JComboBox<String> jComboBoxSexo) {
+        this.jComboBoxSexo = jComboBoxSexo;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCep() {
+        return jFormattedTextFieldCep;
+    }
+
+    public void setjFormattedTextFieldCep(JFormattedTextField jFormattedTextFieldCep) {
+        this.jFormattedTextFieldCep = jFormattedTextFieldCep;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCnpj() {
+        return jFormattedTextFieldCnpj;
+    }
+
+    public void setjFormattedTextFieldCnpj(JFormattedTextField jFormattedTextFieldCnpj) {
+        this.jFormattedTextFieldCnpj = jFormattedTextFieldCnpj;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCpf() {
+        return jFormattedTextFieldCpf;
+    }
+
+    public void setjFormattedTextFieldCpf(JFormattedTextField jFormattedTextFieldCpf) {
+        this.jFormattedTextFieldCpf = jFormattedTextFieldCpf;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldDataCadastro() {
+        return jFormattedTextFieldDataCadastro;
+    }
+
+    public void setjFormattedTextFieldDataCadastro(JFormattedTextField jFormattedTextFieldDataCadastro) {
+        this.jFormattedTextFieldDataCadastro = jFormattedTextFieldDataCadastro;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldFone() {
+        return jFormattedTextFieldFone;
+    }
+
+    public void setjFormattedTextFieldFone(JFormattedTextField jFormattedTextFieldFone) {
+        this.jFormattedTextFieldFone = jFormattedTextFieldFone;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldFone2() {
+        return jFormattedTextFieldFone2;
+    }
+
+    public void setjFormattedTextFieldFone2(JFormattedTextField jFormattedTextFieldFone2) {
+        this.jFormattedTextFieldFone2 = jFormattedTextFieldFone2;
+    }
+
+    public JTextField getjTextFielBairro() {
+        return jTextFielBairro;
+    }
+
+    public void setjTextFielBairro(JTextField jTextFielBairro) {
+        this.jTextFielBairro = jTextFielBairro;
+    }
+
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    public void setjTextFieldCidade(JTextField jTextFieldCidade) {
+        this.jTextFieldCidade = jTextFieldCidade;
+    }
+
+    public JTextField getjTextFieldComplemento() {
+        return jTextFieldComplemento;
+    }
+
+    public void setjTextFieldComplemento(JTextField jTextFieldComplemento) {
+        this.jTextFieldComplemento = jTextFieldComplemento;
+    }
+
+    public JTextField getjTextFieldContato() {
+        return jTextFieldContato;
+    }
+
+    public void setjTextFieldContato(JTextField jTextFieldContato) {
+        this.jTextFieldContato = jTextFieldContato;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    public void setjTextFieldID(JTextField jTextFieldID) {
+        this.jTextFieldID = jTextFieldID;
+    }
+
+    public JTextField getjTextFieldIE() {
+        return jTextFieldIE;
+    }
+
+    public void setjTextFieldIE(JTextField jTextFieldIE) {
+        this.jTextFieldIE = jTextFieldIE;
+    }
+
+    public JTextField getjTextFieldLogradouro() {
+        return jTextFieldLogradouro;
+    }
+
+    public void setjTextFieldLogradouro(JTextField jTextFieldLogradouro) {
+        this.jTextFieldLogradouro = jTextFieldLogradouro;
+    }
+
+    public JTextField getjTextFieldNomeFantasia() {
+        return jTextFieldNomeFantasia;
+    }
+
+    public void setjTextFieldNomeFantasia(JTextField jTextFieldNomeFantasia) {
+        this.jTextFieldNomeFantasia = jTextFieldNomeFantasia;
+    }
+
+    public JTextField getjTextFieldObs() {
+        return jTextFieldObs;
+    }
+
+    public void setjTextFieldObs(JTextField jTextFieldObs) {
+        this.jTextFieldObs = jTextFieldObs;
+    }
+
+    public JTextField getjTextFieldRG() {
+        return jTextFieldRG;
+    }
+
+    public void setjTextFieldRG(JTextField jTextFieldRG) {
+        this.jTextFieldRG = jTextFieldRG;
+    }
+
+    public JTextField getjTextFieldRazaoSocial() {
+        return jTextFieldRazaoSocial;
+    }
+
+    public void setjTextFieldRazaoSocial(JTextField jTextFieldRazaoSocial) {
+        this.jTextFieldRazaoSocial = jTextFieldRazaoSocial;
     }
     
     
@@ -96,12 +251,12 @@ public class CadastroFornecedores extends javax.swing.JDialog {
         jLabelLogradouro = new javax.swing.JLabel();
         jLabelContato = new javax.swing.JLabel();
         jComboBoxSexo = new javax.swing.JComboBox<>();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
-        jFormattedTextField5 = new javax.swing.JFormattedTextField();
-        jFormattedTextField6 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldDataCadastro = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldFone2 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldFone = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCep = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCnpj = new javax.swing.JFormattedTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -201,37 +356,42 @@ public class CadastroFornecedores extends javax.swing.JDialog {
         jComboBoxSexo.setSelectedIndex(-1);
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jFormattedTextFieldDataCadastro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            jFormattedTextFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            jFormattedTextFieldFone2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldFone2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldFone2ActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextFieldFone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            jFormattedTextFieldCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        try {
-            jFormattedTextField6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            jFormattedTextFieldCnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -278,7 +438,7 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                                         .addComponent(jLabelCEP)
                                         .addGap(167, 167, 167))
                                     .addGroup(jPanelDadosLayout.createSequentialGroup()
-                                        .addComponent(jFormattedTextField5)
+                                        .addComponent(jFormattedTextFieldCep)
                                         .addGap(8, 8, 8)))
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelCidade)
@@ -286,12 +446,12 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jFormattedTextFieldFone, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(8, 8, 8)
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabelFone2)
-                                    .addComponent(jFormattedTextField2)
-                                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))))
+                                    .addComponent(jFormattedTextFieldCpf)
+                                    .addComponent(jFormattedTextFieldFone2, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFielBairro, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -302,7 +462,7 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                                         .addComponent(jLabelInscricaoEstadual)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jFormattedTextFieldCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextFieldEmail)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +492,7 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelDataCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextField1))))
+                            .addComponent(jFormattedTextFieldDataCadastro))))
                 .addContainerGap())
         );
         jPanelDadosLayout.setVerticalGroup(
@@ -345,7 +505,7 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNomeFantasia)
@@ -364,11 +524,11 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                     .addComponent(jLabelCNPJ))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldIE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jFormattedTextFieldCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(2, 2, 2)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFone1)
@@ -376,9 +536,9 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                     .addComponent(jLabelEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jFormattedTextField4)
+                    .addComponent(jFormattedTextFieldFone)
                     .addComponent(jTextFieldEmail)
-                    .addComponent(jFormattedTextField3))
+                    .addComponent(jFormattedTextFieldFone2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelBairro)
@@ -387,7 +547,7 @@ public class CadastroFornecedores extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldCidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldCep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFielBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -475,6 +635,10 @@ public class CadastroFornecedores extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jFormattedTextFieldFone2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldFone2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldFone2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -525,12 +689,12 @@ public class CadastroFornecedores extends javax.swing.JDialog {
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JComboBox<String> jComboBoxSexo;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
-    private javax.swing.JFormattedTextField jFormattedTextField6;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCep;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCnpj;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    private javax.swing.JFormattedTextField jFormattedTextFieldDataCadastro;
+    private javax.swing.JFormattedTextField jFormattedTextFieldFone;
+    private javax.swing.JFormattedTextField jFormattedTextFieldFone2;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCEP;
     private javax.swing.JLabel jLabelCNPJ;

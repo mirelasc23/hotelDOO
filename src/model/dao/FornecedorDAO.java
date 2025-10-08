@@ -121,7 +121,7 @@ public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
                 + " cidade, complemento, data_cadastro, cpf, rg,"
                 + " obs, status, razao_social,"
                 + " cnpj, inscricao_estadual, contato, sexo"
-                + " from hospede where " + atributo + " like ?";
+                + " from fornecedor where " + atributo + " like ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -171,7 +171,7 @@ public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
 
     @Override
     public void update(Fornecedor objeto) {
-        String sqlInstrucao = "update hospede set nome = ?,"
+        String sqlInstrucao = "update fornecedor set nome = ?,"
                 + " fone = ?, fone2 = ?, email = ?, cep = ?, logradouro = ?, bairro = ?,"
                 + " cidade = ?, complemento = ?, data_cadastro = ?, cpf = ?, rg = ?,"
                 + " obs = ?, status = ?, razao_social = ?,"

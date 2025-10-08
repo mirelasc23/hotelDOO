@@ -25,7 +25,8 @@ public class ControllerBuscaFornecedor implements ActionListener{
             if(telaBuscaFornecedor.getjTableDados().getRowCount() == 0){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
-                JOptionPane.showMessageDialog(null, "Carregando Dados");
+                ControllerCadFornecedor.codigo = (int)this.telaBuscaFornecedor.getjTableDados().getValueAt(this.telaBuscaFornecedor.getjTableDados().getSelectedRow(), 0);
+                this.telaBuscaFornecedor.dispose();
             }
         } else if(evento.getSource() == this.telaBuscaFornecedor.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
