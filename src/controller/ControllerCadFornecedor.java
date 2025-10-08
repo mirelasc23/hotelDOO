@@ -59,16 +59,16 @@ public class ControllerCadFornecedor implements ActionListener{
                 this.telaCadastroFornecedores.getjTextFieldCidade().setText(fornecedor.getCidade());
                 this.telaCadastroFornecedores.getjTextFieldComplemento().setText(fornecedor.getComplemento());
                 this.telaCadastroFornecedores.getjFormattedTextFieldDataCadastro().setText(fornecedor.getDataCadastro());
-                this.telaCadastroFornecedores.getjFormattedTextFieldCpf().setText(hospede.getCpf());
-                this.telaCadastroFornecedores.getjTextFieldRG().setText(hospede.getRg());
-                this.telaCadastroFornecedores.getjTextFieldObs().setText(hospede.getObs());
-                //this.telaCadastroHospedes.getj().setText(hospede.getStatus());
-                this.telaCadastroFornecedores.getjTextFieldRazaoSocial().setText(hospede.getRazaoSocial());
-                this.telaCadastroFornecedores.getjFormattedTextFieldCnpj().setText(hospede.getCnpj());
-                this.telaCadastroFornecedores.getjTextFieldIE().setText(hospede.getInscricaoEstdual());
-                this.telaCadastroFornecedores.getjTextFieldContato().setText(hospede.getContato());
+                this.telaCadastroFornecedores.getjFormattedTextFieldCpf().setText(fornecedor.getCpf());
+                this.telaCadastroFornecedores.getjTextFieldRG().setText(fornecedor.getRg());
+                this.telaCadastroFornecedores.getjTextFieldObs().setText(fornecedor.getObs());
+                //this.telaCadastroFornecedores.getj().setText(hospede.getStatus());
+                this.telaCadastroFornecedores.getjTextFieldRazaoSocial().setText(fornecedor.getRazaoSocial());
+                this.telaCadastroFornecedores.getjFormattedTextFieldCnpj().setText(fornecedor.getCnpj());
+                this.telaCadastroFornecedores.getjTextFieldIE().setText(fornecedor.getInscricaoEstdual());
+                this.telaCadastroFornecedores.getjTextFieldContato().setText(fornecedor.getContato());
                 int index_sexo;
-                if(hospede.getSexo() == 'f' || hospede.getSexo() == 'F'){
+                if(fornecedor.getSexo() == 'f' || fornecedor.getSexo() == 'F'){
                     index_sexo = 0;
                 }else{
                     index_sexo = 1;

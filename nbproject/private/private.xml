@@ -5,9 +5,16 @@
         <group>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/dao/FornecedorDAO.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/dao/HospedeDAO.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerBuscaFornecedor.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerCadFornecedor.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerCadFuncionario.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/FornecedorService.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerBuscaFuncionario.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/Fornecedor.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/HospedeService.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroFornecedores.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerCadHospedes.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerBuscaHospede.java</file>
         </group>
     </open-files>
 </project-private>
