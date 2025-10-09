@@ -121,7 +121,7 @@ public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
                 + " cidade, complemento, data_cadastro, cpf, rg,"
                 + " obs, status, razao_social,"
                 + " cnpj, inscricao_estadual, contato, sexo"
-                + " from fornecedor where " + atributo + " like ?";
+                + " from fornecedor where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -162,6 +162,9 @@ public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
             
         }catch(SQLException ex) {
             ex.printStackTrace();
+            ex.getErrorCode();
+            ex.getMessage();
+            ex.getCause();
         } finally{
             ConnectionFactoty.closeConnecition(conexao, pstm);            
         }

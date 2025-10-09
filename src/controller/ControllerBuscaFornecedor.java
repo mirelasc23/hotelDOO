@@ -39,7 +39,7 @@ public class ControllerBuscaFornecedor implements ActionListener{
             } else {
                 //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaFornecedor.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por Id");
+                    //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
                     Fornecedor fornecedor = new Fornecedor();
                     fornecedor = service.FornecedorService.Carregar(Integer.parseInt(this.telaBuscaFornecedor.getjTextFieldValor().getText()));
                     System.out.println(fornecedor);
@@ -49,20 +49,40 @@ public class ControllerBuscaFornecedor implements ActionListener{
                     tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
                 } else if(telaBuscaFornecedor.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
                     JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
-                    List<Hospede> hospedes = new ArrayList<>();
-                    hospedes = service.HospedeService.Carregar("nome", this.telaBuscaHospede.getjTextField1().getText());
+                    List<Fornecedor> fornecedores = new ArrayList<>();
+                    fornecedores = service.FornecedorService.Carregar("nome", this.telaBuscaFornecedor.getjTextFieldValor().getText());
                                         
-                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaHospede.getjTableDados().getModel();
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFornecedor.getjTableDados().getModel();
                     tabela.setRowCount(0);
                     int i=0;
-                    for (Hospede hospede : hospedes) {
-                        tabela.addRow(new Object[] {hospede.getId(), hospede.getNome(), hospede.getCpf(), hospede.getStatus()});
+                    for (Fornecedor fornecedor : fornecedores) {
+                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
                         JOptionPane.showMessageDialog(null, ++i);
                     }
                 } else if(telaBuscaFornecedor.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
                     JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
+                    List<Fornecedor> fornecedores = new ArrayList<>();
+                    fornecedores = service.FornecedorService.Carregar("cpf", this.telaBuscaFornecedor.getjTextFieldValor().getText());
+                                        
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFornecedor.getjTableDados().getModel();
+                    tabela.setRowCount(0);
+                    int i=0;
+                    for (Fornecedor fornecedor : fornecedores) {
+                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
+                        JOptionPane.showMessageDialog(null, ++i);
+                    }
                 } else if(telaBuscaFornecedor.getjComboBoxFiltrarPor().getSelectedIndex() == 3){
                     JOptionPane.showMessageDialog(null, "Filtrando Por CNPJ");
+                    List<Fornecedor> fornecedores = new ArrayList<>();
+                    fornecedores = service.FornecedorService.Carregar("cnpj", this.telaBuscaFornecedor.getjTextFieldValor().getText());
+                                        
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFornecedor.getjTableDados().getModel();
+                    tabela.setRowCount(0);
+                    int i=0;
+                    for (Fornecedor fornecedor : fornecedores) {
+                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
+                        JOptionPane.showMessageDialog(null, ++i);
+                    }
                 }
             }
         } else if(evento.getSource() == this.telaBuscaFornecedor.getjButtonFechar()){

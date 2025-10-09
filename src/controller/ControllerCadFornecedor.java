@@ -30,8 +30,50 @@ public class ControllerCadFornecedor implements ActionListener{
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), true);
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonGravar()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
+             if(this.telaCadastroFornecedores.getjTextFieldNomeFantasia().getText().trim().equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
+                this.telaCadastroFornecedores.getjTextFieldNomeFantasia().requestFocus();
+            }else{
+
+                Fornecedor fornecedor = new Fornecedor();
+
+                //hospede.setId(Integer.parseInt(this.telaCadastroHospedes.getjTextFieldID().getText()));
+                fornecedor.setNome(this.telaCadastroFornecedores.getjTextFieldNomeFantasia().getText());
+                fornecedor.setFone1(this.telaCadastroFornecedores.getjFormattedTextFieldFone().getText());
+                fornecedor.setFone2(this.telaCadastroFornecedores.getjFormattedTextFieldFone2().getText());
+                fornecedor.setEmail(this.telaCadastroFornecedores.getjTextFieldEmail().getText());
+                fornecedor.setCep(this.telaCadastroFornecedores.getjFormattedTextFieldCep().getText());
+                fornecedor.setLogradouro(this.telaCadastroFornecedores.getjTextFieldLogradouro().getText());
+                fornecedor.setBairro(this.telaCadastroFornecedores.getjTextFielBairro().getText());
+                fornecedor.setCidade(this.telaCadastroFornecedores.getjTextFieldCidade().getText());
+                fornecedor.setComplemento(this.telaCadastroFornecedores.getjTextFieldComplemento().getText());
+                fornecedor.setDataCadastro(this.telaCadastroFornecedores.getjFormattedTextFieldDataCadastro().getText());
+                fornecedor.setCpf(this.telaCadastroFornecedores.getjFormattedTextFieldCpf().getText());
+                fornecedor.setRg(this.telaCadastroFornecedores.getjTextFieldRG().getText());
+                fornecedor.setObs(this.telaCadastroFornecedores.getjTextFieldObs().getText());
+                //hospede.setStatus(this.telaCadastroHospedes.getj().setText(hospede.getStatus()));
+                fornecedor.setRazaoSocial(this.telaCadastroFornecedores.getjTextFieldRazaoSocial().getText());
+                fornecedor.setCnpj(this.telaCadastroFornecedores.getjFormattedTextFieldCnpj().getText());
+                fornecedor.setInscricaoEstadual(this.telaCadastroFornecedores.getjTextFieldIE().getText());
+                fornecedor.setContato(this.telaCadastroFornecedores.getjTextFieldContato().getText());
+                char sexo;
+                if(this.telaCadastroFornecedores.getjComboBoxSexo().getSelectedIndex() == 0){
+                    sexo = 'f';
+                }else {
+                    sexo = 'm';
+                }
+                fornecedor.setSexo(sexo);
+                if(this.telaCadastroFornecedores.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
+                    //inclusao
+                    fornecedor.setStatus('A');
+                    service.FornecedorService.Criar(fornecedor);
+                } else{
+                    fornecedor.setId(Integer.parseInt(this.telaCadastroFornecedores.getjTextFieldID().getText()));
+                    service.FornecedorService.Atualizar(fornecedor);
+                }
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), true);
+                utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
+             }
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonBuscar()){
             //JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
             JOptionPane.showMessageDialog(null, "ENTROU EM BUSCAR");
