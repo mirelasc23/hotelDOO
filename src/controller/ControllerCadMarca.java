@@ -6,6 +6,7 @@ import view.CadastroMarca;
 
 public class ControllerCadMarca implements ActionListener{
     CadastroMarca telaCadastroMarca;
+    public static int codigo;
 
     public ControllerCadMarca(CadastroMarca telaCadastroMarca) {
         this.telaCadastroMarca = telaCadastroMarca;
@@ -30,9 +31,7 @@ public class ControllerCadMarca implements ActionListener{
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
-            /*BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
-            ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
-            telaBuscaHospede.setVisible(true);*/
+            ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
