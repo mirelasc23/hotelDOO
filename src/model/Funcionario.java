@@ -3,6 +3,7 @@ public class Funcionario extends Pessoa{
    
     private String usuario;
     private String senha;
+    private char sexo;
 
     public Funcionario() {
   
@@ -30,6 +31,15 @@ public class Funcionario extends Pessoa{
         this.senha = senha;
     }
 
+    public char getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+
+    
     @Override
     public String toString() {
         return  "id   = " + super.toString() + 
