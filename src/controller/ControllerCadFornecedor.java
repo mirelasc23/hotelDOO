@@ -3,7 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.Fornecedor;
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 import view.BuscaFornecedor;
 import view.CadastroFornecedores;
 
@@ -34,6 +34,7 @@ public class ControllerCadFornecedor implements ActionListener{
             utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonBuscar()){
             //JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
+            JOptionPane.showMessageDialog(null, "ENTROU EM BUSCAR");
             BuscaFornecedor telaBuscaFornecedor= new BuscaFornecedor(null, true);
             ControllerBuscaFornecedor controllerBuscaFornecedor = new ControllerBuscaFornecedor(telaBuscaFornecedor);
             telaBuscaFornecedor.setVisible(true);
@@ -65,7 +66,7 @@ public class ControllerCadFornecedor implements ActionListener{
                 //this.telaCadastroFornecedores.getj().setText(hospede.getStatus());
                 this.telaCadastroFornecedores.getjTextFieldRazaoSocial().setText(fornecedor.getRazaoSocial());
                 this.telaCadastroFornecedores.getjFormattedTextFieldCnpj().setText(fornecedor.getCnpj());
-                this.telaCadastroFornecedores.getjTextFieldIE().setText(fornecedor.getInscricaoEstdual());
+                this.telaCadastroFornecedores.getjTextFieldIE().setText(fornecedor.getInscricaoEstadual());
                 this.telaCadastroFornecedores.getjTextFieldContato().setText(fornecedor.getContato());
                 int index_sexo;
                 if(fornecedor.getSexo() == 'f' || fornecedor.getSexo() == 'F'){

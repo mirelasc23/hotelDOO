@@ -129,7 +129,7 @@ public class HospedeDAO implements InterfaceDAO<Hospede>{
                 + " cidade, complemento, data_cadastro, cpf, rg,"
                 + " obs, status, razao_social,"
                 + " cnpj, inscricao_estadual, contato, sexo"
-                + " from hospede where " + atributo + " like ?";
+                + " from hospede where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;

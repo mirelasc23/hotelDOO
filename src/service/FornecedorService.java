@@ -4,33 +4,31 @@ import java.util.List;
 import model.Fornecedor;
 import model.dao.FornecedorDAO;
 
-public class FornecedorService implements InterfaceService<Fornecedor>{
+public class FornecedorService {
 
-    @Override
-    public void criar(Fornecedor objeto) {
+    public static void Criar(Fornecedor objeto) {
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         fornecedorDAO.create(objeto);
     }
 
-    @Override
-    public Fornecedor carregar(int id) {
+    
+    public static Fornecedor Carregar(int id) {
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         return fornecedorDAO.retrieve(id);
     }
 
-    @Override
-    public List<Fornecedor> carregar(String atributo, String valor) {
+   
+    public static List<Fornecedor> Carregar(String atributo, String valor) {
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         return fornecedorDAO.retrieve(atributo, valor);
     }
 
-    @Override
-    public void atualizar(Fornecedor objeto) {
+    
+    public static void Atualizar(Fornecedor objeto) {
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         fornecedorDAO.update(objeto);
     }
 
-    @Override
     public void deletar(Fornecedor objeto) {
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         fornecedorDAO.delete(objeto);
