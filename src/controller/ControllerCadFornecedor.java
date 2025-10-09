@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import model.Fornecedor;
 import javax.swing.JOptionPane;
 import view.BuscaFornecedor;
@@ -27,8 +29,16 @@ public class ControllerCadFornecedor implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroFornecedores.getjButtonNovo()){
+            Date hoje = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            String data = sdf.format(hoje);
+            
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFornecedores.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroFornecedores.getjPanelDados(), true);
+            
+            this.telaCadastroFornecedores.getjFormattedTextFieldDataCadastro().setText(data);
+            this.telaCadastroFornecedores.getjFormattedTextFieldDataCadastro().setEnabled(false);
+            this.telaCadastroFornecedores.getjTextFieldID().setEnabled(false);
         }else if(e.getSource() == this.telaCadastroFornecedores.getjButtonGravar()){
              if(this.telaCadastroFornecedores.getjTextFieldNomeFantasia().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");

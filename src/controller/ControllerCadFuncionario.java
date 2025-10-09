@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import model.Funcionario;
 import view.BuscaFuncionario;
@@ -28,10 +30,17 @@ public class ControllerCadFuncionario implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroFuncionarios.getjButtonNovo()){
-            utilities.Utilities.ativaDesativaBotoes
-                (this.telaCadastroFuncionarios.getjPanelBotoes(), false);
-            utilities.Utilities.limpaComponentes
-                (this.telaCadastroFuncionarios.getjPanelDados(), true);
+            Date hoje = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            String data = sdf.format(hoje);
+            
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), true);
+            
+            this.telaCadastroFuncionarios.getjFormattedTextFieldDataCadastro().setText(data);
+            this.telaCadastroFuncionarios.getjFormattedTextFieldDataCadastro().setEnabled(false);
+            this.telaCadastroFuncionarios.getjTextFieldID().setEnabled(false);
+          
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonGravar()){
             if(this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
@@ -40,7 +49,7 @@ public class ControllerCadFuncionario implements ActionListener{
 
                 Funcionario funcionario = new Funcionario();
 
-                //hospede.setId(Integer.parseInt(this.telaCadastroHospedes.getjTextFieldID().getText()));
+                //hospede.setId(Integer.parseInt(this.telaCadastroFuncionarios.getjTextFieldID().getText()));
                 funcionario.setNome(this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().getText());
                 funcionario.setFone1(this.telaCadastroFuncionarios.getjFormattedTextFieldFone().getText());
                 funcionario.setFone2(this.telaCadastroFuncionarios.getjFormattedTextFieldFone2().getText());
@@ -56,7 +65,7 @@ public class ControllerCadFuncionario implements ActionListener{
                 funcionario.setObs(this.telaCadastroFuncionarios.getjTextFieldObs().getText());
                 funcionario.setUsuario(this.telaCadastroFuncionarios.getjTextFieldUsuario().getText());
                 funcionario.setSenha(this.telaCadastroFuncionarios.getjPasswordFieldSenha().getText());
-                //hospede.setStatus(this.telaCadastroHospedes.getj().setText(hospede.getStatus()));
+                //hospede.setStatus(this.telaCadastroFuncionarios.getj().setText(hospede.getStatus()));
                 
                 char sexo;
                 if(this.telaCadastroFuncionarios.getjComboBoxSexo().getSelectedIndex() == 0){
@@ -82,6 +91,48 @@ public class ControllerCadFuncionario implements ActionListener{
             BuscaFuncionario telaBuscaFuncionario = new BuscaFuncionario(null, true);
             ControllerBuscaFuncionario controllerBuscaHospedes = new ControllerBuscaFuncionario(telaBuscaFuncionario);
             telaBuscaFuncionario.setVisible(true);
+            
+            if (codigo != 0) {
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), false);
+                utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), true);
+
+                this.telaCadastroFuncionarios.getjTextFieldID().setText(codigo + "");
+                this.telaCadastroFuncionarios.getjTextFieldID().setEnabled(false);
+                
+                
+                Funcionario funcionario = new Funcionario();
+                funcionario = service.FuncionarioService.Carregar(codigo);
+
+                this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().setText(funcionario.getNome());
+                this.telaCadastroFuncionarios.getjFormattedTextFieldFone().setText(funcionario.getFone1());
+                this.telaCadastroFuncionarios.getjFormattedTextFieldFone2().setText(funcionario.getFone2());
+                this.telaCadastroFuncionarios.getjTextFieldEmail().setText(funcionario.getEmail());
+                this.telaCadastroFuncionarios.getjFormattedTextFieldCep().setText(funcionario.getCep());
+                this.telaCadastroFuncionarios.getjTextFieldLogradouro().setText(funcionario.getLogradouro());
+                this.telaCadastroFuncionarios.getjTextFielBairro().setText(funcionario.getBairro());
+                this.telaCadastroFuncionarios.getjTextFieldCidade().setText(funcionario.getCidade());
+                this.telaCadastroFuncionarios.getjTextFieldComplemento().setText(funcionario.getComplemento());
+                this.telaCadastroFuncionarios.getjFormattedTextFieldDataCadastro().setText(funcionario.getDataCadastro());
+                this.telaCadastroFuncionarios.getjFormattedTextFieldCpf().setText(funcionario.getCpf());
+                this.telaCadastroFuncionarios.getjTextFieldRG().setText(funcionario.getRg());
+                this.telaCadastroFuncionarios.getjTextFieldUsuario().setText(funcionario.getUsuario());
+                this.telaCadastroFuncionarios.getjPasswordFieldSenha().setText(funcionario.getSenha());
+                //this.telaCadastroFuncionarios.getj().setText(hospede.getStatus());
+                
+                int index_sexo;
+                if(funcionario.getSexo() == 'f' || funcionario.getSexo() == 'F'){
+                    index_sexo = 0;
+                }else{
+                    index_sexo = 1;
+                }
+                this.telaCadastroFuncionarios.getjComboBoxSexo().setSelectedIndex(index_sexo);
+                
+
+                //carregar os dados para os containers faltantes
+                this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().requestFocus();
+            }
+
+
         }else if(e.getSource() == this.telaCadastroFuncionarios.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroFuncionarios.getjPanelDados(), false);
