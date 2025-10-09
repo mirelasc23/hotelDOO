@@ -25,7 +25,8 @@ public class ControllerBuscaFuncionario implements ActionListener{
             if(telaBuscaFuncionario.getjTableDados().getRowCount() == 0){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
-                JOptionPane.showMessageDialog(null, "Carregando Dados");
+                ControllerCadFornecedor.codigo = (int)this.telaBuscaFuncionario.getjTableDados().getValueAt(this.telaBuscaFuncionario.getjTableDados().getSelectedRow(), 0);
+                this.telaBuscaFuncionario.dispose();
             }
         } else if(evento.getSource() == this.telaBuscaFuncionario.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");

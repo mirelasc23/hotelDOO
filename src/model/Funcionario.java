@@ -45,7 +45,8 @@ public class Funcionario extends Pessoa{
         return  "id   = " + super.toString() + 
                 "\nnome = " + this.getNome()+
                 "\nUsuário = " + this.getUsuario()+
-                "\nSenha   = " + this.getSenha();
+                "\nSenha   = " + this.getSenha()+
+                "\nSexo = " + this.sexo;
     }
     
     
