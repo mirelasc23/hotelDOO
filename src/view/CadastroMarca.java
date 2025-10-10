@@ -6,8 +6,10 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -62,6 +64,46 @@ public class CadastroMarca extends javax.swing.JDialog {
     public JTable getjTableDados() {
         return jTableDados;
     }
+
+    public JComboBox<String> getjComboBoxFiltrarPor() {
+        return jComboBoxFiltrarPor;
+    }
+
+    public void setjComboBoxFiltrarPor(JComboBox<String> jComboBoxFiltrarPor) {
+        this.jComboBoxFiltrarPor = jComboBoxFiltrarPor;
+    }
+
+    public JTextField getjTextFieldValor() {
+        return jTextFieldValor;
+    }
+
+    public void setjTextFieldValor(JTextField jTextFieldValor) {
+        this.jTextFieldValor = jTextFieldValor;
+    }
+
+    public JComboBox<String> getjComboBoxStatus() {
+        return jComboBoxStatus;
+    }
+
+    public void setjComboBoxStatus(JComboBox<String> jComboBoxStatus) {
+        this.jComboBoxStatus = jComboBoxStatus;
+    }
+
+    public JTextField getjTextFieldDescricao() {
+        return jTextFieldDescricao;
+    }
+
+    public void setjTextFieldDescricao(JTextField jTextFieldDescricao) {
+        this.jTextFieldDescricao = jTextFieldDescricao;
+    }
+
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    public void setjTextFieldID(JTextField jTextFieldID) {
+        this.jTextFieldID = jTextFieldID;
+    }
     
     
 
@@ -77,15 +119,15 @@ public class CadastroMarca extends javax.swing.JDialog {
         jPanelTitulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldID = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldDescricao = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxStatus = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
         jTextFieldValor = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableDados = new javax.swing.JTable();
@@ -132,8 +174,8 @@ public class CadastroMarca extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Descrição");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
-        jComboBox1.setSelectedIndex(-1);
+        jComboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" }));
+        jComboBoxStatus.setSelectedIndex(-1);
 
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Situação");
@@ -144,8 +186,14 @@ public class CadastroMarca extends javax.swing.JDialog {
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Filtrar Por");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "DESCRICAO" }));
-        jComboBox4.setSelectedIndex(-1);
+        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "DESCRICAO" }));
+        jComboBoxFiltrarPor.setSelectedIndex(-1);
+
+        jTextFieldValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldValorActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -181,11 +229,11 @@ public class CadastroMarca extends javax.swing.JDialog {
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2)
+                    .addComponent(jTextFieldDescricao)
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 549, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +249,7 @@ public class CadastroMarca extends javax.swing.JDialog {
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBoxFiltrarPor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -221,12 +269,12 @@ public class CadastroMarca extends javax.swing.JDialog {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
@@ -236,7 +284,7 @@ public class CadastroMarca extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -324,6 +372,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
 
+    private void jTextFieldValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldValorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -375,8 +427,8 @@ public class CadastroMarca extends javax.swing.JDialog {
     private javax.swing.JButton jButtonGravar;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBoxFiltrarPor;
+    private javax.swing.JComboBox<String> jComboBoxStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -389,8 +441,8 @@ public class CadastroMarca extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTableDados;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldDescricao;
+    private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables
 }

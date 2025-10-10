@@ -27,64 +27,39 @@ public  class ControllerBuscaMarca implements ActionListener{
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 ControllerCadMarca.codigo = (int)this.telaBuscaMarca.getjTableDados().getValueAt(this.telaBuscaMarca.getjTableDados().getSelectedRow(), 0);
-                this.telaBuscaMarca.dispose();
+                this.telaBuscaMarca.getjComboBoxFiltrarPor().setEnabled(false);
+                this.telaBuscaMarca.getjTextFieldValor().setEnabled(false);
             }
         } else if(evento.getSource() == this.telaBuscaMarca.getjButtonFiltrar()){
-            JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
+            //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
             if(this.telaBuscaMarca.getjTextFieldValor().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
                     //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
-                    Marca fornecedor = new Marca();
-                    fornecedor = service.MarcaService.Carregar(Integer.parseInt(this.telaBuscaMarca.getjTextFieldValor().getText()));
-                    System.out.println(fornecedor);
+                    Marca marca = new Marca();
+                    marca = service.MarcaService.Carregar(Integer.parseInt(this.telaBuscaMarca.getjTextFieldValor().getText()));
+                    System.out.println(marca);
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
                     //Limpa a tabela a cada filtragem
                     tabela.setRowCount(0);
-                    tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
+                    tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
                 } else if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
-                    List<Marca> fornecedores = new ArrayList<>();
-                    fornecedores = service.MarcaService.Carregar("nome", this.telaBuscaMarca.getjTextFieldValor().getText());
+                    JOptionPane.showMessageDialog(null, "Filtrando Por Descricao");
+                    List<Marca> marcaes = new ArrayList<>();
+                    marcaes = service.MarcaService.Carregar("descricao", this.telaBuscaMarca.getjTextFieldValor().getText());
                                         
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
                     tabela.setRowCount(0);
                     int i=0;
-                    for (Marca fornecedor : fornecedores) {
-                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
-                    }
-                } else if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por CPF");
-                    List<Marca> fornecedores = new ArrayList<>();
-                    fornecedores = service.MarcaService.Carregar("cpf", this.telaBuscaMarca.getjTextFieldValor().getText());
-                                        
-                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
-                    tabela.setRowCount(0);
-                    int i=0;
-                    for (Marca fornecedor : fornecedores) {
-                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
-                    }
-                } else if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 3){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por CNPJ");
-                    List<Marca> fornecedores = new ArrayList<>();
-                    fornecedores = service.MarcaService.Carregar("cnpj", this.telaBuscaMarca.getjTextFieldValor().getText());
-                                        
-                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
-                    tabela.setRowCount(0);
-                    int i=0;
-                    for (Marca fornecedor : fornecedores) {
-                        tabela.addRow(new Object[] {fornecedor.getId(), fornecedor.getNome(), fornecedor.getCpf(), fornecedor.getStatus()});
+                    for (Marca marca : marcaes) {
+                        tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
                         JOptionPane.showMessageDialog(null, ++i);
                     }
                 }
             }
-        } else if(evento.getSource() == this.telaBuscaMarca.getjButtonFechar()){
-            this.telaBuscaMarca.dispose();
-        }
+        } 
 
     }
     
