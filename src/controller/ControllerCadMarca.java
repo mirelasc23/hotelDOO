@@ -33,6 +33,7 @@ public class ControllerCadMarca implements ActionListener{
             this.telaCadastroMarca.getjTextFieldID().setEnabled(false);
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
+            
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonGravar()){
             if(this.telaCadastroMarca.getjTextFieldDescricao().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
@@ -41,20 +42,16 @@ public class ControllerCadMarca implements ActionListener{
 
                 Marca marca = new Marca();
 
-                //hospede.setId(Integer.parseInt(this.telaCadastroMarca.getjTextFieldID().getText()));
+                //marca.setId(Integer.parseInt(this.telaCadastroMarca.getjTextFieldID().getText()));
                 marca.setDescricao(this.telaCadastroMarca.getjTextFieldDescricao().getText());
-                marca.setId((int) this.telaCadastroMarca.getjTextFieldID().getText());
-                marca.setStatus('A');
                 
-                //hospede.setStatus(this.telaCadastroMarca.getj().setText(hospede.getStatus()));
-                
-                char sexo;
-                if(this.telaCadastroMarca.getjComboBoxSexo().getSelectedIndex() == 0){
-                    sexo = 'f';
+                char status;
+                if(this.telaCadastroMarca.getjComboBoxStatus().getSelectedIndex() == 0){
+                    status = 'a';
                 }else {
-                    sexo = 'm';
-                }
-                marca.setSexo(sexo);
+                    status = 'i';
+                } marca.setStatus(status);
+                
                 if(this.telaCadastroMarca.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
                     //inclusao
                     marca.setStatus('A');
