@@ -218,9 +218,13 @@ public class CadastroMarca extends javax.swing.JDialog {
 
         jButtonFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonFiltrar.setText("Filtrar");
+        jButtonFiltrar.setActionCommand("2");
+        jButtonFiltrar.setEnabled(false);
 
         jButtonCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
         jButtonCarregar.setText("Carregar");
+        jButtonCarregar.setActionCommand("2");
+        jButtonCarregar.setEnabled(false);
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);

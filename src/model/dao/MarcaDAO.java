@@ -89,6 +89,7 @@ public class MarcaDAO implements InterfaceDAO<Marca>{
                 marca.setId(rst.getInt("id"));
                 marca.setDescricao(rst.getString("descricao"));
                 marca.setStatus(rst.getString(3).charAt(0));
+                marcas.add(marca);
                 
                 
                 JOptionPane.showMessageDialog(null, "cadastro obtido");

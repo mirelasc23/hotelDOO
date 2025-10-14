@@ -58,4 +58,19 @@ public class Utilities {
             }
         }
     }
+    
+    public static void ativaDesativaBusca(JPanel painel, boolean ativa){
+        Component[] vetComponentes = painel.getComponents();
+        
+        for (Component componente : vetComponentes) {
+            if (componente instanceof JButton) {
+                if ("2".equals(((JButton)componente).getActionCommand())) {
+                    componente.setEnabled(ativa);
+                } else {
+                    componente.setEnabled(!ativa);
+                }
+            }
+        }
+        
+    }
 }

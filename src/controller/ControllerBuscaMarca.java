@@ -29,6 +29,7 @@ public  class ControllerBuscaMarca implements ActionListener{
                 ControllerCadMarca.codigo = (int)this.telaBuscaMarca.getjTableDados().getValueAt(this.telaBuscaMarca.getjTableDados().getSelectedRow(), 0);
                 this.telaBuscaMarca.getjComboBoxFiltrarPor().setEnabled(false);
                 this.telaBuscaMarca.getjTextFieldValor().setEnabled(false);
+                utilities.Utilities.ativaDesativaBusca(this.telaBuscaMarca.getjPanelDados(), false);
             }
         } else if(evento.getSource() == this.telaBuscaMarca.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
@@ -46,17 +47,26 @@ public  class ControllerBuscaMarca implements ActionListener{
                     tabela.setRowCount(0);
                     tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
                 } else if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
-                    JOptionPane.showMessageDialog(null, "Filtrando Por Descricao");
+                    List<Marca> marcas = new ArrayList<>();
+                    marcas = service.MarcaService.Carregar("descricao", this.telaBuscaMarca.getjTextFieldValor().getText());
+                    //System.out.println(marca);
+                    DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
+                    //Limpa a tabela a cada filtragem
+                    tabela.setRowCount(0);
+                    for (Marca marca : marcas) {
+                        tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
+                    }
+                    /*JOptionPane.showMessageDialog(null, "Filtrando Por Descricao");
                     List<Marca> marcaes = new ArrayList<>();
                     marcaes = service.MarcaService.Carregar("descricao", this.telaBuscaMarca.getjTextFieldValor().getText());
                                         
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
                     tabela.setRowCount(0);
-                    int i=0;
+                    //int i=0;
                     for (Marca marca : marcaes) {
                         tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
-                    }
+                        //JOptionPane.showMessageDialog(null, ++i);
+                    }*/
                 }
             }
         } 

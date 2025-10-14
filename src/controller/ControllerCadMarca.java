@@ -67,6 +67,7 @@ public class ControllerCadMarca implements ActionListener{
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
             ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
+            utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), true);
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonCancelar()){
