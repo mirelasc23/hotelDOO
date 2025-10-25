@@ -7,31 +7,31 @@ import model.dao.ModeloDAO;
 public class ModeloService implements InterfaceService<Modelo>{
 
     @Override
-    public void criar(Modelo objeto) {
+    public void Criar(Modelo objeto) {
         ModeloDAO modeloDAO = new ModeloDAO();
         modeloDAO.create(objeto);
     }
 
     @Override
-    public Modelo carregar(int id) {
+    public Modelo Carregar(int id) {
         ModeloDAO modeloDAO = new ModeloDAO();
         return modeloDAO.retrieve(id);
     }
 
     @Override
-    public List<Modelo> carregar(String atributo, String valor) {
+    public List<Modelo> Carregar(String atributo, String valor) {
         ModeloDAO modeloDAO = new ModeloDAO();
         return modeloDAO.retrieve(atributo, valor);
     }
 
     @Override
-    public void atualizar(Modelo objeto) {
+    public void Atualizar(Modelo objeto) {
         ModeloDAO modeloDAO = new ModeloDAO();
         modeloDAO.update(objeto);
     }
 
     @Override
-    public void deletar(Modelo objeto) {
+    public void Deletar(Modelo objeto) {
         ModeloDAO modeloDAO = new ModeloDAO();
         modeloDAO.delete(objeto);
     }

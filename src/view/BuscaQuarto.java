@@ -125,7 +125,9 @@ public class BuscaQuarto extends javax.swing.JDialog {
         if (jTableDados.getColumnModel().getColumnCount() > 0) {
             jTableDados.getColumnModel().getColumn(0).setMaxWidth(50);
             jTableDados.getColumnModel().getColumn(1).setMaxWidth(250);
-            jTableDados.getColumnModel().getColumn(2).setMaxWidth(100);
+            jTableDados.getColumnModel().getColumn(2).setMinWidth(200);
+            jTableDados.getColumnModel().getColumn(2).setPreferredWidth(200);
+            jTableDados.getColumnModel().getColumn(2).setMaxWidth(200);
             jTableDados.getColumnModel().getColumn(3).setMaxWidth(50);
         }
 

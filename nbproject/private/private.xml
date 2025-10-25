@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/BuscaFuncionario.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerCadMarca.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/InterfaceService.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/ModeloService.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/dao/MarcaDAO.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/Modelo.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/controller/ControllerBuscaMarca.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/Marca.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/QuartoService.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/Modelo.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/dao/ModeloDAO.java</file>
-            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/utilities/Utilities.java</file>
+            <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/model/dao/QuartoDAO.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/view/CadastroMarca.java</file>
             <file>file:/C:/Users/Info/OneDrive/Área%20de%20Trabalho/Eclipse-workspace/Projetos/HotelDOO/hotelDOO/src/service/MarcaService.java</file>
         </group>
