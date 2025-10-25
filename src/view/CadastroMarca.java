@@ -8,6 +8,7 @@ package view;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -105,6 +106,12 @@ public class CadastroMarca extends javax.swing.JDialog {
         this.jTextFieldID = jTextFieldID;
     }
     
+    public void limpaJTable(){
+        int rowCount = jTableDados.getRowCount();
+        for (int i = rowCount; i >= 0; i--) {
+            jTableDados.remove(i);
+        }
+    }
     
 
     /**
@@ -207,6 +214,7 @@ public class CadastroMarca extends javax.swing.JDialog {
                 "id", "Descrição", "Status"
             }
         ));
+        jTableDados.setEnabled(false);
         jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTableDados);
         if (jTableDados.getColumnModel().getColumnCount() > 0) {

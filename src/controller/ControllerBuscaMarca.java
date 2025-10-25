@@ -27,6 +27,10 @@ public  class ControllerBuscaMarca implements ActionListener{
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 ControllerCadMarca.codigo = (int)this.telaBuscaMarca.getjTableDados().getValueAt(this.telaBuscaMarca.getjTableDados().getSelectedRow(), 0);
+                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
+                //Limpa a tabela a cada filtragem
+                tabela.setRowCount(0);
+                this.telaBuscaMarca.getjTableDados().setEnabled(false);
                 this.telaBuscaMarca.getjComboBoxFiltrarPor().setEnabled(false);
                 this.telaBuscaMarca.getjTextFieldValor().setEnabled(false);
                 utilities.Utilities.ativaDesativaBusca(this.telaBuscaMarca.getjPanelDados(), false);
@@ -36,6 +40,7 @@ public  class ControllerBuscaMarca implements ActionListener{
             if(this.telaBuscaMarca.getjTextFieldValor().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
+                this.telaBuscaMarca.getjTableDados().setEnabled(true);
                 //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
                     //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
