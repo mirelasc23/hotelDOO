@@ -83,6 +83,8 @@ public class ControllerCadMarca implements ActionListener{
                 //Limpa a tabela a cada filtragem
                 tabela.setRowCount(0);*/
             JOptionPane.showMessageDialog(null, "saiu do contrBusca");
+            JOptionPane.showMessageDialog(null, "cód. em CadMarca" + ControllerCadMarca.codigo);
+            
             if (codigo != 0) {
                 
                 JOptionPane.showMessageDialog(null, "entrou no if(codigo)");
