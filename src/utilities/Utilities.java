@@ -63,7 +63,7 @@ public class Utilities {
             } else if (componente instanceof JScrollPane) {
                 JOptionPane.showMessageDialog(null, "entou em intanceof JScrollPane");
                 //((JScrollPane) componente)
-                Component componenteScroll = ((JScrollPane) componente).getViewport().getView();
+                //Component componenteScroll = ((JScrollPane) componente).getViewport().getView();
                     
             }
         }

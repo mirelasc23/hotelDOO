@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Marca;
 import view.CadastroMarca;
 
@@ -67,15 +68,42 @@ public class ControllerCadMarca implements ActionListener{
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
-            ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
             
+            //ATIVA BOTOES PARA BUSCA
             utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), true);
+            
+            //ATIVA COMPONENTES PARA BUSCA
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);
+            JOptionPane.showMessageDialog(null, "ativou componentes"); 
+            //CONTROLLER
+            ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
             
+            /*DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
+                //Limpa a tabela a cada filtragem
+                tabela.setRowCount(0);*/
+            JOptionPane.showMessageDialog(null, "saiu do contrBusca");
             if (codigo != 0) {
+                
+                JOptionPane.showMessageDialog(null, "entrou no if(codigo)");
+
+                //DESATIVA BOTOES PARA BUSCA
                 utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), false);
+
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), false);
                 utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), true);
+                
+                //DESATIVA COMPONENTES PARA BUSCA
+                this.telaCadastroMarca.getjTableDados().setEnabled(false);
+                this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
+                this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
+            JOptionPane.showMessageDialog(null, "desativou componentes"); 
+                //this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
+                /*DefaultTableModel tabela = (DefaultTableModel) this.telaCadastroMarca.getjTableDados().getModel();
+                //Limpa a tabela a cada filtragem
+                tabela.setRowCount(0);*/
+                this.telaCadastroMarca.getjTableDados().setEnabled(true);
+                this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
 
                 this.telaCadastroMarca.getjTextFieldID().setText(codigo + "");
                 this.telaCadastroMarca.getjTextFieldID().setEnabled(false);
@@ -83,10 +111,12 @@ public class ControllerCadMarca implements ActionListener{
                 Marca marca = new Marca();
                 marca  = service.MarcaService.Carregar(codigo);
                 
+                JOptionPane.showMessageDialog(null, marca);
                 this.telaCadastroMarca.getjTextFieldDescricao().setText(marca.getDescricao());
                 //if(marca.getStatus())
                 //this.telaCadastroMarca.getjComboBoxStatus().set;
                 
+                this.telaCadastroMarca.getjTextFieldDescricao().requestFocus();
             }
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);

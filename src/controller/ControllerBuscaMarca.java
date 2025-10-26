@@ -22,19 +22,14 @@ public  class ControllerBuscaMarca implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evento) {
         if(evento.getSource() == this.telaBuscaMarca.getjButtonCarregar()){
-            //JOptionPane.showMessageDialog(null, "Botão Carregar Pressionado");
+            JOptionPane.showMessageDialog(null, "Botão Carregar Pressionado");
             if(telaBuscaMarca.getjTableDados().getRowCount() == 0){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 ControllerCadMarca.codigo = (int)this.telaBuscaMarca.getjTableDados().getValueAt(this.telaBuscaMarca.getjTableDados().getSelectedRow(), 0);
-                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
-                //Limpa a tabela a cada filtragem
-                tabela.setRowCount(0);
-                this.telaBuscaMarca.getjTableDados().setEnabled(false);
-                this.telaBuscaMarca.getjComboBoxFiltrarPor().setEnabled(false);
-                this.telaBuscaMarca.getjTextFieldValor().setEnabled(false);
-                utilities.Utilities.ativaDesativaBusca(this.telaBuscaMarca.getjPanelDados(), false);
+                JOptionPane.showMessageDialog(null, ControllerCadMarca.codigo);
             }
+            JOptionPane.showMessageDialog(null, "saiu do if-else");
         } else if(evento.getSource() == this.telaBuscaMarca.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
             if(this.telaBuscaMarca.getjTextFieldValor().getText().trim().equalsIgnoreCase("")){
@@ -76,6 +71,7 @@ public  class ControllerBuscaMarca implements ActionListener{
             }
         } 
 
+    JOptionPane.showMessageDialog(null, "sai do contrBusca");
     }
     
 }
