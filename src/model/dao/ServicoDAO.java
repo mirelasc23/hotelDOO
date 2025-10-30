@@ -13,7 +13,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public void create(Servico objeto) {
-        String sqlInstrucao = "insert into produto_copa (decricao, valor, obs) values(?, ?, ?)";
+        String sqlInstrucao = "insert into servico (decricao, obs, status) values(?, ?, ?)";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -22,8 +22,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
             pstm = conexao.prepareStatement(sqlInstrucao);
             
             pstm.setString(1, objeto.getDescricao());
-            pstm.setFloat(2, objeto.getValor());
-            pstm.setString(3, objeto.getObs());
+            pstm.setString(2, objeto.getObs());
+            pstm.setString(3, "a");
             
             JOptionPane.showMessageDialog(null, objeto);
             pstm.execute();
@@ -36,8 +36,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public Servico retrieve(int id) {
-        String sqlInstrucao = "select id, decricao, valor, obs, status"
-                + " from produto_copa where id = ?";
+        String sqlInstrucao = "select id, decricao, obs, status"
+                + " from servico where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         JOptionPane.showMessageDialog(null, "conexao ok");
@@ -55,9 +55,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
                 System.out.println(rst);
                 servico.setId(rst.getInt("id"));
                 servico.setDescricao(rst.getString("decricao"));
-                servico.setValor(rst.getFloat("valor"));
-                servico.setObs(rst.getString(4));
-                servico.setStatus(rst.getString(5).charAt(0));
+                servico.setObs(rst.getString(3));
+                servico.setStatus(rst.getString(4).charAt(0));
                 
                 JOptionPane.showMessageDialog(null, servico);
             }
@@ -73,8 +72,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public List<Servico> retrieve(String atributo, String valor) {
-        String sqlInstrucao = "select id, decricao, valor, obs, status"
-                + " from produto_copa where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
+        String sqlInstrucao = "select id, decricao, obs, status"
+                + " from servico where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -89,9 +88,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
                 Servico servico = new Servico();
                 servico.setId(rst.getInt("id"));
                 servico.setDescricao(rst.getString("decricao"));
-                servico.setValor(rst.getFloat("valor"));
-                servico.setObs(rst.getString(4));
-                servico.setStatus(rst.getString(5).charAt(0));
+                servico.setObs(rst.getString(3));
+                servico.setStatus(rst.getString(4).charAt(0));
                 servicos.add(servico);
                 
             }
@@ -107,8 +105,8 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public void update(Servico objeto) {
-        String sqlInstrucao = "update marca set decricao = ?,"
-                + " valor = ?, obs = ?, status = ? where id = ?";
+        String sqlInstrucao = "update servico set decricao = ?,"
+                + " obs = ?, status = ? where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -117,10 +115,9 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
             pstm = conexao.prepareStatement(sqlInstrucao);
             
             pstm.setString(1, objeto.getDescricao());
-            pstm.setFloat(2, objeto.getValor());
-            pstm.setString(3, objeto.getObs());
-            pstm.setString(4, String.valueOf(objeto.getStatus()));
-            pstm.setInt(5, objeto.getId());
+            pstm.setString(2, objeto.getObs());
+            pstm.setString(3, String.valueOf(objeto.getStatus()));
+            pstm.setInt(4, objeto.getId());
             JOptionPane.showMessageDialog(null, objeto);
             
             pstm.execute();
@@ -129,11 +126,6 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
         } finally{
             ConnectionFactoty.closeConnecition(conexao, pstm);
         }
-    }
-
-    @Override
-    public void update(Servico objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
