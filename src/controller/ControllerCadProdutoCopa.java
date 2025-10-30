@@ -4,10 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.ProdutoCopa;
+import view.BuscaProdutoCopa;
 import view.CadastroProdutoCopa;
 
 public class ControllerCadProdutoCopa implements ActionListener{
         CadastroProdutoCopa telaCadastroProdutoCopa;
+        public static int codigo;
 
     public ControllerCadProdutoCopa(CadastroProdutoCopa telaCadastroProdutoCopa) {
         this.telaCadastroProdutoCopa = telaCadastroProdutoCopa;
@@ -46,20 +48,54 @@ public class ControllerCadProdutoCopa implements ActionListener{
                     status = 'i';
                 }
                 produtoCopa.setStatus(status);
-              
+                
+                if(this.telaCadastroProdutoCopa.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
+                    //inclusao
+                    produtoCopa.setStatus('A');
+                    service.ProdutoCopaService.Criar(produtoCopa);
+                } else{
+                    produtoCopa.setId(Integer.parseInt(this.telaCadastroProdutoCopa.getjTextFieldID().getText()));
+                    service.ProdutoCopaService.Atualizar(produtoCopa);
+                }
+                
                 utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
                 utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
             }
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonBuscar()){
-            /*BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
-            ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
-            telaBuscaHospede.setVisible(true);*/
+            BuscaProdutoCopa telaBuscaProdutoCopa= new BuscaProdutoCopa(null, true);
+            ControllerBuscaProdutoCopa controllerBuscaProdutoCopa = new ControllerBuscaProdutoCopa(telaBuscaProdutoCopa);
+            telaBuscaProdutoCopa.setVisible(true);
+            
+            if (codigo != 0) {
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), false);
+                utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), true);
+
+                this.telaCadastroProdutoCopa.getjTextFieldID().setText(codigo + "");
+                this.telaCadastroProdutoCopa.getjTextFieldID().setEnabled(false);
+                
+                
+                ProdutoCopa produtoCopa = new ProdutoCopa();
+                produtoCopa = service.ProdutoCopaService.Carregar(codigo);
+
+                this.telaCadastroProdutoCopa.getjTextFieldDescricao().setText(produtoCopa.getDescricao());
+                this.telaCadastroProdutoCopa.getjFormattedTextFieldValor().setText(String.valueOf(produtoCopa.getValor()));
+                this.telaCadastroProdutoCopa.getjTextAreaObs().setText(produtoCopa.getObs());
+                int index_status;
+                if(produtoCopa.getStatus() == 'a' || produtoCopa.getStatus() == 'A'){
+                    index_status = 0;
+                }else {
+                    
+                    index_status = 1;
+                }
+                this.telaCadastroProdutoCopa.getjComboBoxStatus().setSelectedIndex(index_status);
+                this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
+                
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonSair()){
            this.telaCadastroProdutoCopa.dispose();
-        }
-        
+        }  
+    }
     }
 }
