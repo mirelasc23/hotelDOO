@@ -8,7 +8,7 @@ import view.BuscaProdutoCopa;
 import view.CadastroProdutoCopa;
 
 public class ControllerCadProdutoCopa implements ActionListener{
-        CadastroProdutoCopa telaCadastroProdutoCopa;
+        private CadastroProdutoCopa telaCadastroProdutoCopa;
         public static int codigo;
 
     public ControllerCadProdutoCopa(CadastroProdutoCopa telaCadastroProdutoCopa) {
@@ -35,7 +35,9 @@ public class ControllerCadProdutoCopa implements ActionListener{
             this.telaCadastroProdutoCopa.getjComboBoxStatus().setSelectedIndex(0);
             this.telaCadastroProdutoCopa.getjComboBoxStatus().setEnabled(false);
             
+            JOptionPane.showMessageDialog(null, "botao NOVO");
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonGravar()){
+            JOptionPane.showMessageDialog(null, "botao GRAVAR");
             if(this.telaCadastroProdutoCopa.getjTextFieldDescricao().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
                 this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
@@ -43,7 +45,18 @@ public class ControllerCadProdutoCopa implements ActionListener{
                 ProdutoCopa produtoCopa = new ProdutoCopa();
                 
                 produtoCopa.setDescricao(this.telaCadastroProdutoCopa.getjTextFieldDescricao().getText());
-                produtoCopa.setValor(Float.parseFloat(this.telaCadastroProdutoCopa.getjFormattedTextFieldValor().getText()));
+                
+                try {
+                    // Isso pode lançar a NumberFormatException: empty String (se vazio) 
+                    // ou apenas NumberFormatException (se não for número)
+                    produtoCopa.setValor(Float.parseFloat(this.telaCadastroProdutoCopa.getjFormattedTextFieldValor().getText()));
+                } catch (NumberFormatException ex) {
+                    // O campo estava vazio OU o texto não era um número
+                    // Você pode registrar o erro, setar um valor padrão, ou avisar o usuário.
+                    JOptionPane.showMessageDialog(null, "Erro de formato numérico ou campo vazio. Use '.' para separar os decimais.");
+                    // e.printStackTrace(); // Apenas para debug
+                }
+                
                 produtoCopa.setObs(this.telaCadastroProdutoCopa.getjTextAreaObs().getText());
                 
                 char status;
@@ -69,6 +82,7 @@ public class ControllerCadProdutoCopa implements ActionListener{
                 utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
             }
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonBuscar()){
+            JOptionPane.showMessageDialog(null, "botao BUSCAR");
             BuscaProdutoCopa telaBuscaProdutoCopa= new BuscaProdutoCopa(null, true);
             ControllerBuscaProdutoCopa controllerBuscaProdutoCopa = new ControllerBuscaProdutoCopa(telaBuscaProdutoCopa);
             telaBuscaProdutoCopa.setVisible(true);
@@ -98,11 +112,12 @@ public class ControllerCadProdutoCopa implements ActionListener{
                 this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
                 
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonCancelar()){
+            JOptionPane.showMessageDialog(null, "botao cancelar");
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonSair()){
            this.telaCadastroProdutoCopa.dispose();
         }  
-    }
-    }
+    
+    }}
 }

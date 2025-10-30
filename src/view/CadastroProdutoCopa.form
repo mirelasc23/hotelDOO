@@ -71,7 +71,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel1" alignment="0" pref="38" max="32767" attributes="0"/>
+              <Component id="jLabel1" alignment="0" pref="44" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -123,10 +123,15 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFieldID" min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jTextFieldDescricao" min="-2" pref="605" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldDescricao" min="-2" pref="605" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldID" min="-2" pref="56" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jComboBoxStatus" pref="125" max="32767" attributes="0"/>
                               <Component id="jFormattedTextFieldValor" max="32767" attributes="0"/>
@@ -150,7 +155,7 @@
                       <Component id="jTextFieldID" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBoxStatus" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -235,13 +240,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextFieldValor">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format subtype="0" type="4"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -249,6 +247,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Valor"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jFormattedTextFieldValor">
         </Component>
       </SubComponents>
     </Container>

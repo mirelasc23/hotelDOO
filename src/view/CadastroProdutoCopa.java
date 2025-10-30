@@ -63,7 +63,7 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
         this.jComboBoxStatus = jComboBoxStatus;
     }
 
-    public JFormattedTextField getjFormattedTextFieldValor() {
+    public JTextField getjFormattedTextFieldValor() {
         return jFormattedTextFieldValor;
     }
 
@@ -126,8 +126,8 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaObs = new javax.swing.JTextArea();
-        jFormattedTextFieldValor = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
+        jFormattedTextFieldValor = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -156,7 +156,7 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
         );
         jPanelTituloLayout.setVerticalGroup(
             jPanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
         );
 
         jPanelDados.setBackground(new java.awt.Color(204, 204, 204));
@@ -180,8 +180,6 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
         jTextAreaObs.setColumns(20);
         jTextAreaObs.setRows(5);
         jScrollPane1.setViewportView(jTextAreaObs);
-
-        jFormattedTextFieldValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
 
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Valor");
@@ -207,9 +205,12 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(160, 160, 160)))
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBoxStatus, 0, 125, Short.MAX_VALUE)
                             .addComponent(jFormattedTextFieldValor))))
@@ -226,7 +227,7 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
@@ -403,7 +404,7 @@ public class CadastroProdutoCopa extends javax.swing.JDialog {
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JComboBox<String> jComboBoxStatus;
-    private javax.swing.JFormattedTextField jFormattedTextFieldValor;
+    private javax.swing.JTextField jFormattedTextFieldValor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
