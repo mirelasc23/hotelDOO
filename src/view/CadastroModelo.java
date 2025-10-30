@@ -169,6 +169,8 @@ public class CadastroModelo extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Marca");
 
+        jComboBoxMarca.setModel(new javax.swing.DefaultComboBoxModel<>(controller.JavaTest.retornaMarca()));
+
         jScrollPane1.setBackground(new java.awt.Color(153, 153, 153));
 
         jTableDados.setBackground(new java.awt.Color(204, 204, 204));

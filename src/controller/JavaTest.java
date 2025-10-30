@@ -5,12 +5,19 @@ import model.Marca;
 import model.dao.MarcaDAO;
 
 public class JavaTest {
-    public void retornaMarca(){
+    //new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo" })
+    //new javax.swing.DefaultComboBoxModel<>(controller.JavaTest.retornaMarca())
+    
+    
+    public static String[] retornaMarca(){
         MarcaDAO marcaDAO = new MarcaDAO();
-        
-        List<Marca> marcas =  marcaDAO.retrieveAll();
+        List<Marca> marcas = marcaDAO.retrieveAll();
+        String[] vet_marcas = null;
+        int i = 0;
         for (Marca marca : marcas) {
-            System.out.println(marca.getDescricao());
+            vet_marcas [i] =  marca.getDescricao();
+            i++;
         }
+        return vet_marcas;
     }
 }

@@ -10,6 +10,7 @@ public class Triangulo {
         this.base = base;
         this.altura = altura;
         //area = base * altura / 2;
+        controller.JavaTest.retornaMarca();
     }
 
     @Override
