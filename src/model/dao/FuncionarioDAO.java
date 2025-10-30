@@ -92,6 +92,8 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
                 funcionario.setObs(rst.getString(14));
                 funcionario.setStatus(rst.getString(15).charAt(0));
                 funcionario.setSexo(rst.getString(16).charAt(0));
+                funcionario.setUsuario(rst.getString(17));
+                funcionario.setSenha(rst.getString(18));
                 
                 JOptionPane.showMessageDialog(null, funcionario);
             }
@@ -194,7 +196,7 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
             pstm.setInt(18, objeto.getId());
             JOptionPane.showMessageDialog(null, objeto);
             
-            pstm.execute();
+            pstm.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally{

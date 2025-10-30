@@ -49,7 +49,7 @@ public class ControllerCadFuncionario implements ActionListener{
 
                 Funcionario funcionario = new Funcionario();
 
-                //hospede.setId(Integer.parseInt(this.telaCadastroFuncionarios.getjTextFieldID().getText()));
+                //funcionario.setId(Integer.parseInt(this.telaCadastroFuncionarios.getjTextFieldID().getText()));
                 funcionario.setNome(this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().getText());
                 funcionario.setFone1(this.telaCadastroFuncionarios.getjFormattedTextFieldFone().getText());
                 funcionario.setFone2(this.telaCadastroFuncionarios.getjFormattedTextFieldFone2().getText());
@@ -65,7 +65,6 @@ public class ControllerCadFuncionario implements ActionListener{
                 funcionario.setObs(this.telaCadastroFuncionarios.getjTextFieldObs().getText());
                 funcionario.setUsuario(this.telaCadastroFuncionarios.getjTextFieldUsuario().getText());
                 funcionario.setSenha(this.telaCadastroFuncionarios.getjPasswordFieldSenha().getText());
-                //hospede.setStatus(this.telaCadastroFuncionarios.getj().setText(hospede.getStatus()));
                 
                 char sexo;
                 if(this.telaCadastroFuncionarios.getjComboBoxSexo().getSelectedIndex() == 0){
@@ -73,13 +72,27 @@ public class ControllerCadFuncionario implements ActionListener{
                 }else {
                     sexo = 'm';
                 }
+                
+                
                 funcionario.setSexo(sexo);
                 if(this.telaCadastroFuncionarios.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
                     //inclusao
-                    funcionario.setStatus('A');
+                    JOptionPane.showMessageDialog(null, "entrou em criar");
+                    funcionario.setStatus('a');
                     service.FuncionarioService.Criar(funcionario);
                 } else{
                     funcionario.setId(Integer.parseInt(this.telaCadastroFuncionarios.getjTextFieldID().getText()));
+                    char status;
+                    if(this.telaCadastroFuncionarios.getjComboBoxSexoStatus().getSelectedIndex() == 0){
+                        status = 'a';
+                    }else{
+                        status = 'i';
+                    }
+
+                    funcionario.setStatus(status);
+                    JOptionPane.showMessageDialog(null, status);
+                    JOptionPane.showMessageDialog(null, "entrou em atualizar");
+                    JOptionPane.showMessageDialog(null, funcionario);
                     service.FuncionarioService.Atualizar(funcionario);
                 }
                 utilities.Utilities.ativaDesativaBotoes(this.telaCadastroFuncionarios.getjPanelBotoes(), true);
@@ -117,7 +130,8 @@ public class ControllerCadFuncionario implements ActionListener{
                 this.telaCadastroFuncionarios.getjTextFieldRG().setText(funcionario.getRg());
                 this.telaCadastroFuncionarios.getjTextFieldUsuario().setText(funcionario.getUsuario());
                 this.telaCadastroFuncionarios.getjPasswordFieldSenha().setText(funcionario.getSenha());
-                //this.telaCadastroFuncionarios.getj().setText(hospede.getStatus());
+                this.telaCadastroFuncionarios.getjTextFieldObs().setText(funcionario.getObs());
+                
                 
                 int index_sexo;
                 if(funcionario.getSexo() == 'f' || funcionario.getSexo() == 'F'){
@@ -125,8 +139,16 @@ public class ControllerCadFuncionario implements ActionListener{
                 }else{
                     index_sexo = 1;
                 }
-                this.telaCadastroFuncionarios.getjComboBoxSexo().setSelectedIndex(index_sexo);
+         
+                int index_status;
+                if(funcionario.getStatus() == 'a' || funcionario.getStatus() == 'A' ){
+                    index_status = 0;
+                }else{
+                    index_status = 1;
+                }
                 
+                this.telaCadastroFuncionarios.getjComboBoxSexo().setSelectedIndex(index_sexo);
+                this.telaCadastroFuncionarios.getjComboBoxSexoStatus().setSelectedIndex(index_status);
 
                 //carregar os dados para os containers faltantes
                 this.telaCadastroFuncionarios.getjTextFieldNomeFantasia().requestFocus();

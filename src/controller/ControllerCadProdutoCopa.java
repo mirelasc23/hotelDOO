@@ -110,7 +110,7 @@ public class ControllerCadProdutoCopa implements ActionListener{
                 }
                 this.telaCadastroProdutoCopa.getjComboBoxStatus().setSelectedIndex(index_status);
                 this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
-                
+        
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonCancelar()){
             JOptionPane.showMessageDialog(null, "botao cancelar");
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);

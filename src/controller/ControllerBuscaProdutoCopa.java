@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ProdutoCopa;
+import model.ProdutoCopa;
 import view.BuscaProdutoCopa;
 
 public class ControllerBuscaProdutoCopa implements ActionListener{
@@ -27,7 +28,8 @@ public class ControllerBuscaProdutoCopa implements ActionListener{
             if(telaBuscaProdutoCopa.getjTableDados().getRowCount() == 0){
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
-                JOptionPane.showMessageDialog(null, "Carregando Dados");
+                ControllerCadProdutoCopa.codigo = (int)this.telaBuscaProdutoCopa.getjTableDados().getValueAt(this.telaBuscaProdutoCopa.getjTableDados().getSelectedRow(), 0);
+                this.telaBuscaProdutoCopa.dispose();
             }
         } else if(evento.getSource() == this.telaBuscaProdutoCopa.getjButtonFiltrar()){
             //JOptionPane.showMessageDialog(null, "Botão Filtrar Pressionado");
@@ -51,7 +53,7 @@ public class ControllerBuscaProdutoCopa implements ActionListener{
                     int i=0;
                     for (ProdutoCopa produtoCopa : produtosCopa) {
                         tabela.addRow(new Object[] {produtoCopa.getId(), produtoCopa.getDescricao(), produtoCopa.getValor(), produtoCopa.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
+                        //JOptionPane.showMessageDialog(null, ++i);
                     }
                 } else if(telaBuscaProdutoCopa.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
                     List<ProdutoCopa> produtosCopa = new ArrayList<>();
@@ -62,7 +64,7 @@ public class ControllerBuscaProdutoCopa implements ActionListener{
                     int i=0;
                     for (ProdutoCopa produtoCopa : produtosCopa) {
                         tabela.addRow(new Object[] {produtoCopa.getId(), produtoCopa.getDescricao(), produtoCopa.getValor(), produtoCopa.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
+                        //JOptionPane.showMessageDialog(null, ++i);
                     }
                 } else if(telaBuscaProdutoCopa.getjComboBoxFiltrarPor().getSelectedIndex() == 3){
                     List<ProdutoCopa> produtosCopa = new ArrayList<>();
@@ -73,7 +75,7 @@ public class ControllerBuscaProdutoCopa implements ActionListener{
                     int i=0;
                     for (ProdutoCopa produtoCopa : produtosCopa) {
                         tabela.addRow(new Object[] {produtoCopa.getId(), produtoCopa.getDescricao(), produtoCopa.getValor(), produtoCopa.getStatus()});
-                        JOptionPane.showMessageDialog(null, ++i);
+                        //JOptionPane.showMessageDialog(null, ++i);
                     }
                 }
             }

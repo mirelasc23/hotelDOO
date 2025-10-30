@@ -156,10 +156,10 @@ public class Pessoa {
 
     public void setStatus(char status) {
         
-        if ( (status == 'A') || (status == 'C') || (status == 'a') || (status == 'c') ) {
+        if ( (status == 'A') || (status == 'C') || (status == 'a') || (status == 'c') || (status == 'i') || (status == 'I') ) {
             this.status = status;
         }else {
-            this.status = 'A';
+            this.status = 'a';
         }
         
     }

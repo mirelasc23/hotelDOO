@@ -47,7 +47,7 @@ public class ControllerBuscaFuncionario implements ActionListener{
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFuncionario.getjTableDados().getModel();
                     //Limpa a tabela a cada filtragem
                     tabela.setRowCount(0);
-                    tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getStatus()});
+                    tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getUsuario(), funcionario.getStatus()});
                 } else if(telaBuscaFuncionario.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
                     //JOptionPane.showMessageDialog(null, "Filtrando Por Nome");
                     List<Funcionario> funcionarios = new ArrayList<>();
@@ -57,7 +57,7 @@ public class ControllerBuscaFuncionario implements ActionListener{
                     tabela.setRowCount(0);
                     int i=0;
                     for (Funcionario funcionario : funcionarios) {
-                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getStatus()});
+                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getUsuario(), funcionario.getStatus()});
                         JOptionPane.showMessageDialog(null, ++i);
                     }
                 } else if(telaBuscaFuncionario.getjComboBoxFiltrarPor().getSelectedIndex() == 2){
@@ -69,7 +69,7 @@ public class ControllerBuscaFuncionario implements ActionListener{
                     tabela.setRowCount(0);
                     int i=0;
                     for (Funcionario funcionario : funcionarios) {
-                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getStatus()});
+                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getUsuario(), funcionario.getStatus()});
                         JOptionPane.showMessageDialog(null, ++i);
                     }
                 } else if(telaBuscaFuncionario.getjComboBoxFiltrarPor().getSelectedIndex() == 3){
@@ -81,7 +81,7 @@ public class ControllerBuscaFuncionario implements ActionListener{
                     tabela.setRowCount(0);
                     int i=0;
                     for (Funcionario funcionario : funcionarios) {
-                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getStatus()});
+                        tabela.addRow(new Object[] {funcionario.getId(), funcionario.getNome(), funcionario.getCpf(), funcionario.getUsuario(), funcionario.getStatus()});
                         JOptionPane.showMessageDialog(null, ++i);
                     }
                 }

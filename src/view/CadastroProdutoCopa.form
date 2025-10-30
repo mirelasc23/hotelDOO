@@ -123,15 +123,10 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextFieldDescricao" min="-2" pref="605" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextFieldID" min="-2" pref="56" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jTextFieldDescricao" alignment="0" min="-2" pref="605" max="-2" attributes="0"/>
+                              <Component id="jTextFieldID" alignment="0" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jComboBoxStatus" pref="125" max="32767" attributes="0"/>
                               <Component id="jFormattedTextFieldValor" max="32767" attributes="0"/>
@@ -291,7 +286,7 @@
               <Image iconType="3" name="/imagens/Delete.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
-            <Property name="actionCommand" type="java.lang.String" value="0"/>
+            <Property name="actionCommand" type="java.lang.String" value="2"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>

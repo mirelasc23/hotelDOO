@@ -107,7 +107,7 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
 
     @Override
     public void update(ProdutoCopa objeto) {
-        String sqlInstrucao = "update marca set decricao = ?,"
+        String sqlInstrucao = "update produto_copa set decricao = ?,"
                 + " valor = ?, obs = ?, status = ? where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    

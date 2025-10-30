@@ -117,7 +117,7 @@ public class BuscaQuarto extends javax.swing.JDialog {
 
             },
             new String [] {
-                "id", "Nome", "CPF", "Status"
+                "id", "Identificacao", "Capacidade", "Animais"
             }
         ));
         jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
