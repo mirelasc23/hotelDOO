@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import model.ProdutoCopa;
 import view.CadastroProdutoCopa;
 
 public class ControllerCadProdutoCopa implements ActionListener{
@@ -16,9 +18,7 @@ public class ControllerCadProdutoCopa implements ActionListener{
         this.telaCadastroProdutoCopa.getjButtonSair().addActionListener(this);
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
-        
-        //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
-        
+                
     }
 
     @Override
@@ -26,9 +26,30 @@ public class ControllerCadProdutoCopa implements ActionListener{
         if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonNovo()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), true);
+            this.telaCadastroProdutoCopa.getjTextFieldID().setEnabled(false);
+            this.telaCadastroProdutoCopa.getjComboBoxStatus().setSelectedIndex(0);
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonGravar()){
-            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
-            utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
+            if(this.telaCadastroProdutoCopa.getjTextFieldDescricao().getText().trim().equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
+                this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
+            }else{
+                ProdutoCopa produtoCopa = new ProdutoCopa();
+                
+                produtoCopa.setDescricao(this.telaCadastroProdutoCopa.getjTextFieldDescricao().getText());
+                produtoCopa.setValor(Float.parseFloat(this.telaCadastroProdutoCopa.getjFormattedTextFieldValor().getText()));
+                produtoCopa.setObs(this.telaCadastroProdutoCopa.getjTextAreaObs().getText());
+                
+                char status;
+                if(this.telaCadastroProdutoCopa.getjComboBoxStatus().getSelectedIndex() == 0){
+                    status = 'a';
+                }else {
+                    status = 'i';
+                }
+                produtoCopa.setStatus(status);
+              
+                utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
+                utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
+            }
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonBuscar()){
             /*BuscaHospede telaBuscaHospede= new BuscaHospede(null, true);
             ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);

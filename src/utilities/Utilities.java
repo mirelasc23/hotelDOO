@@ -61,10 +61,7 @@ public class Utilities {
                 ((JTextArea) componente).setText("");
                 componente.setEnabled(ativa);
             } else if (componente instanceof JScrollPane) {
-                JOptionPane.showMessageDialog(null, "entou em intanceof JScrollPane");
-                //((JScrollPane) componente)
-                //Component componenteScroll = ((JScrollPane) componente).getViewport().getView();
-                    
+                    ((JScrollPane) componente).setEnabled(ativa);
             }
         }
     }
