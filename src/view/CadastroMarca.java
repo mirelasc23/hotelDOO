@@ -38,6 +38,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         return jButtonCarregar;
     }
 
+    public JButton getjButtonCancelarFiltro() {
+        return jButtonCancelarFiltro;
+    }
+
     public JButton getjButtonFiltrar() {
         return jButtonFiltrar;
     }
@@ -141,6 +145,7 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonFiltrar = new javax.swing.JButton();
         jButtonCarregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jButtonCancelarFiltro = new javax.swing.JButton();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -194,7 +199,6 @@ public class CadastroMarca extends javax.swing.JDialog {
         jLabel7.setText("Filtrar Por");
 
         jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "DESCRICAO" }));
-        jComboBoxFiltrarPor.setSelectedIndex(-1);
 
         jTextFieldValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,6 +238,18 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonCarregar.setActionCommand("2");
         jButtonCarregar.setEnabled(false);
 
+        jButtonCancelarFiltro.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonCancelarFiltro.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonCancelarFiltro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
+        jButtonCancelarFiltro.setText("Cancelar");
+        jButtonCancelarFiltro.setActionCommand("2");
+        jButtonCancelarFiltro.setEnabled(false);
+        jButtonCancelarFiltro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarFiltroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
         jPanelDadosLayout.setHorizontalGroup(
@@ -253,9 +269,11 @@ public class CadastroMarca extends javax.swing.JDialog {
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButtonCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonCancelarFiltro, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -303,7 +321,9 @@ public class CadastroMarca extends javax.swing.JDialog {
                         .addComponent(jButtonFiltrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonCarregar)
-                        .addGap(0, 137, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCancelarFiltro)
+                        .addGap(0, 109, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -388,6 +408,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldValorActionPerformed
 
+    private void jButtonCancelarFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarFiltroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarFiltroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -434,6 +458,7 @@ public class CadastroMarca extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonCancelarFiltro;
     private javax.swing.JButton jButtonCarregar;
     private javax.swing.JButton jButtonFiltrar;
     private javax.swing.JButton jButtonGravar;

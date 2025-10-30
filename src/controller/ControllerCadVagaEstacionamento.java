@@ -16,9 +16,7 @@ public class ControllerCadVagaEstacionamento implements ActionListener{
         this.telaCadastroVagaEstacionamento.getjButtonSair().addActionListener(this);
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroVagaEstacionamento.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroVagaEstacionamento.getjPanelDados(), false);
-        
-        //Desenvolver as setagens de situação inicial dos componentes:  ||quais botões estarão ativos
-        
+                
     }
 
     @Override

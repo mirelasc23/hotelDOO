@@ -13,11 +13,13 @@ public class ControllerCadQuarto implements ActionListener{
 
     public ControllerCadQuarto(CadastroQuarto telaCadastroQuarto) {
         this.telaCadastroQuarto = telaCadastroQuarto;
+        
         this.telaCadastroQuarto.getjButtonNovo().addActionListener(this);
         this.telaCadastroQuarto.getjButtonGravar().addActionListener(this);
         this.telaCadastroQuarto.getjButtonBuscar().addActionListener(this);
         this.telaCadastroQuarto.getjButtonCancelar().addActionListener(this);
         this.telaCadastroQuarto.getjButtonSair().addActionListener(this);
+        
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroQuarto.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroQuarto.getjPanelDados(), false);
                 
@@ -78,7 +80,6 @@ public class ControllerCadQuarto implements ActionListener{
                     //inclusao
                     quarto.setStatus('A');
                     service.QuartoService.Criar(quarto);
-                    JOptionPane.showMessageDialog(null, "criar cadast");
                 } else{
                     quarto.setId(Integer.parseInt(this.telaCadastroQuarto.getjTextFieldID().getText()));
                     service.QuartoService.Atualizar(quarto);
@@ -88,7 +89,7 @@ public class ControllerCadQuarto implements ActionListener{
              }
         }else if(e.getSource() == this.telaCadastroQuarto.getjButtonBuscar()){
             //JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
-            JOptionPane.showMessageDialog(null, "ENTROU EM BUSCAR");
+            //JOptionPane.showMessageDialog(null, "ENTROU EM BUSCAR");
             BuscaQuarto telaBuscaQuarto= new BuscaQuarto(null, true);
             ControllerBuscaQuarto controllerBuscaQuarto = new ControllerBuscaQuarto(telaBuscaQuarto);
             telaBuscaQuarto.setVisible(true);

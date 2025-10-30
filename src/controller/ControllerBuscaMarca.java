@@ -17,6 +17,7 @@ public  class ControllerBuscaMarca implements ActionListener{
         
         this.telaBuscaMarca.getjButtonCarregar().addActionListener(this);
         this.telaBuscaMarca.getjButtonFiltrar().addActionListener(this);
+        this.telaBuscaMarca.getjButtonCancelarFiltro().addActionListener(this);
     }
     
     @Override
@@ -36,16 +37,15 @@ public  class ControllerBuscaMarca implements ActionListener{
                 JOptionPane.showMessageDialog(null, "A busca não retornou nada.");
             } else {
                 this.telaBuscaMarca.getjTableDados().setEnabled(true);
-                //JOptionPane.showMessageDialog(null, "   Filando Dados");
                 if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 0){
-                    //JOptionPane.showMessageDialog(null, "Filtrando Por Id");
                     Marca marca = new Marca();
                     marca = service.MarcaService.Carregar(Integer.parseInt(this.telaBuscaMarca.getjTextFieldValor().getText()));
-                    System.out.println(marca);
+                    //System.out.println(marca);
                     DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
                     //Limpa a tabela a cada filtragem
                     tabela.setRowCount(0);
                     tabela.addRow(new Object[] {marca.getId(), marca.getDescricao(), marca.getStatus()});
+                    
                 } else if(telaBuscaMarca.getjComboBoxFiltrarPor().getSelectedIndex() == 1){
                     List<Marca> marcas = new ArrayList<>();
                     marcas = service.MarcaService.Carregar("descricao", this.telaBuscaMarca.getjTextFieldValor().getText());
@@ -71,7 +71,7 @@ public  class ControllerBuscaMarca implements ActionListener{
             }
         } 
 
-    JOptionPane.showMessageDialog(null, "sai do contrBusca");
+    //JOptionPane.showMessageDialog(null, "sai do contrBusca");
     }
     
 }

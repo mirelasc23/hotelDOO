@@ -61,7 +61,19 @@ public class Utilities {
                 ((JTextArea) componente).setText("");
                 componente.setEnabled(ativa);
             } else if (componente instanceof JScrollPane) {
-                    ((JScrollPane) componente).setEnabled(ativa);
+                // **CORREÇÃO AQUI:** Tenta pegar o componente dentro do JScrollPane
+                JScrollPane scrollPane = (JScrollPane) componente;
+                Component componenteAninhado = scrollPane.getViewport().getView();
+
+                // Verifica se o componente aninhado é o JTextArea
+                if (componenteAninhado instanceof JTextArea) {
+                    ((JTextArea) componenteAninhado).setText("");
+                    componenteAninhado.setEnabled(ativa);
+                }
+
+                // Opcional: Você pode manter o setEnabled para o JScrollPane também
+                scrollPane.setEnabled(ativa);
+
             }
         }
     }
