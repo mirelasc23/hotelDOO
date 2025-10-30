@@ -13,11 +13,13 @@ public class ControllerCadProdutoCopa implements ActionListener{
 
     public ControllerCadProdutoCopa(CadastroProdutoCopa telaCadastroProdutoCopa) {
         this.telaCadastroProdutoCopa = telaCadastroProdutoCopa;
+        
         this.telaCadastroProdutoCopa.getjButtonNovo().addActionListener(this);
         this.telaCadastroProdutoCopa.getjButtonGravar().addActionListener(this);
         this.telaCadastroProdutoCopa.getjButtonBuscar().addActionListener(this);
         this.telaCadastroProdutoCopa.getjButtonCancelar().addActionListener(this);
         this.telaCadastroProdutoCopa.getjButtonSair().addActionListener(this);
+        
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), false);
                 
@@ -28,8 +30,11 @@ public class ControllerCadProdutoCopa implements ActionListener{
         if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonNovo()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroProdutoCopa.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroProdutoCopa.getjPanelDados(), true);
+            
             this.telaCadastroProdutoCopa.getjTextFieldID().setEnabled(false);
             this.telaCadastroProdutoCopa.getjComboBoxStatus().setSelectedIndex(0);
+            this.telaCadastroProdutoCopa.getjComboBoxStatus().setEnabled(false);
+            
         }else if(e.getSource() == this.telaCadastroProdutoCopa.getjButtonGravar()){
             if(this.telaCadastroProdutoCopa.getjTextFieldDescricao().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
@@ -48,6 +53,8 @@ public class ControllerCadProdutoCopa implements ActionListener{
                     status = 'i';
                 }
                 produtoCopa.setStatus(status);
+                
+                this.telaCadastroProdutoCopa.getjTextFieldDescricao().requestFocus();
                 
                 if(this.telaCadastroProdutoCopa.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
                     //inclusao

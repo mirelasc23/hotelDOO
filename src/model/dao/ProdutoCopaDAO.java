@@ -36,8 +36,8 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
 
     @Override
     public ProdutoCopa retrieve(int id) {
-        String sqlInstrucao = "select id, descricao, valor, obs, status"
-                + " from produtoCopa where id = ?";
+        String sqlInstrucao = "select id, decricao, valor, obs, status"
+                + " from produto_copa where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         JOptionPane.showMessageDialog(null, "conexao ok");
@@ -54,7 +54,7 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
             while (rst.next()) {  
                 System.out.println(rst);
                 produtoCopa.setId(rst.getInt("id"));
-                produtoCopa.setDescricao(rst.getString("descricao"));
+                produtoCopa.setDescricao(rst.getString("decricao"));
                 produtoCopa.setValor(rst.getFloat("valor"));
                 produtoCopa.setObs(rst.getString(4));
                 produtoCopa.setStatus(rst.getString(5).charAt(0));
@@ -73,8 +73,8 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
 
     @Override
     public List<ProdutoCopa> retrieve(String atributo, String valor) {
-        String sqlInstrucao = "select id, descricao, valor, obs, status"
-                + " from produtoCopa where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
+        String sqlInstrucao = "select id, decricao, valor, obs, status"
+                + " from produto_copa where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -88,7 +88,7 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
             while (rst.next()) {    
                 ProdutoCopa produtoCopa = new ProdutoCopa();
                 produtoCopa.setId(rst.getInt("id"));
-                produtoCopa.setDescricao(rst.getString("descricao"));
+                produtoCopa.setDescricao(rst.getString("decricao"));
                 produtoCopa.setValor(rst.getFloat("valor"));
                 produtoCopa.setObs(rst.getString(4));
                 produtoCopa.setStatus(rst.getString(5).charAt(0));
@@ -107,7 +107,7 @@ public class ProdutoCopaDAO implements InterfaceDAO<ProdutoCopa>{
 
     @Override
     public void update(ProdutoCopa objeto) {
-        String sqlInstrucao = "update marca set descricao = ?,"
+        String sqlInstrucao = "update marca set decricao = ?,"
                 + " valor = ?, obs = ?, status = ? where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
