@@ -40,7 +40,6 @@ public class MarcaDAO implements InterfaceDAO<Marca>{
         
         Connection conexao = ConnectionFactoty.getConnection();    
         JOptionPane.showMessageDialog(null, "conexao ok");
-        JOptionPane.showMessageDialog(null, conexao);
         PreparedStatement pstm = null;
         ResultSet rst = null;
         Marca marca = new Marca();
@@ -92,7 +91,7 @@ public class MarcaDAO implements InterfaceDAO<Marca>{
                 marcas.add(marca);
                 
                 
-                JOptionPane.showMessageDialog(null, "cadastro obtido");
+                //JOptionPane.showMessageDialog(null, "cadastro obtido");
             }
             
         }catch(SQLException ex) {
