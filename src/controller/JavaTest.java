@@ -15,9 +15,17 @@ public class JavaTest {
         String[] vet_marcas = null;
         int i = 0;
         for (Marca marca : marcas) {
-            vet_marcas [i] =  marca.getDescricao();
+            vet_marcas[i] =  marca.getDescricao();
             i++;
         }
         return vet_marcas;
+    }
+    
+    public void retornaMarca1(){
+        MarcaDAO marcaDAO = new MarcaDAO();
+        List<Marca> marcas = marcaDAO.retrieveAll();
+        for (Marca marca : marcas) {
+            System.out.println(marca.getDescricao());
+        }
     }
 }

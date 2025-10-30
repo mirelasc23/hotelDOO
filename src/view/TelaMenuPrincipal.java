@@ -306,7 +306,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         JavaTest jt = new JavaTest();
-        jt.retornaMarca();
+        jt.retornaMarca1();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
