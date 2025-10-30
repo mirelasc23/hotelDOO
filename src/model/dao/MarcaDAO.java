@@ -102,6 +102,41 @@ public class MarcaDAO implements InterfaceDAO<Marca>{
         
         return marcas;
     }
+    
+    public List<Marca> retrieveAll() {
+        String sqlInstrucao = "select id, descricao, status"
+                + " from marca ";
+        Connection conexao = ConnectionFactoty.getConnection();    
+        //JOptionPane.showMessageDialog(null, "conexao ok");
+        //JOptionPane.showMessageDialog(null, conexao);
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+        List<Marca> marcas = new ArrayList<>();
+
+        try{
+            pstm = conexao.prepareStatement(sqlInstrucao);
+            //pstm.setString(1, "%" + valor + "%");
+            rst = pstm.executeQuery();
+            
+            while (rst.next()) {    
+                Marca marca = new Marca();
+                marca.setId(rst.getInt("id"));
+                marca.setDescricao(rst.getString("descricao"));
+                marca.setStatus(rst.getString(3).charAt(0));
+                marcas.add(marca);
+                
+                
+                //JOptionPane.showMessageDialog(null, "cadastro obtido");
+            }
+            
+        }catch(SQLException ex) {
+            ex.printStackTrace();
+        } finally{
+            ConnectionFactoty.closeConnecition(conexao, pstm);            
+        }
+        
+        return marcas;
+    }
 
     @Override
     public void update(Marca objeto) {

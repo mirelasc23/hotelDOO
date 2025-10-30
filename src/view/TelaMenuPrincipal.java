@@ -15,6 +15,7 @@ import controller.ControllerCadQuarto;
 import controller.ControllerCadServico;
 import controller.ControllerCadVagaEstacionamento;
 import controller.ControllerCadVeiculo;
+import controller.JavaTest;
 
 /**
  *
@@ -58,6 +59,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuMovimentos = new javax.swing.JMenu();
         jMenuRelatorios = new javax.swing.JMenu();
         jMenuAjuda = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -196,6 +198,15 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuAjuda.setBackground(new java.awt.Color(204, 204, 204));
         jMenuAjuda.setForeground(new java.awt.Color(102, 102, 102));
         jMenuAjuda.setText("Ajuda");
+
+        jMenuItem1.setText("TestJava");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuAjuda.add(jMenuItem1);
+
         jMenuPrincipal.add(jMenuAjuda);
 
         jMenuSobre.setBackground(new java.awt.Color(204, 204, 204));
@@ -292,6 +303,12 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         telaCadastroMarca.setVisible(true);
     }//GEN-LAST:event_jMenuItemMarcaActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JavaTest jt = new JavaTest();
+        jt.retornaMarca();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -330,6 +347,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenu jMenuCadastros;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemFornecedor;
     private javax.swing.JMenuItem jMenuItemFuncionario;
     private javax.swing.JMenuItem jMenuItemHospede;
