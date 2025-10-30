@@ -7,6 +7,7 @@ import view.CadastroModelo;
 
 public class ControllerCadModelo implements ActionListener{
     private CadastroModelo telaCadastroModelo;
+    public static int codigo;
 
     public ControllerCadModelo(CadastroModelo telaCadastroModelo) {
         this.telaCadastroModelo = telaCadastroModelo;
@@ -30,9 +31,11 @@ public class ControllerCadModelo implements ActionListener{
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroModelo.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroModelo.getjPanelDados(), false);
         }else if(e.getSource() == this.telaCadastroModelo.getjButtonBuscar()){
-            JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
+            //JOptionPane.showMessageDialog(null, "Falta ControllerBuscaFuncionarios");
             //BuscaModelo telaBuscaHospede= new BuscaModelo(null, true);
-            //ControllerBuscaHospede controllerBuscaHospedes = new ControllerBuscaHospede(telaBuscaHospede);
+            this.telaCadastroModelo.getjTextFieldValor().setEnabled(true);
+            this.telaCadastroModelo.getjComboBoxFiltrarPor().setEnabled(true);
+            ControllerBuscaModelo controllerBuscaModelo = new ControllerBuscaModelo(this.telaCadastroModelo);
             //telaBuscaHospede.setVisible(true);
         }else if(e.getSource() == this.telaCadastroModelo.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroModelo.getjPanelBotoes(), true);
