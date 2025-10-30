@@ -145,8 +145,8 @@ public class QuartoDAO implements InterfaceDAO<Quarto>{
             pstm.setString(4, objeto.getIdentificacao());
             pstm.setInt(5, objeto.getAndar());
             pstm.setBoolean(6, objeto.isFlagAnimais());
-            pstm.setBoolean(7, objeto.isFlagAnimais());
-            pstm.setBoolean(8, objeto.isFlagAnimais());
+            pstm.setBoolean(7, objeto.isFlagBebe());
+            pstm.setBoolean(8, objeto.isFlagFumante());
             pstm.setString(9, objeto.getObs());
             pstm.setString(10, String.valueOf(objeto.getStatus()));
             pstm.setInt(11, objeto.getId());

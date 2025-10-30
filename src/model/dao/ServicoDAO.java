@@ -13,7 +13,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public void create(Servico objeto) {
-        String sqlInstrucao = "insert into servico (decricao, obs, status) values(?, ?, ?)";
+        String sqlInstrucao = "insert into servico (descricao, obs) values(?, ?)";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -23,7 +23,6 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
             
             pstm.setString(1, objeto.getDescricao());
             pstm.setString(2, objeto.getObs());
-            pstm.setString(3, "a");
             
             JOptionPane.showMessageDialog(null, objeto);
             pstm.execute();
@@ -36,12 +35,11 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public Servico retrieve(int id) {
-        String sqlInstrucao = "select id, decricao, obs, status"
+        String sqlInstrucao = "select id, descricao, obs, status"
                 + " from servico where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
         JOptionPane.showMessageDialog(null, "conexao ok");
-        JOptionPane.showMessageDialog(null, conexao);
         PreparedStatement pstm = null;
         ResultSet rst = null;
         Servico servico = new Servico();
@@ -54,7 +52,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
             while (rst.next()) {  
                 System.out.println(rst);
                 servico.setId(rst.getInt("id"));
-                servico.setDescricao(rst.getString("decricao"));
+                servico.setDescricao(rst.getString("descricao"));
                 servico.setObs(rst.getString(3));
                 servico.setStatus(rst.getString(4).charAt(0));
                 
@@ -72,7 +70,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public List<Servico> retrieve(String atributo, String valor) {
-        String sqlInstrucao = "select id, decricao, obs, status"
+        String sqlInstrucao = "select id, descricao, obs, status"
                 + " from servico where " + atributo + " like ? COLLATE utf8mb4_unicode_ci";
         Connection conexao = ConnectionFactoty.getConnection();    
         PreparedStatement pstm = null;
@@ -87,7 +85,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
             while (rst.next()) {    
                 Servico servico = new Servico();
                 servico.setId(rst.getInt("id"));
-                servico.setDescricao(rst.getString("decricao"));
+                servico.setDescricao(rst.getString("descricao"));
                 servico.setObs(rst.getString(3));
                 servico.setStatus(rst.getString(4).charAt(0));
                 servicos.add(servico);
@@ -105,7 +103,7 @@ public class ServicoDAO implements InterfaceDAO<Servico>{
 
     @Override
     public void update(Servico objeto) {
-        String sqlInstrucao = "update servico set decricao = ?,"
+        String sqlInstrucao = "update servico set descricao = ?,"
                 + " obs = ?, status = ? where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    

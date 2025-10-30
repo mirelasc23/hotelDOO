@@ -44,7 +44,7 @@ public class BuscaQuarto extends javax.swing.JDialog {
         return jTableDados;
     }
 
-    public JTextField getjTextField1() {
+    public JTextField getjTextFieldValor() {
         return jTextFieldValor;
     }
 
@@ -117,7 +117,7 @@ public class BuscaQuarto extends javax.swing.JDialog {
 
             },
             new String [] {
-                "id", "Identificacao", "Capacidade", "Animais"
+                "id", "Identificacao", "Capacidade", "Metragem"
             }
         ));
         jTableDados.setSelectionBackground(new java.awt.Color(153, 153, 153));
@@ -128,7 +128,7 @@ public class BuscaQuarto extends javax.swing.JDialog {
             jTableDados.getColumnModel().getColumn(2).setMinWidth(200);
             jTableDados.getColumnModel().getColumn(2).setPreferredWidth(200);
             jTableDados.getColumnModel().getColumn(2).setMaxWidth(200);
-            jTableDados.getColumnModel().getColumn(3).setMaxWidth(50);
+            jTableDados.getColumnModel().getColumn(3).setMaxWidth(150);
         }
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
@@ -146,15 +146,29 @@ public class BuscaQuarto extends javax.swing.JDialog {
 
         jButtonFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonFiltrar.setText("Filtrar");
+        jButtonFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFiltrarActionPerformed(evt);
+            }
+        });
 
-        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "NOME", "CPF" }));
-        jComboBoxFiltrarPor.setSelectedIndex(-1);
+        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Identificação", "Capacidade", "Metragem" }));
 
         jButtonCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
         jButtonCarregar.setText("Carregar");
+        jButtonCarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCarregarActionPerformed(evt);
+            }
+        });
 
         jButtonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonFechar.setText("Fechar");
+        jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFecharActionPerformed(evt);
+            }
+        });
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Filtrar Por");
@@ -175,15 +189,15 @@ public class BuscaQuarto extends javax.swing.JDialog {
                         .addComponent(jButtonFechar))
                     .addGroup(jPanelBotoesLayout.createSequentialGroup()
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelBotoesLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelBotoesLayout.createSequentialGroup()
-                                .addComponent(jTextFieldValor)
+                                .addComponent(jTextFieldValor, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButtonFiltrar)))))
                 .addContainerGap())
@@ -201,9 +215,9 @@ public class BuscaQuarto extends javax.swing.JDialog {
                     .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonCarregar)
-                    .addComponent(jButtonFechar))
+                    .addComponent(jButtonFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -234,6 +248,18 @@ public class BuscaQuarto extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCarregarActionPerformed
+
+    private void jButtonFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonFiltrarActionPerformed
+
+    private void jButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonFecharActionPerformed
 
     /**
      * @param args the command line arguments
