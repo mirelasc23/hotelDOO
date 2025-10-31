@@ -31,6 +31,7 @@ public class ControllerCadMarca implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //BOTAO NOVO
         if(e.getSource() == this.telaCadastroMarca.getjButtonNovo()){
            //padrao dos botoes
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), false);
@@ -44,6 +45,7 @@ public class ControllerCadMarca implements ActionListener{
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
             
+        //BOTAO GRAVAR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonGravar()){
             if(this.telaCadastroMarca.getjTextFieldDescricao().getText().trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Atributo Obrigatorio");
@@ -51,7 +53,6 @@ public class ControllerCadMarca implements ActionListener{
             }else{
 
                 Marca marca = new Marca();
-
                 marca.setDescricao(this.telaCadastroMarca.getjTextFieldDescricao().getText());
                 
                 char status;
@@ -63,7 +64,6 @@ public class ControllerCadMarca implements ActionListener{
                 
                 if(this.telaCadastroMarca.getjTextFieldID().getText().trim().equalsIgnoreCase("")){
                     //inclusao
-                    marca.setStatus('A');
                     service.MarcaService.Criar(marca);
                 } else{
                     marca.setId(Integer.parseInt(this.telaCadastroMarca.getjTextFieldID().getText()));
