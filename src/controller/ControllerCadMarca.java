@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Marca;
@@ -16,9 +18,11 @@ public class ControllerCadMarca implements ActionListener{
         
         this.telaCadastroMarca.getjButtonNovo().addActionListener(this);
         this.telaCadastroMarca.getjButtonGravar().addActionListener(this);
-        this.telaCadastroMarca.getjButtonBuscar().addActionListener(this);
         this.telaCadastroMarca.getjButtonCancelar().addActionListener(this);
         this.telaCadastroMarca.getjButtonSair().addActionListener(this);
+        this.telaCadastroMarca.getjButtonCarregar().addActionListener(this);
+        this.telaCadastroMarca.getjButtonFiltrar().addActionListener(this);
+        //this.telaCadastroMarca.getjButtonCancelarFiltro().addActionListener(this);
         
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
@@ -28,10 +32,11 @@ public class ControllerCadMarca implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaCadastroMarca.getjButtonNovo()){
-           
+           //padrao dos botoes
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), false);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), true);
             
+            //inativa id, status e campos de filtro
             this.telaCadastroMarca.getjTextFieldID().setEnabled(false);
             this.telaCadastroMarca.getjComboBoxStatus().setSelectedIndex(0);
             this.telaCadastroMarca.getjComboBoxStatus().setEnabled(false);
@@ -47,7 +52,6 @@ public class ControllerCadMarca implements ActionListener{
 
                 Marca marca = new Marca();
 
-                //marca.setId(Integer.parseInt(this.telaCadastroMarca.getjTextFieldID().getText()));
                 marca.setDescricao(this.telaCadastroMarca.getjTextFieldDescricao().getText());
                 
                 char status;
@@ -70,7 +74,10 @@ public class ControllerCadMarca implements ActionListener{
              }
             //utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             //utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
-        }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
+            
+            
+        //BOTAO BUSCAR
+        }else if(e.getSource() == this.telaCadastroMarca.getjButtonFiltrar()){
             
             //ATIVA BOTOES PARA BUSCA
             utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), true);
@@ -78,11 +85,11 @@ public class ControllerCadMarca implements ActionListener{
             //ATIVA COMPONENTES PARA BUSCA
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);
-            JOptionPane.showMessageDialog(null, "ativou componentes"); 
+            //JOptionPane.showMessageDialog(null, "ativou componentes"); 
             
             
             //CONTROLLER
-            ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
+            //ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
             
             /*DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
                 //Limpa a tabela a cada filtragem
@@ -130,10 +137,13 @@ public class ControllerCadMarca implements ActionListener{
                 
                 this.telaCadastroMarca.getjTextFieldDescricao().requestFocus();
             }
+            
+        //BOTAO CANCELAR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
             
+        //BOTAO SAIR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonSair()){
            this.telaCadastroMarca.dispose();
         }

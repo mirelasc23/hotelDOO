@@ -16,7 +16,7 @@ public class ControllerMarca_Original implements ActionListener{
         
         this.telaCadastroMarca.getjButtonNovo().addActionListener(this);
         this.telaCadastroMarca.getjButtonGravar().addActionListener(this);
-        this.telaCadastroMarca.getjButtonBuscar().addActionListener(this);
+        //this.telaCadastroMarca.getjButtonBuscar().addActionListener(this);
         this.telaCadastroMarca.getjButtonCancelar().addActionListener(this);
         this.telaCadastroMarca.getjButtonSair().addActionListener(this);
         
@@ -70,7 +70,7 @@ public class ControllerMarca_Original implements ActionListener{
              }
             //utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             //utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
-        }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
+//        }else if(e.getSource() == this.telaCadastroMarca.getjButtonBuscar()){
             
             //ATIVA BOTOES PARA BUSCA
             utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), true);

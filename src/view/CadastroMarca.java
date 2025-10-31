@@ -26,9 +26,13 @@ public class CadastroMarca extends javax.swing.JDialog {
         initComponents();
     }
 
-    public JButton getjButtonBuscar() {
+    /*public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
+    
+    public JButton getjButtonCancelarFiltro() {
+        return jButtonCancelarFiltro;
+    }*/
 
     public JButton getjButtonCancelar() {
         return jButtonCancelar;
@@ -36,10 +40,6 @@ public class CadastroMarca extends javax.swing.JDialog {
 
     public JButton getjButtonCarregar() {
         return jButtonCarregar;
-    }
-
-    public JButton getjButtonCancelarFiltro() {
-        return jButtonCancelarFiltro;
     }
 
     public JButton getjButtonFiltrar() {
@@ -145,12 +145,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonFiltrar = new javax.swing.JButton();
         jButtonCarregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButtonCancelarFiltro = new javax.swing.JButton();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonGravar = new javax.swing.JButton();
-        jButtonBuscar = new javax.swing.JButton();
         jButtonSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -231,24 +229,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonFiltrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonFiltrar.setText("Filtrar");
         jButtonFiltrar.setActionCommand("2");
-        jButtonFiltrar.setEnabled(false);
 
         jButtonCarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Load.png"))); // NOI18N
         jButtonCarregar.setText("Carregar");
         jButtonCarregar.setActionCommand("2");
-        jButtonCarregar.setEnabled(false);
-
-        jButtonCancelarFiltro.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonCancelarFiltro.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonCancelarFiltro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete.png"))); // NOI18N
-        jButtonCancelarFiltro.setText("Cancelar");
-        jButtonCancelarFiltro.setActionCommand("2");
-        jButtonCancelarFiltro.setEnabled(false);
-        jButtonCancelarFiltro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarFiltroActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
@@ -269,11 +253,10 @@ public class CadastroMarca extends javax.swing.JDialog {
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButtonCancelarFiltro, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
@@ -321,9 +304,7 @@ public class CadastroMarca extends javax.swing.JDialog {
                         .addComponent(jButtonFiltrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonCarregar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCancelarFiltro)
-                        .addGap(0, 109, Short.MAX_VALUE))
+                        .addGap(0, 137, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -352,13 +333,6 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonGravar.setActionCommand("0");
         jButtonGravar.setEnabled(false);
         jPanelBotoes.add(jButtonGravar);
-
-        jButtonBuscar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.setActionCommand("1");
-        jPanelBotoes.add(jButtonBuscar);
 
         jButtonSair.setBackground(new java.awt.Color(204, 204, 204));
         jButtonSair.setForeground(new java.awt.Color(0, 0, 0));
@@ -408,10 +382,6 @@ public class CadastroMarca extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldValorActionPerformed
 
-    private void jButtonCancelarFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarFiltroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarFiltroActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -456,9 +426,7 @@ public class CadastroMarca extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonCancelarFiltro;
     private javax.swing.JButton jButtonCarregar;
     private javax.swing.JButton jButtonFiltrar;
     private javax.swing.JButton jButtonGravar;

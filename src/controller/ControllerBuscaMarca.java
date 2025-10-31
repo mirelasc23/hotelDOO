@@ -17,7 +17,7 @@ public  class ControllerBuscaMarca implements ActionListener{
         
         this.telaBuscaMarca.getjButtonCarregar().addActionListener(this);
         this.telaBuscaMarca.getjButtonFiltrar().addActionListener(this);
-        this.telaBuscaMarca.getjButtonCancelarFiltro().addActionListener(this);
+        //this.telaBuscaMarca.getjButtonCancelarFiltro().addActionListener(this);
     }
     
     @Override
