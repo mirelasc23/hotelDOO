@@ -26,11 +26,11 @@ public class CadastroMarca extends javax.swing.JDialog {
         initComponents();
     }
 
-    /*public JButton getjButtonBuscar() {
+    public JButton getjButtonBuscar() {
         return jButtonBuscar;
     }
     
-    public JButton getjButtonCancelarFiltro() {
+    /*public JButton getjButtonCancelarFiltro() {
         return jButtonCancelarFiltro;
     }*/
 
@@ -146,6 +146,7 @@ public class CadastroMarca extends javax.swing.JDialog {
         jButtonCarregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jPanelBotoes = new javax.swing.JPanel();
+        jButtonBuscar = new javax.swing.JButton();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonGravar = new javax.swing.JButton();
@@ -311,6 +312,15 @@ public class CadastroMarca extends javax.swing.JDialog {
 
         jPanelBotoes.setBackground(new java.awt.Color(204, 204, 204));
 
+        jButtonBuscar.setText("jButton1");
+        jButtonBuscar.setActionCommand("1");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
+        jPanelBotoes.add(jButtonBuscar);
+
         jButtonNovo.setBackground(new java.awt.Color(204, 204, 204));
         jButtonNovo.setForeground(new java.awt.Color(0, 0, 0));
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
@@ -382,6 +392,10 @@ public class CadastroMarca extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldValorActionPerformed
 
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -426,6 +440,7 @@ public class CadastroMarca extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonCarregar;
     private javax.swing.JButton jButtonFiltrar;

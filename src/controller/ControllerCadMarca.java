@@ -22,11 +22,12 @@ public class ControllerCadMarca implements ActionListener{
         this.telaCadastroMarca.getjButtonSair().addActionListener(this);
         this.telaCadastroMarca.getjButtonCarregar().addActionListener(this);
         this.telaCadastroMarca.getjButtonFiltrar().addActionListener(this);
-        //this.telaCadastroMarca.getjButtonCancelarFiltro().addActionListener(this);
         
         utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
         utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
-                
+        
+        this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
+        this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);        
     }
 
     @Override
@@ -44,6 +45,7 @@ public class ControllerCadMarca implements ActionListener{
             
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
+            
             
         //BOTAO GRAVAR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonGravar()){
@@ -72,11 +74,9 @@ public class ControllerCadMarca implements ActionListener{
                 utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
                 utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
              }
-            //utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
-            //utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
             
             
-        //BOTAO BUSCAR
+        //BOTAO FILTRAR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonFiltrar()){
             
             //ATIVA BOTOES PARA BUSCA
@@ -86,21 +86,9 @@ public class ControllerCadMarca implements ActionListener{
             this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
             this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);
             //JOptionPane.showMessageDialog(null, "ativou componentes"); 
-            
-            
-            //CONTROLLER
-            //ControllerBuscaMarca controllerBuscaHospedes = new ControllerBuscaMarca(this.telaCadastroMarca);
-            
-            /*DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaMarca.getjTableDados().getModel();
-                //Limpa a tabela a cada filtragem
-                tabela.setRowCount(0);*/
-            //JOptionPane.showMessageDialog(null, "saiu do contrBusca");
-            //JOptionPane.showMessageDialog(null, "cód. em CadMarca" + ControllerCadMarca.codigo);
-            
+                        
             if (codigo != 0) {
                 
-                //JOptionPane.showMessageDialog(null, "entrou no if(codigo)");
-
                 //DESATIVA BOTOES PARA BUSCA
                 utilities.Utilities.ativaDesativaBusca(this.telaCadastroMarca.getjPanelDados(), false);
 
@@ -111,18 +99,11 @@ public class ControllerCadMarca implements ActionListener{
                 this.telaCadastroMarca.getjTableDados().setEnabled(false);
                 this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);
                 this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
-            //JOptionPane.showMessageDialog(null, "desativou componentes"); 
-                //this.telaCadastroMarca.getjTextFieldValor().setEnabled(false);
-                /*DefaultTableModel tabela = (DefaultTableModel) this.telaCadastroMarca.getjTableDados().getModel();
-                //Limpa a tabela a cada filtragem
-                tabela.setRowCount(0);
-                this.telaCadastroMarca.getjTableDados().setEnabled(true);
-                this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(false);*/
 
                 this.telaCadastroMarca.getjTextFieldID().setText(codigo + "");
                 this.telaCadastroMarca.getjTextFieldID().setEnabled(false);
                 
-                Marca marca = new Marca();
+                /*Marca marca = new Marca();
                 marca  = service.MarcaService.Carregar(codigo);
                 
                 //JOptionPane.showMessageDialog(null, marca);
@@ -135,18 +116,27 @@ public class ControllerCadMarca implements ActionListener{
                 }
                 this.telaCadastroMarca.getjComboBoxStatus().setSelectedIndex(index_status);
                 
-                this.telaCadastroMarca.getjTextFieldDescricao().requestFocus();
+                this.telaCadastroMarca.getjTextFieldDescricao().requestFocus();*/
             }
+         
+        
+        //BOTAO CARREGAR
+        }else if(e.getSource() == this.telaCadastroMarca.getjButtonCarregar()){
+            utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), false);
+            utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), true);
             
+
         //BOTAO CANCELAR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonCancelar()){
             utilities.Utilities.ativaDesativaBotoes(this.telaCadastroMarca.getjPanelBotoes(), true);
             utilities.Utilities.limpaComponentes(this.telaCadastroMarca.getjPanelDados(), false);
             
+            this.telaCadastroMarca.getjComboBoxFiltrarPor().setEnabled(true);
+            this.telaCadastroMarca.getjTextFieldValor().setEnabled(true);    
+            
         //BOTAO SAIR
         }else if(e.getSource() == this.telaCadastroMarca.getjButtonSair()){
            this.telaCadastroMarca.dispose();
-        }
-        
+        }        
     }
 }
