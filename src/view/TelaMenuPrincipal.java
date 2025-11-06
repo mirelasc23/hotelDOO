@@ -16,6 +16,7 @@ import controller.ControllerCadServico;
 import controller.ControllerCadVagaEstacionamento;
 import controller.ControllerCadVeiculo;
 import controller.JavaTest;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -305,8 +306,10 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        JavaTest jt = new JavaTest();
-        jt.retornaMarca1();
+        //JavaTest jt = new JavaTest();
+        //jt.retornaMarca1();
+        String i = JOptionPane.showInputDialog("insira cpf");
+        JOptionPane.showMessageDialog(null, utilities.Utilities.validaCpf(i));
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

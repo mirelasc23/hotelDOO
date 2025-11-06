@@ -3,6 +3,8 @@ package utilities;
 
 //import javax.swing.JComponent;
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -91,5 +93,34 @@ public class Utilities {
             }
         }
         
+    }
+    
+    public static String validaCpf(String cpf){//boolean validaCpf(String cpf){
+        List<Integer> valor = new ArrayList<>();
+        List<Integer> valorConvertido = new ArrayList<>();
+        int mult = 10, soma = 0, validador1, validador2;
+        
+        //OBTEM SOMA:
+        try {
+            for (int i = 0; i < cpf.length(); i++) {
+                int n = Character.getNumericValue(cpf.charAt(i));
+                //int n = Integer.parseInt(String.valueOf(cpf.charAt(i)));
+                valor.add(n);
+            }
+            
+            for (int i = 0; i < 9; i++) {
+                int n = valor.get(i)*mult;
+                valorConvertido.add(n);
+                soma+=n;
+                mult--;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        
+        validador1 = 11 - (soma%11);
+        //validador2 = 
+                
+        return valorConvertido.toString() + " = " + soma;
     }
 }
