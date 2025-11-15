@@ -16,6 +16,7 @@ import controller.ControllerCadServico;
 import controller.ControllerCadVagaEstacionamento;
 import controller.ControllerCadVeiculo;
 import controller.JavaTest;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +32,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
     }
+    private String retorno;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -308,8 +310,18 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //JavaTest jt = new JavaTest();
         //jt.retornaMarca1();
+        //testa cpf
         String i = JOptionPane.showInputDialog("insira cpf");
         JOptionPane.showMessageDialog(null, utilities.Utilities.validaCpf(i));
+        /*do{
+            String i = JOptionPane.showInputDialog("insira data (dd/MM/yyyy)");
+            this.retorno = utilities.Utilities.validaDataString(i);
+            JOptionPane.showMessageDialog(null,retorno);
+        }while (this.retorno.equals("Informe uma data válida!"));*/
+        /*String a = JOptionPane.showInputDialog("insira data antiga:");
+        JOptionPane.showMessageDialog(null, utilities.Utilities.validaDataAntigaString(a, LocalDate.now()));
+        String f = JOptionPane.showInputDialog("insira data futura:");
+        JOptionPane.showMessageDialog(null, utilities.Utilities.validaDataFuturaString(f, LocalDate.now()));*/
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

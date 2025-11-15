@@ -1,5 +1,7 @@
 package model;
 
+import javax.swing.JOptionPane;
+
 public class Pessoa {
 
     private int id;
@@ -131,7 +133,15 @@ public class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        /*try {
+            if(utilities.Utilities.validaCpf(cpf)){
+                this.cpf = cpf;
+            }else{
+                JOptionPane.showMessageDialog(null, "Informe um CPF válido");
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }*/
     }
 
     public String getRg() {
