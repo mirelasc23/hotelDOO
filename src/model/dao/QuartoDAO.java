@@ -50,8 +50,8 @@ public class QuartoDAO implements InterfaceDAO<Quarto>{
                 + " from quarto where id = ?";
         
         Connection conexao = ConnectionFactoty.getConnection();    
-        JOptionPane.showMessageDialog(null, "conexao ok");
-        JOptionPane.showMessageDialog(null, conexao);
+        //JOptionPane.showMessageDialog(null, "conexao ok");
+        //JOptionPane.showMessageDialog(null, conexao);
         PreparedStatement pstm = null;
         ResultSet rst = null;
         Quarto quarto = new Quarto();
