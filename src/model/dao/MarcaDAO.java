@@ -9,8 +9,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.Marca;
 
-public class MarcaDAO implements InterfaceDAO<Marca>{
-
+public class MarcaDAO implements InterfaceDAO<Marca>{ 
+    
     @Override
     public void create(Marca objeto) {
         String sqlInstrucao = "insert into marca (descricao) values(?)";
